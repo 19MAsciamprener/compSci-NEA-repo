@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15" version="29.2.7">
   <diagram name="Page-1" id="97916047-d0de-89f5-080d-49f4d83e522f">
-    <mxGraphModel dx="1333" dy="868" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3086.5" dy="868" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -12,6 +12,9 @@
             <mxPoint x="22" y="265.5" as="sourcePoint" />
             <mxPoint x="772" y="345.5" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-31" edge="1" parent="1" source="41CRgPURk2EIKP6zxfPS-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="SuPLhIEAeGpzkHReTqnK-30" value="">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="41CRgPURk2EIKP6zxfPS-56" parent="1" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" value="KIOSK APP" vertex="1">
           <mxGeometry height="60" width="200" x="320" y="380" as="geometry" />
@@ -27,6 +30,51 @@
             <mxPoint x="1032" y="290" as="sourcePoint" />
             <mxPoint x="770" y="384" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-35" edge="1" parent="1" source="SuPLhIEAeGpzkHReTqnK-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="SuPLhIEAeGpzkHReTqnK-34" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-37" edge="1" parent="1" source="SuPLhIEAeGpzkHReTqnK-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="SuPLhIEAeGpzkHReTqnK-36" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-42" edge="1" parent="1" source="SuPLhIEAeGpzkHReTqnK-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="SuPLhIEAeGpzkHReTqnK-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-43" edge="1" parent="1" source="SuPLhIEAeGpzkHReTqnK-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="SuPLhIEAeGpzkHReTqnK-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-44" edge="1" parent="1" source="SuPLhIEAeGpzkHReTqnK-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="SuPLhIEAeGpzkHReTqnK-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-30" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Standby Screen" vertex="1">
+          <mxGeometry height="60" width="200" x="320" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-32" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Stock Price Information" vertex="1">
+          <mxGeometry height="60" width="200" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-46" edge="1" parent="1" source="SuPLhIEAeGpzkHReTqnK-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="SuPLhIEAeGpzkHReTqnK-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-34" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="QR Login Screen" vertex="1">
+          <mxGeometry height="60" width="200" x="80" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-36" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Settings Page" vertex="1">
+          <mxGeometry height="60" width="200" x="560" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-38" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Info Dialog" vertex="1">
+          <mxGeometry height="60" width="200" x="0.5" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-39" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Language Change Dialog" vertex="1">
+          <mxGeometry height="60" width="200" x="0.5" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-50" edge="1" parent="1" source="SuPLhIEAeGpzkHReTqnK-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="SuPLhIEAeGpzkHReTqnK-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-45" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="QR Login Screen" vertex="1">
+          <mxGeometry height="60" width="200" x="80" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-48" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Forgot Password Screen" vertex="1">
+          <mxGeometry height="60" width="200" x="-160" y="910" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
