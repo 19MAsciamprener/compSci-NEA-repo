@@ -92,61 +92,40 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: GridView(
-                  reverse: true,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    mainAxisSpacing: 8,
-                    crossAxisSpacing: 8,
-                    crossAxisCount: 2,
-                    childAspectRatio: 1,
-                  ),
-                  children: [
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.add),
-                      style: ButtonStyle(
-                        shape: WidgetStatePropertyAll(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        backgroundColor: WidgetStatePropertyAll(Colors.red),
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.remove),
-                      style: ButtonStyle(
-                        shape: WidgetStatePropertyAll(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        backgroundColor: WidgetStatePropertyAll(Colors.red),
-                      ),
-                    ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.refresh),
-                      style: ButtonStyle(
-                        shape: WidgetStatePropertyAll(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        backgroundColor: WidgetStatePropertyAll(Colors.red),
-                      ),
-                    ),
-                  ],
-                ),
+            SizedBox(width: 16),
+            Column(children: [
+              ElevatedButton(onPressed: () {}, style: ElevatedButton.styleFrom(
+              minimumSize: Size(150, 120),
+              backgroundColor: Theme.of(context).primaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
               ),
             ),
+            child: Icon(Icons.add,color: Color(0xFFFFFFFF), size: 48,)),
+            
+            Row(children: [ElevatedButton(onPressed: () {}, style: ElevatedButton.styleFrom(
+              minimumSize: Size(150, 120),
+              backgroundColor: Theme.of(context).primaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+            ),
+            child: Icon(Icons.mail,color: Color(0xFFFFFFFF), size: 48,)),
+            
+            ElevatedButton(onPressed: () {}, style: ElevatedButton.styleFrom(
+              minimumSize: Size(150, 120),
+              backgroundColor: Theme.of(context).primaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+            ),
+            child: Icon(Icons.settings,color: Color(0xFFFFFFFF), size: 48,)),
+            ],)])
           ],
         ),
       ),
     );
   }
 }
+
+
