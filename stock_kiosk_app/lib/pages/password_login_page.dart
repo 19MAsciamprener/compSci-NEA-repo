@@ -1,8 +1,35 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stock_kiosk_app/pages/password_reset_page.dart';
 
-class PasswordLoginPage extends StatelessWidget {
+class PasswordLoginPage extends StatefulWidget {
   const PasswordLoginPage({super.key});
+
+  @override
+  State<PasswordLoginPage> createState() => _PasswordLoginPageState();
+}
+
+class _PasswordLoginPageState extends State<PasswordLoginPage> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  Future<void> createUserWithEmailAndPassword() async {
+    // Implementation for creating user with email and password
+    final UserCredential = await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(
+          email: emailController.text.trim(),
+          password: passwordController.text.trim(),
+        );
+    print(UserCredential);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,15 +58,13 @@ class PasswordLoginPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 128),
-            Text(
-              'Username:',
-              style: TextStyle(color: Colors.white, fontSize: 30),
-            ),
+            Text('Email:', style: TextStyle(color: Colors.white, fontSize: 30)),
             SizedBox(height: 2),
 
             SizedBox(
               width: 400,
               child: TextField(
+                controller: emailController,
                 style: TextStyle(color: Colors.black),
                 decoration: InputDecoration(
                   prefixIcon: Icon(
@@ -62,6 +87,7 @@ class PasswordLoginPage extends StatelessWidget {
             SizedBox(
               width: 400,
               child: TextField(
+                controller: passwordController,
                 obscureText: true,
                 style: TextStyle(color: Colors.black),
                 decoration: InputDecoration(
@@ -79,7 +105,9 @@ class PasswordLoginPage extends StatelessWidget {
 
             Center(
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await createUserWithEmailAndPassword();
+                },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(300, 100),
                   backgroundColor: Theme.of(context).primaryColor,
