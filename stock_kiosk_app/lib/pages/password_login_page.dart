@@ -12,7 +12,6 @@ class PasswordLoginPage extends StatefulWidget {
 class _PasswordLoginPageState extends State<PasswordLoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
@@ -21,14 +20,31 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
     super.dispose();
   }
 
-  Future<void> createUserWithEmailAndPassword() async {
-    // Implementation for creating user with email and password
-    final UserCredential = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(
-          email: emailController.text.trim(),
-          password: passwordController.text.trim(),
-        );
-    print(UserCredential);
+  // Future<void> createUserWithEmailAndPassword() async {
+  //   // Implementation for creating user with email and password
+  //   try {
+  //     final userCredential = await FirebaseAuth.instance
+  //         .createUserWithEmailAndPassword(
+  //           email: emailController.text.trim(),
+  //           password: passwordController.text.trim(),
+  //         );
+  //     print(userCredential);
+  //   } on FirebaseAuthException catch (e) {
+  //     print(e.message);
+  //   }
+  // }
+
+  Future<void> loginUserWithEmailAndPassword() async {
+    try {
+      final userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+            email: emailController.text.trim(),
+            password: passwordController.text.trim(),
+          );
+      print(userCredential);
+    } on FirebaseAuthException catch (e) {
+      print(e.message);
+    }
   }
 
   @override
@@ -106,7 +122,7 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
             Center(
               child: ElevatedButton(
                 onPressed: () async {
-                  await createUserWithEmailAndPassword();
+                  await loginUserWithEmailAndPassword();
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(300, 100),
