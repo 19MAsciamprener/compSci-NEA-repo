@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const NewNotePage(),
+      home: const StandbyPage(),
     );
   }
 }

@@ -1,16 +1,17 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:stock_mobile_app/pages/password_reset_page.dart';
-import 'package:stock_mobile_app/pages/signup_page.dart';
+import 'package:stock_mobile_app/pages/login_page.dart';
+import 'package:stock_mobile_app/pages/qr_page.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -21,10 +22,10 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
-  Future<void> loginUserWithEmailAndPassword() async {
+  Future<void> createUserWithEmailAndPassword() async {
     try {
       final userCredential = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(
+          .createUserWithEmailAndPassword(
             email: emailController.text.trim(),
             password: passwordController.text.trim(),
           );
@@ -32,13 +33,18 @@ class _LoginPageState extends State<LoginPage> {
     } on FirebaseAuthException catch (e) {
       print(e.message);
     }
+
+    FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser?.uid)
+        .set({'email': emailController.text.trim()});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login', style: TextStyle(color: Colors.white)),
+        title: const Text('Sign Up', style: TextStyle(color: Colors.white)),
         centerTitle: true,
       ),
 
@@ -100,8 +106,9 @@ class _LoginPageState extends State<LoginPage> {
               Center(
                 child: ElevatedButton(
                   onPressed: () async {
-                    await loginUserWithEmailAndPassword();
+                    await createUserWithEmailAndPassword();
                   },
+
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(300, 100),
                     backgroundColor: Theme.of(context).primaryColor,
@@ -127,11 +134,11 @@ class _LoginPageState extends State<LoginPage> {
             onPressed: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => SignupPage()),
+                MaterialPageRoute(builder: (context) => LoginPage()),
               );
             },
             child: Text(
-              'No account yet? Sign up here.',
+              'Already have an account? Login here.',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 color: Colors.white,
                 fontSize: 24,

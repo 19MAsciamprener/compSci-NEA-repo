@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stock_kiosk_app/pages/password_reset_page.dart';
+import 'package:stock_kiosk_app/pages/user_home_page.dart';
 
 class PasswordLoginPage extends StatefulWidget {
   const PasswordLoginPage({super.key});
@@ -123,6 +124,11 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
               child: ElevatedButton(
                 onPressed: () async {
                   await loginUserWithEmailAndPassword();
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => UserHomePage()),
+                    (route) => false,
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(300, 100),
