@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:stock_kiosk_app/pages/password_login_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:stock_kiosk_app/pages/user_home_page.dart';
 
 class QrLoginPage extends StatefulWidget {
   const QrLoginPage({super.key});
@@ -15,6 +20,41 @@ class _QrLoginPageState extends State<QrLoginPage> {
   );
 
   bool scanned = false;
+  String? idToken;
+
+  Future<void> kioskSignInWithUid(String idToken) async {
+    final serverUrl = 'http://192.168.0.160:3000/getCustomToken';
+
+    final response = await http.post(
+      Uri.parse(serverUrl),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({'token': idToken}),
+    );
+    print('Requesting custom token from server with idToken: $idToken');
+    if (response.statusCode != 200) {
+      print('Failed to get custom token from server ${response.body}');
+      return;
+    }
+
+    final responseData = jsonDecode(response.body);
+    final customToken = responseData['customToken'];
+
+    try {
+      await FirebaseAuth.instance.signInWithCustomToken(customToken);
+
+      if (!mounted) return;
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => UserHomePage()),
+        (route) => false,
+      );
+    } on FirebaseAuthException catch (e) {
+      print('Error during sign-in: $e');
+      return;
+    }
+
+    print('Kiosk signed in!');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,13 +80,43 @@ class _QrLoginPageState extends State<QrLoginPage> {
         children: [
           MobileScanner(
             controller: controller,
-            onDetect: (result) {
+            onDetect: (capture) async {
+              print('QR code detected, processing...');
               if (scanned) return;
-              final String? qrData = result.barcodes.first.rawValue;
-              if (qrData == null) return;
+              final List<Barcode> barcodes = capture.barcodes;
+              for (final barcode in barcodes) {
+                idToken = barcode.rawValue?.trim();
+                if (idToken != null) {
+                  scanned = true;
+                  print('QR Code detected: $idToken');
+                  break;
+                }
+              }
+              {
+                final backendTokenDoc = await FirebaseFirestore.instance
+                    .collection('LoginTokens')
+                    .doc(idToken)
+                    .get();
 
-              scanned = true;
-              controller.stop();
+                if (!backendTokenDoc.exists) {
+                  return;
+                }
+
+                final docData = backendTokenDoc.data()!;
+                final expiresAt = (docData['timestamp'] as Timestamp)
+                    .toDate()
+                    .add(Duration(minutes: 5));
+
+                if (DateTime.now().isAfter(expiresAt)) {
+                  print('Token expired (local clock)');
+                  return;
+                }
+
+                final uid = docData['uid']!;
+                print('Token valid, UID: $uid');
+
+                await kioskSignInWithUid(idToken!);
+              }
             },
           ),
           Container(color: Theme.of(context).colorScheme.surface),

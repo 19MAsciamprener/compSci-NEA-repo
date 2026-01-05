@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stock_kiosk_app/pages/new_note_page.dart';
 import 'pages/standby_page.dart';
@@ -7,6 +8,7 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FirebaseAuth.instance.signOut();
   runApp(const MyApp());
 }
 

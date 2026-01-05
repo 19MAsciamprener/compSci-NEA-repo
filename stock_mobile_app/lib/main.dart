@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:stock_mobile_app/pages/qr_page.dart';
-import 'package:stock_mobile_app/pages/signup_page.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:stock_mobile_app/utils/auth_logic.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
           if (snapshot.hasData) {
             return const QrPage();
           } else {
-            return const AuthGate();
+            return const AuthPage();
           }
         },
       ),

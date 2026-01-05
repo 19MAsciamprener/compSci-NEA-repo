@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -26,10 +27,16 @@ class _NewNotePageState extends State<NewNotePage> {
         'title': titleController.text.trim(),
         'content': contentController.text.trim(),
         'creationDate': FieldValue.serverTimestamp(),
+        'createdBy': FirebaseAuth.instance.currentUser?.uid,
       });
-      print(data.id);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Note saved successfully! with ID ${data.id}')),
+      );
     } catch (e) {
-      print(e);
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Error uploading note: $e')));
     }
   }
 

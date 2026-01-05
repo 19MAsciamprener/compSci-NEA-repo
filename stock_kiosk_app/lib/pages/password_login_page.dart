@@ -37,14 +37,18 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
 
   Future<void> loginUserWithEmailAndPassword() async {
     try {
-      final userCredential = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(
-            email: emailController.text.trim(),
-            password: passwordController.text.trim(),
-          );
-      print(userCredential);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      if (!mounted) return;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Login successful!')));
     } on FirebaseAuthException catch (e) {
-      print(e.message);
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Login failed: ${e.message}')));
     }
   }
 
@@ -124,6 +128,11 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
               child: ElevatedButton(
                 onPressed: () async {
                   await loginUserWithEmailAndPassword();
+                  if (!context.mounted ||
+                      FirebaseAuth.instance.currentUser == null) {
+                    return;
+                  }
+
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(builder: (context) => UserHomePage()),

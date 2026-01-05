@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:stock_mobile_app/pages/password_reset_page.dart';
-import 'package:stock_mobile_app/pages/signup_page.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final VoidCallback onTap;
+
+  const LoginPage({super.key, required this.onTap});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -23,14 +23,18 @@ class _LoginPageState extends State<LoginPage> {
 
   Future<void> loginUserWithEmailAndPassword() async {
     try {
-      final userCredential = await FirebaseAuth.instance
-          .signInWithEmailAndPassword(
-            email: emailController.text.trim(),
-            password: passwordController.text.trim(),
-          );
-      print(userCredential);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      if (!mounted) return;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Login successful!')));
     } on FirebaseAuthException catch (e) {
-      print(e.message);
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Login failed: ${e.message}')));
     }
   }
 
@@ -124,12 +128,7 @@ class _LoginPageState extends State<LoginPage> {
         elevation: 0,
         child: Center(
           child: TextButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => SignupPage()),
-              );
-            },
+            onPressed: widget.onTap,
             child: Text(
               'No account yet? Sign up here.',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(

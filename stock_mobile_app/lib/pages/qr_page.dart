@@ -1,9 +1,36 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+import 'package:uuid/uuid.dart';
 
-class QrPage extends StatelessWidget {
+class QrPage extends StatefulWidget {
   const QrPage({super.key});
+
+  @override
+  State<QrPage> createState() => _QrPageState();
+}
+
+class _QrPageState extends State<QrPage> {
+  Future<String> getIdToken() async {
+    final uid = FirebaseAuth.instance.currentUser?.uid;
+    final idToken = const Uuid().v4();
+
+    await FirebaseFirestore.instance.collection('LoginTokens').doc(idToken).set(
+      {'uid': uid, 'timestamp': FieldValue.serverTimestamp()},
+    );
+    return idToken;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +51,23 @@ class QrPage extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: QrImageView(
-          data: FirebaseAuth.instance.currentUser?.uid ?? 'No UID',
-          version: QrVersions.auto,
-          foregroundColor: Colors.white,
-          size: 400.0,
+        child: FutureBuilder<String>(
+          future: getIdToken(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              return Text('Error: ${snapshot.error}');
+            } else {
+              return QrImageView(
+                data: snapshot.data ?? '',
+                version: QrVersions.auto,
+                backgroundColor: Colors.white,
+                dataModuleStyle: QrDataModuleStyle(color: Colors.black),
+                size: 400.0,
+              );
+            }
+          },
         ),
       ),
     );

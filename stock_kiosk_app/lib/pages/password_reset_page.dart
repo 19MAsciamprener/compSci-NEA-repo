@@ -1,7 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class PasswordResetPage extends StatelessWidget {
+class PasswordResetPage extends StatefulWidget {
   const PasswordResetPage({super.key});
+
+  @override
+  State<PasswordResetPage> createState() => _PasswordResetPageState();
+}
+
+class _PasswordResetPageState extends State<PasswordResetPage> {
+  final emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    super.dispose();
+  }
+
+  Future<void> sendPasswordResetEmail() async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(
+        email: emailController.text.trim(),
+      );
+
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Password reset email sent!')),
+      );
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Password reset failed: ${e.message}')),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +69,7 @@ class PasswordResetPage extends StatelessWidget {
             SizedBox(
               width: 400,
               child: TextField(
+                controller: emailController,
                 style: TextStyle(color: Colors.black),
                 decoration: InputDecoration(
                   prefixIcon: Icon(
@@ -54,7 +87,9 @@ class PasswordResetPage extends StatelessWidget {
             SizedBox(
               width: 300,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                  await sendPasswordResetEmail();
+                },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(300, 100),
                   backgroundColor: Theme.of(context).primaryColor,

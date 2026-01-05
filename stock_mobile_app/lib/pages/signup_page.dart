@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:stock_mobile_app/pages/login_page.dart';
-import 'package:stock_mobile_app/pages/qr_page.dart';
 
 class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+  final VoidCallback onTap;
+
+  const SignupPage({super.key, required this.onTap});
 
   @override
   State<SignupPage> createState() => _SignupPageState();
@@ -24,20 +24,24 @@ class _SignupPageState extends State<SignupPage> {
 
   Future<void> createUserWithEmailAndPassword() async {
     try {
-      final userCredential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(
-            email: emailController.text.trim(),
-            password: passwordController.text.trim(),
-          );
-      print(userCredential);
-    } on FirebaseAuthException catch (e) {
-      print(e.message);
-    }
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
+      );
+      FirebaseFirestore.instance
+          .collection('users')
+          .doc(FirebaseAuth.instance.currentUser?.uid)
+          .set({'email': emailController.text.trim()});
 
-    FirebaseFirestore.instance
-        .collection('users')
-        .doc(FirebaseAuth.instance.currentUser?.uid)
-        .set({'email': emailController.text.trim()});
+      if (!mounted) return;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Login successful!')));
+    } on FirebaseAuthException catch (e) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Login failed: ${e.message}')));
+    }
   }
 
   @override
@@ -131,12 +135,7 @@ class _SignupPageState extends State<SignupPage> {
         elevation: 0,
         child: Center(
           child: TextButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-              );
-            },
+            onPressed: widget.onTap,
             child: Text(
               'Already have an account? Login here.',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
