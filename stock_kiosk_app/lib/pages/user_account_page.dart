@@ -5,6 +5,9 @@ import 'package:http_parser/http_parser.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:image/image.dart' as img;
 import 'dart:io';
+import 'package:stock_kiosk_app/pages/user_settings_page.dart';
+
+import 'package:stock_kiosk_app/pages/standby_page.dart';
 
 class UserAccountPage extends StatefulWidget {
   const UserAccountPage({super.key});
@@ -51,6 +54,47 @@ class _UserAccountPageState extends State<UserAccountPage> {
     }
   }
 
+  Future<void> _pickAndUploadImage() async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      final bytes = await pickedFile.readAsBytes();
+
+      final image = img.decodeImage(bytes);
+      if (image == null) return;
+
+      final jpgBytes = img.encodeJpg(image, quality: 90);
+
+      final tempDir = Directory.systemTemp;
+      final tempFile = File(
+        '${tempDir.path}/profile_${DateTime.now().millisecondsSinceEpoch}.jpg',
+      );
+      await tempFile.writeAsBytes(jpgBytes);
+
+      await _uploadProfilePicture(tempFile.path);
+    }
+  }
+
+  void _handleMenuSelection(BuildContext context, String value) {
+    switch (value) {
+      case 'profile settings':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const UserSettingsPage()),
+        );
+        break;
+      case 'logout':
+        FirebaseAuth.instance.signOut();
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => StandbyPage()),
+          (route) => false,
+        );
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,6 +114,21 @@ class _UserAccountPageState extends State<UserAccountPage> {
           'Account Page',
           style: TextStyle(color: Colors.white),
         ),
+        actions: [
+          PopupMenuButton(
+            icon: const Icon(Icons.menu, color: Colors.white, size: 48),
+            onSelected: (value) {
+              _handleMenuSelection(context, value);
+            },
+            itemBuilder: (context) => [
+              const PopupMenuItem(
+                value: 'profile settings',
+                child: Text('Profile Settings'),
+              ),
+              const PopupMenuItem(value: 'logout', child: Text('Logout')),
+            ],
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -78,54 +137,22 @@ class _UserAccountPageState extends State<UserAccountPage> {
             SizedBox(
               width: 256,
               height: 256,
-              child: Image.network(
-                'https://stock-tokenrequest.matnlaws.co.uk/images/profile/${FirebaseAuth.instance.currentUser!.uid}.jpg?${DateTime.now().millisecondsSinceEpoch}',
-                cacheWidth: 256,
-                fit: BoxFit.cover,
-
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return Image.asset(
-                    'lib/assets/images/Default_pfp.jpg',
-                    fit: BoxFit.cover,
-                  );
-                },
-
-                errorBuilder: (context, error, stackTrace) {
-                  return Image.asset(
-                    'lib/assets/images/Default_pfp.jpg',
-                    fit: BoxFit.cover,
-                  );
-                },
+              child: ClipOval(
+                child: FadeInImage.assetNetwork(
+                  placeholder: 'lib/assets/images/Default_pfp.jpg',
+                  image:
+                      'https://stock-tokenrequest.matnlaws.co.uk/images/profile/${FirebaseAuth.instance.currentUser!.uid}.jpg?${DateTime.now().millisecondsSinceEpoch}',
+                  fit: BoxFit.cover,
+                  width: 96,
+                  height: 96,
+                ),
               ),
             ),
 
             const SizedBox(height: 20),
 
             ElevatedButton(
-              onPressed: () async {
-                final picker = ImagePicker();
-                final pickedFile = await picker.pickImage(
-                  source: ImageSource.gallery,
-                );
-
-                if (pickedFile != null) {
-                  final bytes = await pickedFile.readAsBytes();
-
-                  final image = img.decodeImage(bytes);
-                  if (image == null) return;
-
-                  final jpgBytes = img.encodeJpg(image, quality: 90);
-
-                  final tempDir = Directory.systemTemp;
-                  final tempFile = File(
-                    '${tempDir.path}/profile_${DateTime.now().millisecondsSinceEpoch}.jpg',
-                  );
-                  await tempFile.writeAsBytes(jpgBytes);
-
-                  await _uploadProfilePicture(tempFile.path);
-                }
-              },
+              onPressed: _pickAndUploadImage,
               child: const Text('Upload Profile Picture'),
             ),
           ],
