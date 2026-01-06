@@ -23,16 +23,27 @@ class _QrLoginPageState extends State<QrLoginPage> {
   String? idToken;
 
   Future<void> kioskSignInWithUid(String idToken) async {
-    final serverUrl = 'http://192.168.0.160:3000/getCustomToken';
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Signing in...')));
+
+    final serverUrl = 'http://stock-tokenrequest.matnlaws.co.uk/getCustomToken';
 
     final response = await http.post(
       Uri.parse(serverUrl),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode({'token': idToken}),
     );
-    print('Requesting custom token from server with idToken: $idToken');
+
     if (response.statusCode != 200) {
-      print('Failed to get custom token from server ${response.body}');
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Failed to get custom token from server ${response.body}',
+          ),
+        ),
+      );
       return;
     }
 
@@ -49,11 +60,17 @@ class _QrLoginPageState extends State<QrLoginPage> {
         (route) => false,
       );
     } on FirebaseAuthException catch (e) {
-      print('Error during sign-in: $e');
+      if (!mounted) return;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Error during sign-in: $e')));
       return;
     }
 
-    print('Kiosk signed in!');
+    if (!mounted) return;
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Login successful')));
   }
 
   @override
@@ -81,14 +98,12 @@ class _QrLoginPageState extends State<QrLoginPage> {
           MobileScanner(
             controller: controller,
             onDetect: (capture) async {
-              print('QR code detected, processing...');
               if (scanned) return;
               final List<Barcode> barcodes = capture.barcodes;
               for (final barcode in barcodes) {
                 idToken = barcode.rawValue?.trim();
                 if (idToken != null) {
                   scanned = true;
-                  print('QR Code detected: $idToken');
                   break;
                 }
               }
@@ -99,6 +114,10 @@ class _QrLoginPageState extends State<QrLoginPage> {
                     .get();
 
                 if (!backendTokenDoc.exists) {
+                  if (!context.mounted) return;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Invalid QR code scanned.')),
+                  );
                   return;
                 }
 
@@ -108,12 +127,12 @@ class _QrLoginPageState extends State<QrLoginPage> {
                     .add(Duration(minutes: 5));
 
                 if (DateTime.now().isAfter(expiresAt)) {
-                  print('Token expired (local clock)');
+                  if (!context.mounted) return;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('This QR code has expired.')),
+                  );
                   return;
                 }
-
-                final uid = docData['uid']!;
-                print('Token valid, UID: $uid');
 
                 await kioskSignInWithUid(idToken!);
               }
@@ -139,7 +158,7 @@ class _QrLoginPageState extends State<QrLoginPage> {
           ),
 
           Positioned(
-            top: 1000, // 80 (top padding) + 300 (box height) + 20 spacing
+            top: 1000,
             left: 0,
             right: 0,
             child: Column(

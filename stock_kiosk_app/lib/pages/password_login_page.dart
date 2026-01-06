@@ -14,27 +14,6 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  @override
-  void dispose() {
-    emailController.dispose();
-    passwordController.dispose();
-    super.dispose();
-  }
-
-  // Future<void> createUserWithEmailAndPassword() async {
-  //   // Implementation for creating user with email and password
-  //   try {
-  //     final userCredential = await FirebaseAuth.instance
-  //         .createUserWithEmailAndPassword(
-  //           email: emailController.text.trim(),
-  //           password: passwordController.text.trim(),
-  //         );
-  //     print(userCredential);
-  //   } on FirebaseAuthException catch (e) {
-  //     print(e.message);
-  //   }
-  // }
-
   Future<void> loginUserWithEmailAndPassword() async {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(

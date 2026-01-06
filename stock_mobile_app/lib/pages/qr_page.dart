@@ -11,25 +11,17 @@ class QrPage extends StatefulWidget {
   State<QrPage> createState() => _QrPageState();
 }
 
+final idToken = const Uuid().v4();
+// String oldIdToken = '';
+
 class _QrPageState extends State<QrPage> {
   Future<String> getIdToken() async {
     final uid = FirebaseAuth.instance.currentUser?.uid;
-    final idToken = const Uuid().v4();
 
     await FirebaseFirestore.instance.collection('LoginTokens').doc(idToken).set(
       {'uid': uid, 'timestamp': FieldValue.serverTimestamp()},
     );
     return idToken;
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
-  void initState() {
-    super.initState();
   }
 
   @override
@@ -50,25 +42,37 @@ class _QrPageState extends State<QrPage> {
           child: Text('Logout', style: TextStyle(color: Colors.white)),
         ),
       ),
-      body: Center(
-        child: FutureBuilder<String>(
-          future: getIdToken(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
-            } else if (snapshot.hasError) {
-              return Text('Error: ${snapshot.error}');
-            } else {
-              return QrImageView(
-                data: snapshot.data ?? '',
-                version: QrVersions.auto,
-                backgroundColor: Colors.white,
-                dataModuleStyle: QrDataModuleStyle(color: Colors.black),
-                size: 400.0,
-              );
-            }
-          },
-        ),
+      body: Column(
+        children: [
+          Center(
+            child: FutureBuilder<String>(
+              future: getIdToken(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return CircularProgressIndicator();
+                } else if (snapshot.hasError) {
+                  return Text('Error: ${snapshot.error}');
+                } else {
+                  return QrImageView(
+                    data: snapshot.data ?? '',
+                    version: QrVersions.auto,
+                    backgroundColor: Colors.white,
+                    dataModuleStyle: QrDataModuleStyle(color: Colors.black),
+                    size: 400.0,
+                  );
+                }
+              },
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // oldIdToken = idToken;
+              //}
+              setState(() {});
+            },
+            child: Text('Refresh'),
+          ),
+        ],
       ),
     );
   }

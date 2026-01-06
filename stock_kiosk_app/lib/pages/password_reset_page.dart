@@ -11,12 +11,6 @@ class PasswordResetPage extends StatefulWidget {
 class _PasswordResetPageState extends State<PasswordResetPage> {
   final emailController = TextEditingController();
 
-  @override
-  void dispose() {
-    emailController.dispose();
-    super.dispose();
-  }
-
   Future<void> sendPasswordResetEmail() async {
     try {
       await FirebaseAuth.instance.sendPasswordResetEmail(

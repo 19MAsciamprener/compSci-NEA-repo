@@ -29,9 +29,11 @@ class StandbyPage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => StockPricePage()),
+                    MaterialPageRoute(
+                      builder: (context) => StockPricePage(),
+                    ), // FUTURE JOB: MAKE STOCK PRICE PAGE
                   );
-                }, // THIS WILL TAKE ME TO THE FULL STOCK PAGE
+                },
                 child: Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
@@ -120,10 +122,12 @@ class StandbyPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SettingsPage()),
+                      MaterialPageRoute(
+                        builder: (context) => SettingsPage(),
+                      ), //FUTURE JOB: MAKE SETTINGS PAGE
                     );
                   },
-                ), // THIS WILL TAKE ME TO SETTINGS PAGE
+                ),
 
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -136,7 +140,7 @@ class StandbyPage extends StatelessWidget {
                           mode: LaunchMode.externalApplication,
                         );
                       },
-                    ), // THIS WILL TAKE ME TO HELP PAGE (WEB)
+                    ), // FUTURE JOB: MAKE THIS AN IN-APP WEBVIEW
 
                     MainIconButton(
                       icon: Icons.translate,
@@ -161,7 +165,7 @@ class StandbyPage extends StatelessWidget {
                           },
                         );
                       },
-                    ), // THIS WILL TAKE ME TO LANGUAGE SELECTION DIALOG
+                    ), // FUTURE JOB: MAKE THIS CHANGE APP LANGUAGE
                   ],
                 ),
               ],
