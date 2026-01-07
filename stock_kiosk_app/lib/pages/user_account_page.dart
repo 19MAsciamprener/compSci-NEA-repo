@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:http/http.dart' as http;
-import 'package:http_parser/http_parser.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:image/image.dart' as img;
-import 'dart:io';
 import 'package:stock_kiosk_app/pages/user_settings_page.dart';
+import 'package:stock_kiosk_app/logic/pfp_upload.dart';
 
 import 'package:stock_kiosk_app/pages/standby_page.dart';
 
@@ -17,65 +13,6 @@ class UserAccountPage extends StatefulWidget {
 }
 
 class _UserAccountPageState extends State<UserAccountPage> {
-  Future<void> _uploadProfilePicture(String imagePath) async {
-    final idToken = await FirebaseAuth.instance.currentUser!.getIdToken();
-
-    final request = http.MultipartRequest(
-      'POST',
-      Uri.parse(
-        'https://stock-tokenrequest.matnlaws.co.uk/uploadProfilePicture',
-      ),
-    );
-
-    request.headers['Authorization'] = 'Bearer $idToken';
-
-    request.files.add(
-      await http.MultipartFile.fromPath(
-        'image',
-        imagePath,
-        contentType: MediaType('image', 'jpeg'),
-      ),
-    );
-
-    final response = await request.send();
-
-    if (response.statusCode == 200) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Profile picture uploaded successfully')),
-      );
-      setState(() {});
-    } else {
-      final body = await response.stream.bytesToString();
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Failed to upload profile picture: $body')),
-      );
-    }
-  }
-
-  Future<void> _pickAndUploadImage() async {
-    final picker = ImagePicker();
-    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
-
-    if (pickedFile != null) {
-      final bytes = await pickedFile.readAsBytes();
-
-      final image = img.decodeImage(bytes);
-      if (image == null) return;
-
-      final jpgBytes = img.encodeJpg(image, quality: 90);
-
-      final tempDir = Directory.systemTemp;
-      final tempFile = File(
-        '${tempDir.path}/profile_${DateTime.now().millisecondsSinceEpoch}.jpg',
-      );
-      await tempFile.writeAsBytes(jpgBytes);
-
-      await _uploadProfilePicture(tempFile.path);
-    }
-  }
-
   void _handleMenuSelection(BuildContext context, String value) {
     switch (value) {
       case 'profile settings':
@@ -152,7 +89,10 @@ class _UserAccountPageState extends State<UserAccountPage> {
             const SizedBox(height: 20),
 
             ElevatedButton(
-              onPressed: _pickAndUploadImage,
+              onPressed: () {
+                pickAndUploadImage(context);
+                setState(() {});
+              },
               child: const Text('Upload Profile Picture'),
             ),
           ],
