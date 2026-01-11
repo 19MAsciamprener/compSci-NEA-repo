@@ -1,8 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:stock_kiosk_app/logic/pfp_upload.dart';
-import 'package:stock_kiosk_app/widgets/user_settings_fields.dart';
 
 class UserSettingsFields extends StatelessWidget {
   const UserSettingsFields({

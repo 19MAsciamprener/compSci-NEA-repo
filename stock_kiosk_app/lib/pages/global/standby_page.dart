@@ -1,23 +1,56 @@
+// material import
 import 'package:flutter/material.dart';
-import 'package:stock_kiosk_app/pages/qr_login_page.dart';
-import 'package:stock_kiosk_app/widgets/stock_list_items.dart';
-import 'package:stock_kiosk_app/widgets/main_icon_button.dart';
+//dart imports
+import 'dart:async';
+//external package imports
 import 'package:url_launcher/url_launcher.dart';
+//internal widget imports
+import 'package:stock_kiosk_app/widgets/table_cell_widgets.dart';
+import 'package:stock_kiosk_app/widgets/main_icon_button.dart';
+import 'package:stock_kiosk_app/widgets/stock_table_body.dart';
+//internal page imports
+import 'qr_login_page.dart';
 import 'settings_page.dart';
 import 'stock_price_page.dart';
 
-class StandbyPage extends StatelessWidget {
+class StandbyPage extends StatefulWidget {
+  //stateful page so that clock can update
   const StandbyPage({super.key});
 
+  @override
+  State<StandbyPage> createState() => _StandbyPageState();
+}
+
+class _StandbyPageState extends State<StandbyPage> {
   String _formatTime(DateTime dt) {
+    //will format time as HH:MM
     String two(int n) => n.toString().padLeft(2, '0');
     return '${two(dt.hour)}:${two(dt.minute)}';
   }
 
+  late DateTime _now;
+  Timer? _timer;
+
+  @override
+  void initState() {
+    //initialize timer to update time every 30 seconds
+    super.initState();
+    _now = DateTime.now();
+    _timer = Timer.periodic(Duration(seconds: 30), (_) {
+      setState(() {
+        _now = DateTime.now();
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final now = DateTime.now();
-
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -26,8 +59,10 @@ class StandbyPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               GestureDetector(
+                //gesture detector to make whole stock container tappable
                 onTap: () {
                   Navigator.push(
+                    //navigate to full stock price page on tap (allows user to return to standby page)
                     context,
                     MaterialPageRoute(
                       builder: (context) => StockPricePage(),
@@ -40,6 +75,7 @@ class StandbyPage extends StatelessWidget {
                     vertical: 12.0,
                   ),
                   decoration: BoxDecoration(
+                    //takes theme data from main.dart
                     color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(12.0),
                   ),
@@ -49,11 +85,13 @@ class StandbyPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Stock Prices',
+                            'Stock Prices', //title of container
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                           Text(
-                            _formatTime(now),
+                            _formatTime(
+                              _now,
+                            ), //current time on right (formatted as HH:MM)
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                         ],
@@ -61,18 +99,27 @@ class StandbyPage extends StatelessWidget {
 
                       const SizedBox(height: 32.0),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      Column(
                         children: [
-                          StockListItems(title: 'Name'),
-                          StockListItems(title: 'Price'),
-                          StockListItems(title: 'Change'),
+                          // Header row of stock table
+                          Row(
+                            children: [
+                              headerCell('Name', flex: 3),
+                              headerCell('Price'),
+                              headerCell('Change'),
+                              const SizedBox(width: 48),
+                              headerCell('High'),
+                              headerCell('Low'),
+                              headerCell('MV'),
+                            ],
+                          ),
 
-                          SizedBox(width: 48),
+                          const SizedBox(height: 12),
 
-                          StockListItems(title: 'High'),
-                          StockListItems(title: 'Low'),
-                          StockListItems(title: 'MV.'),
+                          SizedBox(
+                            height: 612, //fixed height for stock table
+                            child: stockTable(), //stock table body widget
+                          ),
                         ],
                       ),
                     ],
@@ -84,6 +131,7 @@ class StandbyPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
+        //bottom navigation bar widget
         height: 275,
         color: Colors.transparent,
         elevation: 0,
@@ -91,18 +139,18 @@ class StandbyPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             ElevatedButton(
+              //login button in bottom left corner
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => QrLoginPage()),
+                  MaterialPageRoute(
+                    builder: (context) => QrLoginPage(),
+                  ), //navigate to QR login page (allows user to return to standby page)
                 );
               },
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(250, 300),
-                backgroundColor: Theme.of(context).primaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
+              style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                //uses theme data from main.dart
+                minimumSize: WidgetStateProperty.all(Size(250, 300)),
               ),
               child: Text(
                 'LOGIN',
@@ -115,6 +163,7 @@ class StandbyPage extends StatelessWidget {
             ),
 
             Column(
+              //settings, help, and language buttons in bottom right corner
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 MainIconButton(
@@ -123,6 +172,7 @@ class StandbyPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
+                        //navigate to settings page on tap (allows user to return to standby page)
                         builder: (context) => SettingsPage(),
                       ), //FUTURE JOB: MAKE SETTINGS PAGE
                     );
@@ -143,6 +193,7 @@ class StandbyPage extends StatelessWidget {
                     ), // FUTURE JOB: MAKE THIS AN IN-APP WEBVIEW
 
                     MainIconButton(
+                      //language selection button
                       icon: Icons.translate,
                       onPressed: () {
                         showDialog(

@@ -1,7 +1,10 @@
+//material import
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+//internal logic imports
+import 'package:stock_kiosk_app/logic/sign_in_logic.dart';
 
 class PasswordResetPage extends StatefulWidget {
+  //stateful page for password reset (email input)
   const PasswordResetPage({super.key});
 
   @override
@@ -9,31 +12,15 @@ class PasswordResetPage extends StatefulWidget {
 }
 
 class _PasswordResetPageState extends State<PasswordResetPage> {
+  // controller for email input field
   final emailController = TextEditingController();
-
-  Future<void> sendPasswordResetEmail() async {
-    try {
-      await FirebaseAuth.instance.sendPasswordResetEmail(
-        email: emailController.text.trim(),
-      );
-
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Password reset email sent!')),
-      );
-      Navigator.pop(context);
-    } on FirebaseAuthException catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Password reset failed: ${e.message}')),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
+          // back button
           icon: const Icon(
             Icons.keyboard_backspace,
             color: Colors.white,
@@ -82,14 +69,12 @@ class _PasswordResetPageState extends State<PasswordResetPage> {
               width: 300,
               child: ElevatedButton(
                 onPressed: () async {
-                  await sendPasswordResetEmail();
+                  // submit button to send password reset email
+                  await sendPasswordResetEmail(emailController, context);
                 },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(300, 100),
-                  backgroundColor: Theme.of(context).primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
+                // theme from main.dart
+                style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                  minimumSize: WidgetStateProperty.all(Size(200, 80)),
                 ),
                 child: Text(
                   'SUBMIT',

@@ -83,6 +83,9 @@ class _NewNotePageState extends State<NewNotePage> {
               onPressed: () async {
                 await uploadNoteToDatabase();
               },
+              style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                minimumSize: WidgetStateProperty.all(Size(200, 80)),
+              ),
               child: Text('Save Note'),
             ),
           ],

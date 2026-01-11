@@ -1,9 +1,14 @@
-import 'package:firebase_auth/firebase_auth.dart';
+//material import
 import 'package:flutter/material.dart';
-import 'package:stock_kiosk_app/pages/password_reset_page.dart';
-import 'package:stock_kiosk_app/pages/user_home_page.dart';
+//firebase imports
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:stock_kiosk_app/logic/sign_in_logic.dart';
+//internal page imports
+import 'package:stock_kiosk_app/pages/global/password_reset_page.dart';
+import 'package:stock_kiosk_app/pages/user/user_home_page.dart';
 
 class PasswordLoginPage extends StatefulWidget {
+  //stateful page for user login with email and password (so that we can manage the input fields)
   const PasswordLoginPage({super.key});
 
   @override
@@ -11,25 +16,9 @@ class PasswordLoginPage extends StatefulWidget {
 }
 
 class _PasswordLoginPageState extends State<PasswordLoginPage> {
+  //email and password controllers for the input fields
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
-  Future<void> loginUserWithEmailAndPassword() async {
-    try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
-      );
-      if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Login successful!')));
-    } on FirebaseAuthException catch (e) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Login failed: ${e.message}')));
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +26,13 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(
+            //back button
             Icons.keyboard_backspace,
             color: Colors.white,
             size: 48,
           ),
           onPressed: () {
+            //return to QR login page
             Navigator.pop(context);
           },
         ),
@@ -55,6 +46,7 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
       body: Padding(
         padding: const EdgeInsets.all(48.0),
         child: Column(
+          //column to hold input fields on left side (strange alignment is intentional)
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 128),
@@ -104,31 +96,30 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
             SizedBox(height: 256),
 
             Center(
+              // center the submit button
               child: ElevatedButton(
                 onPressed: () async {
-                  await loginUserWithEmailAndPassword();
+                  await loginUserWithEmailAndPassword(
+                    emailController,
+                    passwordController,
+                    context,
+                  );
                   if (!context.mounted ||
                       FirebaseAuth.instance.currentUser == null) {
-                    return;
+                    return; // Login failed or context is not mounted
                   }
 
                   Navigator.pushAndRemoveUntil(
+                    //navigate to user home page on successful login (removing all previous pages so user can't go back to login)
                     context,
                     MaterialPageRoute(builder: (context) => UserHomePage()),
                     (route) => false,
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(300, 100),
-                  backgroundColor: Theme.of(context).primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
+                style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                  minimumSize: WidgetStateProperty.all(Size(200, 80)),
                 ),
-                child: Text(
-                  'SUBMIT',
-                  style: TextStyle(fontSize: 32, color: Colors.white),
-                ),
+                child: Text('SUBMIT'),
               ),
             ),
           ],
@@ -140,6 +131,7 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
         child: Center(
           child: TextButton(
             onPressed: () {
+              //navigate to password reset page (allows user to go back)
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => PasswordResetPage()),

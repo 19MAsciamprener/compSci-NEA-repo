@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stock_kiosk_app/pages/user_account_page.dart';
+import 'package:stock_kiosk_app/pages/user/user_account_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class UserHomePage extends StatelessWidget {

@@ -1,13 +1,16 @@
+// material import
 import 'package:flutter/material.dart';
+//external package imports
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:stock_kiosk_app/pages/password_login_page.dart';
+//firebase imports
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:stock_kiosk_app/pages/user_home_page.dart';
+//internal page imports
+import 'package:stock_kiosk_app/pages/global/password_login_page.dart';
+//internal logic imports
+import 'package:stock_kiosk_app/logic/sign_in_logic.dart';
 
 class QrLoginPage extends StatefulWidget {
+  //stateful page because of scanner
   const QrLoginPage({super.key});
 
   @override
@@ -16,62 +19,13 @@ class QrLoginPage extends StatefulWidget {
 
 class _QrLoginPageState extends State<QrLoginPage> {
   final MobileScannerController controller = MobileScannerController(
+    //controller settings for the scanner
     detectionSpeed: DetectionSpeed.noDuplicates,
   );
 
-  bool scanned = false;
-  String? idToken;
-
-  Future<void> kioskSignInWithUid(String idToken) async {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('Signing in...')));
-
-    final serverUrl = 'http://stock-tokenrequest.matnlaws.co.uk/getCustomToken';
-
-    final response = await http.post(
-      Uri.parse(serverUrl),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({'token': idToken}),
-    );
-
-    if (response.statusCode != 200) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(
-            'Failed to get custom token from server ${response.body}',
-          ),
-        ),
-      );
-      return;
-    }
-
-    final responseData = jsonDecode(response.body);
-    final customToken = responseData['customToken'];
-
-    try {
-      await FirebaseAuth.instance.signInWithCustomToken(customToken);
-
-      if (!mounted) return;
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => UserHomePage()),
-        (route) => false,
-      );
-    } on FirebaseAuthException catch (e) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Error during sign-in: $e')));
-      return;
-    }
-
-    if (!mounted) return;
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('Login successful')));
-  }
+  bool scanned =
+      false; //to prevent multiple scans, the page is initialised as not scanned
+  String? idToken; //variable to hold the scanned token
 
   @override
   Widget build(BuildContext context) {
@@ -94,26 +48,32 @@ class _QrLoginPageState extends State<QrLoginPage> {
         centerTitle: true,
       ),
       body: Stack(
+        // stack to overlay scanner and UI elements (as scanner takes full screen)
         children: [
           MobileScanner(
+            //scanner widget
             controller: controller,
             onDetect: (capture) async {
               if (scanned) return;
               final List<Barcode> barcodes = capture.barcodes;
               for (final barcode in barcodes) {
-                idToken = barcode.rawValue?.trim();
+                idToken = barcode.rawValue
+                    ?.trim(); //get the scanned token, remove whitespace
                 if (idToken != null) {
+                  // if a token was scanned, set scanned to true to prevent further scans
                   scanned = true;
                   break;
                 }
               }
               {
-                final backendTokenDoc = await FirebaseFirestore.instance
+                final backendTokenDoc = await FirebaseFirestore
+                    .instance //access Firestore, look for the scanned token
                     .collection('LoginTokens')
                     .doc(idToken)
                     .get();
 
                 if (!backendTokenDoc.exists) {
+                  //if the token does not exist in the database, show error
                   if (!context.mounted) return;
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('Invalid QR code scanned.')),
@@ -121,24 +81,30 @@ class _QrLoginPageState extends State<QrLoginPage> {
                   return;
                 }
 
-                final docData = backendTokenDoc.data()!;
+                final docData = backendTokenDoc.data()!; //get the document data
                 final expiresAt = (docData['timestamp'] as Timestamp)
                     .toDate()
                     .add(Duration(minutes: 5));
 
                 if (DateTime.now().isAfter(expiresAt)) {
+                  //compare current time to expiry time, show error if expired
                   if (!context.mounted) return;
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('This QR code has expired.')),
                   );
                   return;
                 }
-
-                await kioskSignInWithUid(idToken!);
+                if (!context.mounted) return;
+                await kioskSignInWithUid(
+                  idToken!,
+                  context,
+                ); //call sign-in logic with the scanned token if all checks passed
               }
             },
           ),
-          Container(color: Theme.of(context).colorScheme.surface),
+          Container(
+            color: Theme.of(context).colorScheme.surface,
+          ), // overlay to darken the screen behind the scanner box
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
@@ -158,6 +124,7 @@ class _QrLoginPageState extends State<QrLoginPage> {
           ),
 
           Positioned(
+            // button to navigate to password login page
             top: 1000,
             left: 0,
             right: 0,
@@ -171,14 +138,11 @@ class _QrLoginPageState extends State<QrLoginPage> {
                 ),
 
                 ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).primaryColor,
-                    minimumSize: Size(250, 60),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0),
-                    ),
+                  style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                    minimumSize: WidgetStateProperty.all(Size(200, 80)),
                   ),
                   onPressed: () {
+                    // navigate to password login page (allows user to go back)
                     Navigator.push(
                       context,
                       MaterialPageRoute(

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:stock_kiosk_app/pages/user_settings_page.dart';
+import 'package:stock_kiosk_app/pages/user/account_settings_page.dart';
+import 'package:stock_kiosk_app/pages/user/user_settings_page.dart';
 import 'package:stock_kiosk_app/logic/pfp_upload.dart';
 
-import 'package:stock_kiosk_app/pages/standby_page.dart';
+import 'package:stock_kiosk_app/pages/global/standby_page.dart';
 
 class UserAccountPage extends StatefulWidget {
   const UserAccountPage({super.key});
@@ -21,6 +22,14 @@ class _UserAccountPageState extends State<UserAccountPage> {
           MaterialPageRoute(builder: (context) => const UserSettingsPage()),
         );
         break;
+
+      case 'account settings':
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const AccountSettingsPage()),
+        );
+        break;
+
       case 'logout':
         FirebaseAuth.instance.signOut();
         Navigator.pushAndRemoveUntil(
@@ -52,7 +61,8 @@ class _UserAccountPageState extends State<UserAccountPage> {
           style: TextStyle(color: Colors.white),
         ),
         actions: [
-          PopupMenuButton(
+          PopupMenuButton<String>(
+            color: Theme.of(context).colorScheme.primary,
             icon: const Icon(Icons.menu, color: Colors.white, size: 48),
             onSelected: (value) {
               _handleMenuSelection(context, value);
@@ -60,9 +70,28 @@ class _UserAccountPageState extends State<UserAccountPage> {
             itemBuilder: (context) => [
               const PopupMenuItem(
                 value: 'profile settings',
-                child: Text('Profile Settings'),
+                child: Text(
+                  'Profile Settings',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
-              const PopupMenuItem(value: 'logout', child: Text('Logout')),
+
+              const PopupMenuDivider(height: 1),
+
+              const PopupMenuItem(
+                value: 'account settings',
+                child: Text(
+                  'Account Settings',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+
+              const PopupMenuDivider(height: 1),
+
+              const PopupMenuItem(
+                value: 'logout',
+                child: Text('Logout', style: TextStyle(color: Colors.white)),
+              ),
             ],
           ),
         ],
@@ -93,6 +122,9 @@ class _UserAccountPageState extends State<UserAccountPage> {
                 pickAndUploadImage(context);
                 setState(() {});
               },
+              style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                minimumSize: WidgetStateProperty.all(Size(200, 80)),
+              ),
               child: const Text('Upload Profile Picture'),
             ),
           ],
