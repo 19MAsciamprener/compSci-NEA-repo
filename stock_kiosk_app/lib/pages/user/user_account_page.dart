@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stock_kiosk_app/pages/user/account_settings_page.dart';
-import 'package:stock_kiosk_app/pages/user/user_settings_page.dart';
+import 'package:stock_kiosk_app/pages/user/profile_settings_page.dart';
 import 'package:stock_kiosk_app/logic/pfp_upload.dart';
 
 import 'package:stock_kiosk_app/pages/global/standby_page.dart';
