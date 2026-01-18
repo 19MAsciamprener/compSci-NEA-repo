@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -15,6 +17,22 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
   final TextEditingController firstNameController = TextEditingController();
   final TextEditingController lastNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
+  DateTime? dateOfBirth;
+
+  Future<void> _pickDate() async {
+    DateTime? selectedDate = await showDatePicker(
+      context: context,
+      initialDate: dateOfBirth ?? DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+
+    if (selectedDate != null) {
+      setState(() {
+        dateOfBirth = selectedDate;
+      });
+    }
+  }
 
   Future<void> changeEmail(String newEmail) async {
     try {
@@ -45,6 +63,11 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
       }
       if (userDoc.data() != null && userDoc.data()!.containsKey('email')) {
         emailController.text = userDoc.data()!['email'];
+        _oldEmail = emailController.text;
+      }
+      if (userDoc.data() != null &&
+          userDoc.data()!.containsKey('date_of_birth')) {
+        dateOfBirth = (userDoc.data()!['date_of_birth'] as Timestamp).toDate();
       }
     }
   }
@@ -57,7 +80,6 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
   void initState() {
     super.initState();
     _userDataFuture = loadUserData();
-    _oldEmail = emailController.text;
   }
 
   @override
@@ -163,6 +185,37 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
                         nameController: emailController,
                         fieldType: 'Email',
                       ),
+                      SizedBox(height: 32),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                'Date of Birth:',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Text(
+                                '${dateOfBirth?.toLocal()}'.split(' ')[0],
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
+                          ElevatedButton(
+                            onPressed: () async {
+                              await _pickDate();
+                            },
+                            child: Text('Select Date'),
+                          ),
+                        ],
+                      ),
                     ],
                   );
                 },
@@ -180,7 +233,9 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
                             .update({
                               'first_name': firstNameController.text,
                               'last_name': lastNameController.text,
-                              'email': emailController.text,
+                              'date_of_birth': dateOfBirth != null
+                                  ? Timestamp.fromDate(dateOfBirth!)
+                                  : null,
                             });
                       } on Exception catch (e) {
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -204,6 +259,9 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
                               'first_name': firstNameController.text,
                               'last_name': lastNameController.text,
                               'email': emailController.text,
+                              'date_of_birth': dateOfBirth != null
+                                  ? Timestamp.fromDate(dateOfBirth!)
+                                  : null,
                             });
                       } on Exception catch (e) {
                         if (!context.mounted) return;

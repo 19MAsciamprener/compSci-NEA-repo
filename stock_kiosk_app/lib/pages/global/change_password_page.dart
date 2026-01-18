@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:stock_kiosk_app/logic/password_change.dart';
 
-class AccountSettingsPage extends StatefulWidget {
-  const AccountSettingsPage({super.key});
+class ChangePasswordPage extends StatefulWidget {
+  const ChangePasswordPage({super.key});
 
   @override
-  State<AccountSettingsPage> createState() => _AccountSettingsPageState();
+  State<ChangePasswordPage> createState() => _ChangePasswordPageState();
 }
 
-class _AccountSettingsPageState extends State<AccountSettingsPage> {
+class _ChangePasswordPageState extends State<ChangePasswordPage> {
   final TextEditingController oldPasswordController = TextEditingController();
-  final TextEditingController newPasswordController1 = TextEditingController();
-  final TextEditingController newPasswordController2 = TextEditingController();
+  final TextEditingController newPasswordController = TextEditingController();
+  final TextEditingController newPasswordControllerConfirm =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,7 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
 
                   SizedBox(height: 48),
                   Text(
-                    'New Password:',
+                    'Current Password:',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
 
@@ -83,7 +85,7 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
                   SizedBox(height: 8),
 
                   TextField(
-                    controller: newPasswordController1,
+                    controller: newPasswordController,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -107,13 +109,31 @@ class _AccountSettingsPageState extends State<AccountSettingsPage> {
                   SizedBox(height: 8),
 
                   TextField(
-                    controller: newPasswordController2,
+                    controller: newPasswordControllerConfirm,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
+                    ),
+                  ),
+                  SizedBox(height: 48),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        updatePassword(
+                          context,
+                          oldPasswordController,
+                          newPasswordController,
+                          newPasswordControllerConfirm,
+                        );
+                      },
+                      style: Theme.of(context).elevatedButtonTheme.style
+                          ?.copyWith(
+                            minimumSize: WidgetStateProperty.all(Size(200, 75)),
+                          ),
+                      child: Text('Update Password'),
                     ),
                   ),
                 ],
