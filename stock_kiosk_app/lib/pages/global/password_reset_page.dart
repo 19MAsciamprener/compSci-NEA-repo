@@ -69,7 +69,7 @@ class _PasswordResetPageState extends State<PasswordResetPage> {
               width: 300,
               child: ElevatedButton(
                 onPressed: () async {
-                  // submit button to send password reset email
+                  // submit button to send password reset email (using function from sign_in_logic.dart)
                   await sendPasswordResetEmail(emailController, context);
                 },
                 // theme from main.dart

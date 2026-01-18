@@ -14,7 +14,10 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   ); //initialize firebase
   await FirebaseAuth.instance.signOut(); //ensure signed out on app start
-  runApp(const MyApp());
+
+  runApp(
+    const MyApp(),
+  ); // 'the beginning of everything' (*read aloud, Mysteriously*)
 }
 
 class MyApp extends StatelessWidget {
@@ -29,7 +32,8 @@ class MyApp extends StatelessWidget {
           seedColor: Color.fromRGBO(110, 5, 6, 1),
           primary: Color.fromRGBO(110, 5, 6, 1),
           surface: Color.fromRGBO(29, 27, 32, 1),
-        ),
+        ), //who picked this dumbass color scheme?
+
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: Color.fromRGBO(110, 5, 6, 1),

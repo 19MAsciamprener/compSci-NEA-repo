@@ -1,3 +1,5 @@
+//CAN PROBABLY DELETE THIS ('twas just being used for testing)
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

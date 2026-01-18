@@ -1,7 +1,10 @@
+// material imports
 import 'package:flutter/material.dart';
+// internal logic imports
 import 'package:stock_kiosk_app/logic/password_change.dart';
 
 class ChangePasswordPage extends StatefulWidget {
+  //stateful widget for changing password (fields are cleared after each attempt)
   const ChangePasswordPage({super.key});
 
   @override
@@ -9,10 +12,20 @@ class ChangePasswordPage extends StatefulWidget {
 }
 
 class _ChangePasswordPageState extends State<ChangePasswordPage> {
+  //all text editing controllers for password fields
   final TextEditingController oldPasswordController = TextEditingController();
   final TextEditingController newPasswordController = TextEditingController();
   final TextEditingController newPasswordControllerConfirm =
       TextEditingController();
+
+  @override
+  void dispose() {
+    // dispose all controllers when the widget is removed from the widget tree (good practice for memory management)
+    oldPasswordController.dispose();
+    newPasswordController.dispose();
+    newPasswordControllerConfirm.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +43,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             size: 48,
           ),
           onPressed: () {
+            // back button to return to previous page
             Navigator.pop(context);
           },
         ),
@@ -62,6 +76,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   SizedBox(height: 8),
 
                   TextField(
+                    // field for current password
                     controller: oldPasswordController,
                     decoration: InputDecoration(
                       filled: true,
@@ -85,6 +100,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   SizedBox(height: 8),
 
                   TextField(
+                    // field for new password
                     controller: newPasswordController,
                     decoration: InputDecoration(
                       filled: true,
@@ -109,6 +125,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   SizedBox(height: 8),
 
                   TextField(
+                    // field for confirming new password
                     controller: newPasswordControllerConfirm,
                     decoration: InputDecoration(
                       filled: true,
@@ -122,6 +139,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   Center(
                     child: ElevatedButton(
                       onPressed: () {
+                        // button to update password (calls function from password_change.dart)
                         updatePassword(
                           context,
                           oldPasswordController,
@@ -129,10 +147,9 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                           newPasswordControllerConfirm,
                         );
                       },
-                      style: Theme.of(context).elevatedButtonTheme.style
-                          ?.copyWith(
-                            minimumSize: WidgetStateProperty.all(Size(200, 75)),
-                          ),
+                      style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                        minimumSize: WidgetStateProperty.all(Size(200, 75)),
+                      ), //takes theme style from main.dart and customizes size
                       child: Text('Update Password'),
                     ),
                   ),

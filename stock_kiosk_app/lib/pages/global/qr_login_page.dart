@@ -51,8 +51,12 @@ class _QrLoginPageState extends State<QrLoginPage> {
           MobileScanner(
             //scanner widget
             controller: controller,
-            onDetect: (capture) =>
-                onQrScanned(context, capture, scanned, idToken),
+            onDetect: (capture) => onQrScanned(
+              context,
+              capture,
+              scanned,
+              idToken,
+            ), //calls function from sign_in_logic.dart
           ),
           Container(
             color: Theme.of(context).colorScheme.surface,

@@ -1,8 +1,11 @@
+// material imports
 import 'package:flutter/material.dart';
+// internal logic and widget imports
 import 'package:stock_kiosk_app/widgets/new_item_fields.dart';
 import 'package:stock_kiosk_app/logic/upload_item.dart';
 
 class NewItemPage extends StatefulWidget {
+  //stateful widget for adding a new item (fields refresh after each upload)
   const NewItemPage({super.key});
 
   @override
@@ -10,6 +13,7 @@ class NewItemPage extends StatefulWidget {
 }
 
 class _NewItemPageState extends State<NewItemPage> {
+  //all text editing controllers for new item fields
   final barcodeController = TextEditingController();
   final nameController = TextEditingController();
   final priceController = TextEditingController();
@@ -20,6 +24,7 @@ class _NewItemPageState extends State<NewItemPage> {
 
   @override
   void dispose() {
+    // dispose all controllers when the widget is removed from the widget tree (good practice for memory management)
     barcodeController.dispose();
     nameController.dispose();
     priceController.dispose();
@@ -31,6 +36,7 @@ class _NewItemPageState extends State<NewItemPage> {
   }
 
   void clearAllFields() {
+    // function to clear all text fields after uploading an item
     barcodeController.clear();
     nameController.clear();
     priceController.clear();
@@ -50,6 +56,7 @@ class _NewItemPageState extends State<NewItemPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              //all children widgets come from new_item_fields.dart
               NewItemFields(controller: barcodeController, label: 'barcode'),
               SizedBox(height: 32),
               NewItemFields(controller: nameController, label: 'name'),
@@ -67,6 +74,7 @@ class _NewItemPageState extends State<NewItemPage> {
 
               ElevatedButton(
                 onPressed: () async {
+                  // upload item to database and clear fields on button press (requests function from upload_item.dart)
                   await uploadItemToDatabase(
                     context,
                     barcodeController,
@@ -77,9 +85,10 @@ class _NewItemPageState extends State<NewItemPage> {
                     lowController,
                     mvController,
                   );
-                  clearAllFields();
+                  clearAllFields(); // clear all fields after upload
                 },
                 style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
+                  //takes theme style from main.dart and customizes size
                   minimumSize: WidgetStateProperty.all(Size(200, 80)),
                 ),
                 child: Text('Save Item'),

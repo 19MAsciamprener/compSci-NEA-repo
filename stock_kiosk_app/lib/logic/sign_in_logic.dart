@@ -1,18 +1,26 @@
+// material imports
 import 'package:flutter/material.dart';
+// dart imports
 import 'dart:convert';
+// external package imports
 import 'package:http/http.dart' as http;
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:stock_kiosk_app/pages/user/user_home_page.dart';
+
+// firebase imports
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+// internal page imports
+import 'package:stock_kiosk_app/pages/user/user_home_page.dart';
 
 Future<void> onQrScanned(
+  // function to handle QR code scanning for kiosk sign-in
   BuildContext context,
   BarcodeCapture capture,
   bool scanned,
   String? idToken,
+  // takes in context, barcode capture data, scanned flag and idToken
 ) async {
-  if (scanned) return;
+  if (scanned) return; // if already scanned, return
   final List<Barcode> barcodes = capture.barcodes;
   for (final barcode in barcodes) {
     idToken = barcode.rawValue
@@ -61,24 +69,30 @@ Future<void> onQrScanned(
 }
 
 Future<void> kioskSignInWithUid(String idToken, BuildContext context) async {
-  ScaffoldMessenger.of(
-    context,
-  ).showSnackBar(SnackBar(content: Text('Signing in...')));
+  // function to sign in user with scanned kiosk token
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text('Signing in...')),
+  ); // show signing in message (so that user knows something is happening)
 
-  final serverUrl = 'http://stock-tokenrequest.matnlaws.co.uk/getCustomToken';
+  final serverUrl =
+      'http://stock-tokenrequest.matnlaws.co.uk/getCustomToken'; // backend server URL to exchange scanned token for Firebase custom token
 
   final response = await http.post(
+    // make HTTP POST request to backend server
     Uri.parse(serverUrl),
-    headers: {'Content-Type': 'application/json'},
-    body: jsonEncode({'token': idToken}),
+    headers: {'Content-Type': 'application/json'}, // set content type to JSON
+    body: jsonEncode({
+      'token': idToken,
+    }), // send scanned token in request body as JSON
   );
 
   if (response.statusCode != 200) {
+    // check for successful response from server (200 = success)
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          'Failed to get custom token from server ${response.body}',
+          'Failed to get custom token from server ${response.body}', // show error message with response body
         ),
       ),
     );
@@ -86,69 +100,88 @@ Future<void> kioskSignInWithUid(String idToken, BuildContext context) async {
   }
 
   final responseData = jsonDecode(response.body);
-  final customToken = responseData['customToken'];
+  final customToken =
+      responseData['customToken']; // extract custom token from response data
 
   try {
-    await FirebaseAuth.instance.signInWithCustomToken(customToken);
+    await FirebaseAuth.instance.signInWithCustomToken(
+      customToken,
+    ); // sign in user with Firebase custom token
 
     if (!context.mounted) return;
     Navigator.pushAndRemoveUntil(
+      //if successful, navigate to user home page and remove all previous routes (to prevent back navigation)
       context,
       MaterialPageRoute(builder: (context) => UserHomePage()),
       (route) => false,
     );
   } on FirebaseAuthException catch (e) {
     if (!context.mounted) return;
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('Error during sign-in: $e')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error during sign-in: $e')),
+    ); // show error message if sign-in fails
     return;
   }
 
   if (!context.mounted) return;
-  ScaffoldMessenger.of(
-    context,
-  ).showSnackBar(SnackBar(content: Text('Login successful')));
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text('Login successful')),
+  ); // show success message after successful sign-in
 }
 
 Future<void> loginUserWithEmailAndPassword(
+  // function to log in user with email and password
   TextEditingController emailController,
   TextEditingController passwordController,
   BuildContext context,
+  // takes in email and password controllers, and context
 ) async {
   try {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
+      // sign in with email and password (firebase auth method using text from controllers)
       email: emailController.text.trim(),
       password: passwordController.text.trim(),
-    );
+    ); //trim() to remove any leading/trailing whitespace
     if (!context.mounted) return;
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text('Login successful!')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Login successful!')),
+    ); // show success message
   } on FirebaseAuthException catch (e) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Text('Login failed: ${e.message}')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Login failed: ${e.message}')),
+    ); // show error message if login fails
   }
 }
 
 Future<void> sendPasswordResetEmail(
+  // function to send password reset email to user if they forgot their password
   TextEditingController emailController,
   BuildContext context,
+  // takes in email controller and context
 ) async {
   try {
     await FirebaseAuth.instance.sendPasswordResetEmail(
+      // send password reset email using trimmed text from email controller (firebase auth method)
       email: emailController.text.trim(),
     );
 
     if (!context.mounted) return;
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(const SnackBar(content: Text('Password reset email sent!')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Password reset email sent!')),
+    ); // show success message
     Navigator.pop(context);
   } on FirebaseAuthException catch (e) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Password reset failed: ${e.message}')),
+      SnackBar(
+        content: Text('Password reset failed: ${e.message}'),
+      ), // show error message if sending email fails
     );
   }
 }
+
+
+//MAYBE ADD A LOGOUT FUNCTION HERE LATER YOU FUCKING MORON
+// WHY IN THE HELL DIDN'T YOU THINK OF THAT BEFORE YOU FINISHED THE REST OF THE APP HUH?
+// YOU'VE LITERALLY HAD TO MANUALLY NAVIGATE BACK TO THE STANDBY PAGE EVERY TIME YOU WANT TO LOG OUT
+// YOU ABSOLUTE IMBECILE
+

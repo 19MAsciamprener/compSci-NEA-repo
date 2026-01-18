@@ -100,6 +100,7 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
               child: ElevatedButton(
                 onPressed: () async {
                   await loginUserWithEmailAndPassword(
+                    // login function from sign_in_logic.dart
                     emailController,
                     passwordController,
                     context,
@@ -140,6 +141,7 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
             child: Text(
               'Forgotten your password?',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                // takes theme style from main.dart and customizes color and text size
                 color: Colors.white,
                 fontSize: 24,
               ),
