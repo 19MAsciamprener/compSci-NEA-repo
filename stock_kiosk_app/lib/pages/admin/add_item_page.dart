@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:stock_kiosk_app/widgets/new_item_fields.dart';
+import 'package:stock_kiosk_app/logic/upload_item.dart';
 
 class NewItemPage extends StatefulWidget {
   const NewItemPage({super.key});
@@ -40,57 +40,6 @@ class _NewItemPageState extends State<NewItemPage> {
     mvController.clear();
   }
 
-  Future<void> uploadItemToDatabase() async {
-    if (barcodeController.text.trim().isEmpty ||
-        nameController.text.trim().isEmpty ||
-        priceController.text.trim().isEmpty ||
-        changeController.text.trim().isEmpty ||
-        highController.text.trim().isEmpty ||
-        lowController.text.trim().isEmpty ||
-        mvController.text.trim().isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Please fill in all fields before saving.')),
-      );
-      return;
-    }
-
-    try {
-      final itemDoc = await FirebaseFirestore.instance
-          .collection('items')
-          .doc(barcodeController.text.trim())
-          .get();
-
-      if (itemDoc.exists) {
-        if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Item with this barcode already exists.')),
-        );
-        return;
-      }
-
-      await FirebaseFirestore.instance
-          .collection('items')
-          .doc(barcodeController.text.trim())
-          .set({
-            'name': nameController.text.trim(),
-            'price': priceController.text.trim(),
-            'change': changeController.text.trim(),
-            'high': highController.text.trim(),
-            'low': lowController.text.trim(),
-            'mv': mvController.text.trim(),
-          });
-      if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Item added successfully!')));
-      clearAllFields();
-    } catch (e) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Error uploading Item: $e')));
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,7 +67,17 @@ class _NewItemPageState extends State<NewItemPage> {
 
               ElevatedButton(
                 onPressed: () async {
-                  await uploadItemToDatabase();
+                  await uploadItemToDatabase(
+                    context,
+                    barcodeController,
+                    nameController,
+                    priceController,
+                    changeController,
+                    highController,
+                    lowController,
+                    mvController,
+                  );
+                  clearAllFields();
                 },
                 style: Theme.of(context).elevatedButtonTheme.style?.copyWith(
                   minimumSize: WidgetStateProperty.all(Size(200, 80)),

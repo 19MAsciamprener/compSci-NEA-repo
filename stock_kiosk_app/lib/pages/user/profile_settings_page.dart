@@ -1,8 +1,7 @@
-import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:stock_kiosk_app/logic/load_user_data.dart';
 import 'package:stock_kiosk_app/logic/pfp_upload.dart';
 import 'package:stock_kiosk_app/widgets/user_settings_fields.dart';
 
@@ -34,19 +33,6 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
     }
   }
 
-  Future<void> changeEmail(String newEmail) async {
-    try {
-      await FirebaseAuth.instance.currentUser!.verifyBeforeUpdateEmail(
-        newEmail,
-      );
-    } catch (e) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Error updating email: $e')));
-    }
-  }
-
   Future<void> loadUserData() async {
     String uid = FirebaseAuth.instance.currentUser!.uid;
     final userDoc = await FirebaseFirestore.instance
@@ -63,7 +49,7 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
       }
       if (userDoc.data() != null && userDoc.data()!.containsKey('email')) {
         emailController.text = userDoc.data()!['email'];
-        _oldEmail = emailController.text;
+        oldEmail = emailController.text;
       }
       if (userDoc.data() != null &&
           userDoc.data()!.containsKey('date_of_birth')) {
@@ -74,7 +60,7 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
 
   late Future<void> _userDataFuture;
   int _imageRefreshKey = DateTime.now().millisecondsSinceEpoch;
-  late String _oldEmail;
+  late String oldEmail;
 
   @override
   void initState() {
@@ -224,60 +210,17 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
               Center(
                 child: ElevatedButton(
                   onPressed: () async {
-                    if (emailController.text == _oldEmail) {
-                      String uid = FirebaseAuth.instance.currentUser!.uid;
-                      try {
-                        FirebaseFirestore.instance
-                            .collection('users')
-                            .doc(uid)
-                            .update({
-                              'first_name': firstNameController.text,
-                              'last_name': lastNameController.text,
-                              'date_of_birth': dateOfBirth != null
-                                  ? Timestamp.fromDate(dateOfBirth!)
-                                  : null,
-                            });
-                      } on Exception catch (e) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Error saving changes: $e')),
-                        );
-                      }
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Changes saved successfully')),
-                      );
-                      setState(() {
-                        _userDataFuture = loadUserData();
-                      });
-                    } else {
-                      await changeEmail(emailController.text);
-                      String uid = FirebaseAuth.instance.currentUser!.uid;
-                      try {
-                        FirebaseFirestore.instance
-                            .collection('users')
-                            .doc(uid)
-                            .update({
-                              'first_name': firstNameController.text,
-                              'last_name': lastNameController.text,
-                              'email': emailController.text,
-                              'date_of_birth': dateOfBirth != null
-                                  ? Timestamp.fromDate(dateOfBirth!)
-                                  : null,
-                            });
-                      } on Exception catch (e) {
-                        if (!context.mounted) return;
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Error saving changes: $e')),
-                        );
-                      }
-                      if (!context.mounted) return;
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Changes saved successfully.')),
-                      );
-                      setState(() {
-                        _userDataFuture = loadUserData();
-                        _oldEmail = emailController.text;
-                      });
-                    }
+                    await updateUserData(
+                      context,
+                      firstNameController,
+                      lastNameController,
+                      emailController,
+                      dateOfBirth,
+                      oldEmail,
+                    );
+                    setState(() {
+                      oldEmail = emailController.text;
+                    });
                   },
                   style: Theme.of(context).elevatedButtonTheme.style,
                   child: Text('Save Changes'),

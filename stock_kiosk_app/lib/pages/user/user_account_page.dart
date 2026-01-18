@@ -136,7 +136,7 @@ class _UserAccountPageState extends State<UserAccountPage> {
                       ),
                       SizedBox(height: 8),
                       Text(
-                        FirebaseAuth.instance.currentUser!.email ?? '',
+                        userDocument['email'],
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
                       SizedBox(height: 8),

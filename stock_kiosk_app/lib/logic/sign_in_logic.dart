@@ -2,7 +2,63 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:stock_kiosk_app/pages/user/user_home_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+Future<void> onQrScanned(
+  BuildContext context,
+  BarcodeCapture capture,
+  bool scanned,
+  String? idToken,
+) async {
+  if (scanned) return;
+  final List<Barcode> barcodes = capture.barcodes;
+  for (final barcode in barcodes) {
+    idToken = barcode.rawValue
+        ?.trim(); //get the scanned token, remove whitespace
+    if (idToken != null) {
+      // if a token was scanned, set scanned to true to prevent further scans
+      scanned = true;
+      break;
+    }
+  }
+  {
+    final backendTokenDoc = await FirebaseFirestore
+        .instance //access Firestore, look for the scanned token
+        .collection('LoginTokens')
+        .doc(idToken)
+        .get();
+
+    if (!backendTokenDoc.exists) {
+      //if the token does not exist in the database, show error
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Invalid QR code scanned.')));
+      return;
+    }
+
+    final docData = backendTokenDoc.data()!; //get the document data
+    final expiresAt = (docData['timestamp'] as Timestamp).toDate().add(
+      Duration(minutes: 5),
+    );
+
+    if (DateTime.now().isAfter(expiresAt)) {
+      //compare current time to expiry time, show error if expired
+      if (!context.mounted) return;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('This QR code has expired.')));
+      return;
+    }
+    if (!context.mounted) return;
+    await kioskSignInWithUid(
+      idToken!,
+      context,
+    ); //call sign-in logic with the scanned token if all checks passed
+  }
+}
 
 Future<void> kioskSignInWithUid(String idToken, BuildContext context) async {
   ScaffoldMessenger.of(

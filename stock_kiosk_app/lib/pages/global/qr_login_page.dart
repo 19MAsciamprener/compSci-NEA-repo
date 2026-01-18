@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 //external package imports
 import 'package:mobile_scanner/mobile_scanner.dart';
-//firebase imports
-import 'package:cloud_firestore/cloud_firestore.dart';
 //internal page imports
 import 'package:stock_kiosk_app/pages/global/password_login_page.dart';
 //internal logic imports
@@ -53,54 +51,8 @@ class _QrLoginPageState extends State<QrLoginPage> {
           MobileScanner(
             //scanner widget
             controller: controller,
-            onDetect: (capture) async {
-              if (scanned) return;
-              final List<Barcode> barcodes = capture.barcodes;
-              for (final barcode in barcodes) {
-                idToken = barcode.rawValue
-                    ?.trim(); //get the scanned token, remove whitespace
-                if (idToken != null) {
-                  // if a token was scanned, set scanned to true to prevent further scans
-                  scanned = true;
-                  break;
-                }
-              }
-              {
-                final backendTokenDoc = await FirebaseFirestore
-                    .instance //access Firestore, look for the scanned token
-                    .collection('LoginTokens')
-                    .doc(idToken)
-                    .get();
-
-                if (!backendTokenDoc.exists) {
-                  //if the token does not exist in the database, show error
-                  if (!context.mounted) return;
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Invalid QR code scanned.')),
-                  );
-                  return;
-                }
-
-                final docData = backendTokenDoc.data()!; //get the document data
-                final expiresAt = (docData['timestamp'] as Timestamp)
-                    .toDate()
-                    .add(Duration(minutes: 5));
-
-                if (DateTime.now().isAfter(expiresAt)) {
-                  //compare current time to expiry time, show error if expired
-                  if (!context.mounted) return;
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('This QR code has expired.')),
-                  );
-                  return;
-                }
-                if (!context.mounted) return;
-                await kioskSignInWithUid(
-                  idToken!,
-                  context,
-                ); //call sign-in logic with the scanned token if all checks passed
-              }
-            },
+            onDetect: (capture) =>
+                onQrScanned(context, capture, scanned, idToken),
           ),
           Container(
             color: Theme.of(context).colorScheme.surface,
