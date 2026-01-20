@@ -1,10 +1,14 @@
+//material imports
 import 'package:flutter/material.dart';
 
 class UserSettingsFields extends StatelessWidget {
+  // reusable widget for user settings input fields (like name, email, etc)
+  // takes a text controller and field type as parameters, formats them to fit page theme, and returns to caller.
+  // used in user_settings_screen.dart
   const UserSettingsFields({
     super.key,
-    required this.nameController,
-    required this.fieldType,
+    required this.nameController, // controller for the text field
+    required this.fieldType, // type of field (e.g., 'Name', 'Email')
   });
 
   final TextEditingController nameController;

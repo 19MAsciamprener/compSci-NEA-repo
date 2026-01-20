@@ -1,3 +1,4 @@
+//material imports
 import 'package:flutter/material.dart';
 
 Widget headerCell(String text, {int flex = 1}) {
@@ -23,11 +24,13 @@ Widget tableCell(
   TextAlign align = TextAlign.center,
 }) {
   return Expanded(
+    // expanded widget to fill available space (avoids overflow errors)
     flex: flex,
     child: Text(
       text,
       maxLines: 1,
-      overflow: TextOverflow.ellipsis,
+      overflow: TextOverflow
+          .ellipsis, // ellipsis for overflowed text (so that it doesn't wrap and break layout)
       softWrap: false,
       textAlign: align,
       style: const TextStyle(color: Colors.white),

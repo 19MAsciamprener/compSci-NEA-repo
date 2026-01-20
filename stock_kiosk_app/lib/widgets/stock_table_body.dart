@@ -1,5 +1,8 @@
+// material imports
 import 'package:flutter/material.dart';
+//internal widget imports
 import 'package:stock_kiosk_app/widgets/table_cell_widgets.dart';
+//firebase imports
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 Widget stockTable() {
@@ -36,6 +39,7 @@ Widget stockTable() {
             padding: const EdgeInsets.symmetric(vertical: 6.0),
             child: Row(
               children: [
+                // build table row for each item (using tableCell widget for each cell)
                 tableCell(item['name'] ?? '', flex: 3, align: TextAlign.left),
                 tableCell(item['price'].toString()),
                 tableCell(item['change'].toString()),
