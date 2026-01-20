@@ -1,3 +1,5 @@
+//main.dart @ stock_kiosk_app (the beginning of everything)
+
 //material import
 import 'package:flutter/material.dart';
 //firebase imports

@@ -26,6 +26,30 @@ Future<void> updatePassword(
     return;
   }
 
+  if (newPassword.isEmpty) {
+    //check new password is not empty
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Please enter a new password')));
+    return;
+  }
+
+  if (newPasswordConfirm.isEmpty) {
+    //check new password confirmation is not empty
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Please confirm your new password')));
+    return;
+  }
+
+  if (newPassword.length > 128) {
+    //check new password length (firebase maximum is 128, so enforce that here to avoid unecessary firebase calls)
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('New password must be less than 128 characters')),
+    );
+    return;
+  }
+
   if (newPassword.length < 6) {
     //check new password length (firebase minimum is 6, so enforce that here to avoid unecessary firebase calls)
     ScaffoldMessenger.of(context).showSnackBar(

@@ -31,6 +31,14 @@ Future<void> onQrScanned(
       break;
     }
   }
+  if (idToken == null) {
+    //if no token was scanned, show error
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('No QR code detected.')));
+    return;
+  }
   {
     final backendTokenDoc = await FirebaseFirestore
         .instance //access Firestore, look for the scanned token
@@ -62,7 +70,7 @@ Future<void> onQrScanned(
     }
     if (!context.mounted) return;
     await kioskSignInWithUid(
-      idToken!,
+      idToken,
       context,
     ); //call sign-in logic with the scanned token if all checks passed
   }
@@ -136,6 +144,40 @@ Future<void> loginUserWithEmailAndPassword(
   BuildContext context,
   // takes in email and password controllers, and context
 ) async {
+  if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+    // check email and password fields are not empty
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Please enter email and password')));
+    return;
+  }
+
+  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+$').hasMatch(emailController.text.trim())) {
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Please enter a valid email address.')),
+    );
+    return;
+  }
+
+  if (passwordController.text.length < 6) {
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Password must be at least 6 characters long.'),
+      ),
+    );
+    return;
+  }
+
+  if (passwordController.text.length > 128) {
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Password must not exceed 128 characters.')),
+    );
+    return;
+  }
+
   try {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
       // sign in with email and password (firebase auth method using text from controllers)
@@ -159,6 +201,32 @@ Future<void> sendPasswordResetEmail(
   BuildContext context,
   // takes in email controller and context
 ) async {
+  if (emailController.text.isEmpty) {
+    // check email field is not empty
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Please enter your email address')));
+    return;
+  }
+
+  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+$').hasMatch(emailController.text.trim())) {
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Please enter a valid email address.')),
+    );
+    return;
+  }
+
+  if (emailController.text.length > 256) {
+    if (!context.mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Email address must not exceed 256 characters.'),
+      ),
+    );
+    return;
+  }
+
   try {
     await FirebaseAuth.instance.sendPasswordResetEmail(
       // send password reset email using trimmed text from email controller (firebase auth method)

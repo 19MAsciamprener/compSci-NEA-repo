@@ -31,6 +31,53 @@ Future<void> uploadItemToDatabase(
     return;
   }
 
+  if ((mvController.text.trim() != '-') ||
+      (mvController.text.trim() != 'v') ||
+      (mvController.text.trim() != '^')) {
+    // check market value field is valid
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          "Market Value must be '-', 'v', or '^'.",
+        ), //if invalid, show error
+      ),
+    );
+    return;
+  }
+
+  if (double.tryParse(highController.text.trim())! <
+      double.tryParse(lowController.text.trim())!) {
+    // check high price is not less than low price
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("High price cannot be less than Low price."),
+      ), //if invalid, show error
+    );
+    return;
+  }
+
+  if (double.tryParse(priceController.text.trim())! >
+      double.tryParse(highController.text.trim())!) {
+    // check price is not greater than high price
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("Price cannot be greater than High price."),
+      ), //if invalid, show error
+    );
+    return;
+  }
+
+  if (double.tryParse(priceController.text.trim())! <
+      double.tryParse(lowController.text.trim())!) {
+    // check price is not less than low price
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("Price cannot be less than Low price."),
+      ), //if invalid, show error
+    );
+    return;
+  }
+
   try {
     // try to upload item to Firestore if all fields are filled
     final itemDoc = await FirebaseFirestore.instance
