@@ -78,6 +78,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   TextField(
                     // field for current password
                     controller: oldPasswordController,
+                    obscureText: true,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -102,6 +103,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   TextField(
                     // field for new password
                     controller: newPasswordController,
+                    obscureText: true,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -127,6 +129,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                   TextField(
                     // field for confirming new password
                     controller: newPasswordControllerConfirm,
+                    obscureText: true,
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
