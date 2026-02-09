@@ -127,18 +127,28 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
                 child: Column(
                   children: [
                     ClipOval(
-                      child: FadeInImage.assetNetwork(
-                        key: ValueKey(
-                          _imageRefreshKey,
-                        ), //takes refresh key from state
-                        placeholder:
-                            'lib/assets/images/Default_pfp.jpg', //default profile image while loading (or if none set)
-                        image:
-                            'https://stock-tokenrequest.matnlaws.co.uk/images/profile/${FirebaseAuth.instance.currentUser!.uid}.jpg?v=$_imageRefreshKey',
-                        //user's profile image from server with cache-busting query parameter
-                        fit: BoxFit.cover,
+                      child: Image.network(
+                        'https://stock-tokenrequest.matnlaws.co.uk/images/profile/${FirebaseAuth.instance.currentUser!.uid}.jpg?${DateTime.now().millisecondsSinceEpoch}',
                         width: 148,
                         height: 148,
+                        fit: BoxFit.cover,
+                        loadingBuilder: (context, child, loadingProgress) {
+                          if (loadingProgress == null) return child;
+                          return Image.asset(
+                            'lib/assets/images/default_pfp.jpg',
+                            width: 148,
+                            height: 148,
+                            fit: BoxFit.cover,
+                          );
+                        },
+                        errorBuilder: (context, error, stackTrace) {
+                          return Image.asset(
+                            'lib/assets/images/default_pfp.jpg',
+                            width: 148,
+                            height: 148,
+                            fit: BoxFit.cover,
+                          );
+                        },
                       ),
                     ),
                     TextButton(

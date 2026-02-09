@@ -31,7 +31,14 @@ class _SignupPageState extends State<SignupPage> {
       FirebaseFirestore.instance
           .collection('users')
           .doc(FirebaseAuth.instance.currentUser?.uid)
-          .set({'email': emailController.text.trim()});
+          .set({
+            'email': emailController.text.trim(),
+            'createdAt': Timestamp.now(),
+            'updatedAt': Timestamp.now(),
+            'first_name': 'first',
+            'last_name': 'last',
+            'date_of_birth': Timestamp.fromDate(DateTime(2000, 1, 1)),
+          });
 
       if (!mounted) return;
       ScaffoldMessenger.of(

@@ -28,15 +28,28 @@ class UserHomePage extends StatelessWidget {
                 );
               },
               child: ClipOval(
-                child: FadeInImage.assetNetwork(
-                  //profile picture with default placeholder while loading or if no picture set
-                  placeholder: 'lib/assets/images/Default_pfp.jpg',
-                  image:
-                      'https://stock-tokenrequest.matnlaws.co.uk/images/profile/${FirebaseAuth.instance.currentUser!.uid}.jpg?${DateTime.now().millisecondsSinceEpoch}',
-                  //user profile picture from server with cache-busting query parameter
-                  fit: BoxFit.cover,
+                child: Image.network(
+                  'https://stock-tokenrequest.matnlaws.co.uk/images/profile/${FirebaseAuth.instance.currentUser!.uid}.jpg?${DateTime.now().millisecondsSinceEpoch}',
                   width: 96,
                   height: 96,
+                  fit: BoxFit.cover,
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Image.asset(
+                      'lib/assets/images/default_pfp.jpg',
+                      width: 96,
+                      height: 96,
+                      fit: BoxFit.cover,
+                    );
+                  },
+                  errorBuilder: (context, error, stackTrace) {
+                    return Image.asset(
+                      'lib/assets/images/default_pfp.jpg',
+                      width: 96,
+                      height: 96,
+                      fit: BoxFit.cover,
+                    );
+                  },
                 ),
               ),
             ),
