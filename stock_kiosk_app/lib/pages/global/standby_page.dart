@@ -187,7 +187,8 @@ class _StandbyPageState extends State<StandbyPage> {
                       onPressed: () {
                         launchUrl(
                           Uri.parse('https://www.example.com/help'),
-                          mode: LaunchMode.externalApplication,
+                          mode: LaunchMode
+                              .inAppWebView, //opens help page in in-app webview (prevents user from leaving app)
                         );
                       },
                     ), // FUTURE JOB: MAKE THIS AN IN-APP WEBVIEW
