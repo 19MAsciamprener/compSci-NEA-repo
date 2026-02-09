@@ -129,10 +129,12 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
                     ClipOval(
                       child: Image.network(
                         'https://stock-tokenrequest.matnlaws.co.uk/images/profile/${FirebaseAuth.instance.currentUser!.uid}.jpg?${DateTime.now().millisecondsSinceEpoch}',
+                        //profile image URL with refresh key to prevent caching
                         width: 148,
                         height: 148,
                         fit: BoxFit.cover,
                         loadingBuilder: (context, child, loadingProgress) {
+                          //show default profile image while loading or if there is an error (prevents blank space or broken image icon)
                           if (loadingProgress == null) return child;
                           return Image.asset(
                             'lib/assets/images/default_pfp.jpg',
@@ -142,6 +144,7 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
                           );
                         },
                         errorBuilder: (context, error, stackTrace) {
+                          //show default profile image if there is an error loading the image (prevents broken image icon)
                           return Image.asset(
                             'lib/assets/images/default_pfp.jpg',
                             width: 148,

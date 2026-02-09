@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stock_kiosk_app/logic/sign_in_logic.dart';
 //internal page imports
 import 'package:stock_kiosk_app/pages/global/password_reset_page.dart';
+import 'package:stock_kiosk_app/pages/global/qr_login_page.dart';
 import 'package:stock_kiosk_app/pages/user/user_home_page.dart';
 
 class PasswordLoginPage extends StatefulWidget {
@@ -33,7 +34,10 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
           ),
           onPressed: () {
             //return to QR login page
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => QrLoginPage()),
+            );
           },
         ),
         title: const Text(

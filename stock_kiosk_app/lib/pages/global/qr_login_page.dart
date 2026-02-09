@@ -99,7 +99,7 @@ class _QrLoginPageState extends State<QrLoginPage> {
                   ),
                   onPressed: () {
                     // navigate to password login page (allows user to go back)
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                         builder: (context) => PasswordLoginPage(),
