@@ -21,18 +21,17 @@ TO-DO:
 \[x] redesign account page
 
 \[] design user home page
+\[] design purchase page
+
 
 \[] stock price algorithm!!!
 
 \[] Invent and value currency (different currency for different item types: e.g. drinkCoin, snackCoin, libraryCoin, stationaryCoin, etc...)
 
+\[] Add user/admin logic
 
+\[] admin-only stock modificaiton page
 
-\[] make 'change password' a popup, not a dedicated page?
 
 \[] Abstract validation into its own file within 'logic' directory?
-
-
-
-
 
