@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // internal page imports
-import 'package:stock_kiosk_app/pages/global/change_password_page.dart';
+import 'package:stock_kiosk_app/pages/user/change_password_page.dart';
 import 'package:stock_kiosk_app/pages/user/profile_settings_page.dart';
 import 'package:stock_kiosk_app/pages/global/standby_page.dart';
 
