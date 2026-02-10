@@ -11,36 +11,34 @@ class CategoryCards extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-          childAspectRatio: 1,
-        ),
-        itemCount: categories.length,
-        itemBuilder: (context, index) {
-          final category = categories[index];
-          return GestureDetector(
-            onTap: () {
-              //TODO: NAVIGATE TO CATEGORY PAGE
-            },
-            child: Card(
-              color: Colors.grey,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              child: Center(
-                child: Text(
-                  category,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 16,
+        mainAxisSpacing: 16,
+        childAspectRatio: 1,
+      ),
+      itemCount: categories.length,
+      itemBuilder: (context, index) {
+        final category = categories[index];
+        return GestureDetector(
+          onTap: () {
+            //TODO: NAVIGATE TO CATEGORY PAGE
+          },
+          child: Card(
+            color: Colors.grey,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0),
+            ),
+            child: Center(
+              child: Text(
+                category,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }
@@ -62,31 +60,29 @@ class CartItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemCount: cartItems.length, // TODO: MAKE DYNAMIC
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 6.0),
-            child: Column(
-              children: [
-                Text(
-                  cartItems[index].toString(), // TODO: MAKE DYNAMIC
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
-                ),
-                Text(
-                  'Quantity: 1', // TODO: MAKE DYNAMIC
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodySmall?.copyWith(color: Colors.white70),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
+    return ListView.builder(
+      itemCount: cartItems.length, // TODO: MAKE DYNAMIC
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 6.0),
+          child: Column(
+            children: [
+              Text(
+                cartItems[index].toString(), // TODO: MAKE DYNAMIC
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
+              ),
+              Text(
+                'Quantity: 1', // TODO: MAKE DYNAMIC
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: Colors.white70),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
