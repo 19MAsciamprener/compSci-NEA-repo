@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 //page imports
 import 'package:stock_kiosk_app/pages/user/user_account_page.dart';
 import 'package:stock_kiosk_app/pages/global/stock_price_page.dart';
+import 'package:stock_kiosk_app/pages/user/user_purchase_page.dart';
 import 'package:stock_kiosk_app/widgets/home_page_widgets.dart';
 import 'package:stock_kiosk_app/widgets/stock_list_widgets.dart';
 //widget imports
@@ -131,7 +132,15 @@ class UserHomePage extends StatelessWidget {
                                             TextStyle(fontSize: 24),
                                           ),
                                         ), // make purchase button smaller than category buttons
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              UserPurchasePage(),
+                                        ),
+                                      );
+                                    },
                                     child: Text(
                                       'Purchase',
                                     ), // TODO: MAKE DYNAMIC

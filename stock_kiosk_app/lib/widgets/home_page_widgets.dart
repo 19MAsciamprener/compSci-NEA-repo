@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 class CategoryCards extends StatelessWidget {
   const CategoryCards({super.key});
   static final List<String> categories = [
-    'Tech',
-    'Finance',
-    'Healthcare',
-    'Energy',
-    'Consumer Goods',
-    'Utilities',
+    'Drinks',
+    'Snacks',
+    'Books',
+    'Stationery',
+    'Electronics',
   ];
   @override
   Widget build(BuildContext context) {
