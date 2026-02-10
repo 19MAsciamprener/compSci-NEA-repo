@@ -5,9 +5,8 @@ import 'dart:async';
 //external package imports
 import 'package:url_launcher/url_launcher.dart';
 //internal widget imports
-import 'package:stock_kiosk_app/widgets/table_cell_widgets.dart';
 import 'package:stock_kiosk_app/widgets/main_icon_button.dart';
-import 'package:stock_kiosk_app/widgets/stock_table_body.dart';
+import 'package:stock_kiosk_app/widgets/stock_list_widgets.dart';
 //internal page imports
 import 'qr_login_page.dart';
 import 'settings_page.dart';
@@ -22,12 +21,6 @@ class StandbyPage extends StatefulWidget {
 }
 
 class _StandbyPageState extends State<StandbyPage> {
-  String _formatTime(DateTime dt) {
-    //will format time as HH:MM
-    String two(int n) => n.toString().padLeft(2, '0');
-    return '${two(dt.hour)}:${two(dt.minute)}';
-  }
-
   late DateTime _now;
   Timer? _timer;
 
@@ -66,65 +59,12 @@ class _StandbyPageState extends State<StandbyPage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => StockPricePage(),
-                    ), // FUTURE JOB: MAKE STOCK PRICE PAGE
+                    ), // TODO: MAKE STOCK PRICE PAGE
                   );
                 },
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 12.0,
-                  ),
-                  decoration: BoxDecoration(
-                    //takes theme data from main.dart
-                    color: Theme.of(context).primaryColor,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Stock Prices', //title of container
-                            style: Theme.of(context).textTheme.titleLarge,
-                          ),
-                          Text(
-                            _formatTime(
-                              _now,
-                            ), //current time on right (formatted as HH:MM)
-                            style: Theme.of(context).textTheme.titleLarge,
-                          ),
-                        ],
-                      ),
-
-                      const SizedBox(height: 32.0),
-
-                      Column(
-                        children: [
-                          // Header row of stock table
-                          Row(
-                            children: [
-                              headerCell('Name', flex: 3),
-                              headerCell('Price'),
-                              headerCell('Change'),
-                              const SizedBox(width: 48),
-                              headerCell('High'),
-                              headerCell('Low'),
-                              headerCell('MV'),
-                            ],
-                          ),
-
-                          const SizedBox(height: 12),
-
-                          SizedBox(
-                            height: 612, //fixed height for stock table
-                            child: stockTable(), //stock table body widget
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+                child: StockListBox(
+                  now: _now,
+                ), //stock list container (shows current stock prices and time)
               ),
             ],
           ),
@@ -174,7 +114,7 @@ class _StandbyPageState extends State<StandbyPage> {
                       MaterialPageRoute(
                         //navigate to settings page on tap (allows user to return to standby page)
                         builder: (context) => SettingsPage(),
-                      ), //FUTURE JOB: MAKE SETTINGS PAGE
+                      ), //TODO: MAKE SETTINGS PAGE
                     );
                   },
                 ),
@@ -191,7 +131,7 @@ class _StandbyPageState extends State<StandbyPage> {
                               .inAppWebView, //opens help page in in-app webview (prevents user from leaving app)
                         );
                       },
-                    ), // FUTURE JOB: MAKE THIS AN IN-APP WEBVIEW
+                    ), //TODO: MAKE THIS AN IN-APP WEBVIEW
 
                     MainIconButton(
                       //language selection button
@@ -217,7 +157,7 @@ class _StandbyPageState extends State<StandbyPage> {
                           },
                         );
                       },
-                    ), // FUTURE JOB: MAKE THIS CHANGE APP LANGUAGE
+                    ), // TODO: MAKE THIS CHANGE APP LANGUAGE
                   ],
                 ),
               ],

@@ -2,18 +2,17 @@
 
 // material imports
 import 'package:flutter/material.dart';
-//firebase imports
-import 'package:firebase_auth/firebase_auth.dart';
 //page imports
 import 'package:stock_kiosk_app/pages/user/user_account_page.dart';
-import 'package:stock_kiosk_app/pages/global/standby_page.dart';
 import 'package:stock_kiosk_app/pages/global/stock_price_page.dart';
+import 'package:stock_kiosk_app/widgets/home_page_widgets.dart';
+import 'package:stock_kiosk_app/widgets/stock_list_widgets.dart';
 //widget imports
-import 'package:stock_kiosk_app/widgets/table_cell_widgets.dart';
-import 'package:stock_kiosk_app/widgets/stock_table_body.dart';
+import 'package:stock_kiosk_app/widgets/profile_picture_widget.dart';
 
 class UserHomePage extends StatelessWidget {
   const UserHomePage({super.key});
+  //TODO: MAKE THIS DYNAMIC
 
   @override
   Widget build(BuildContext context) {
@@ -32,34 +31,7 @@ class UserHomePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => UserAccountPage()),
                 );
               },
-              child: ClipOval(
-                child: Image.network(
-                  //profile image URL with refresh key to prevent caching
-                  'https://stock-tokenrequest.matnlaws.co.uk/images/profile/${FirebaseAuth.instance.currentUser!.uid}.jpg?${DateTime.now().millisecondsSinceEpoch}',
-                  width: 96,
-                  height: 96,
-                  fit: BoxFit.cover,
-                  loadingBuilder: (context, child, loadingProgress) {
-                    //show default profile image while loading or if there is an error (prevents blank space or broken image icon)
-                    if (loadingProgress == null) return child;
-                    return Image.asset(
-                      'lib/assets/images/default_pfp.jpg',
-                      width: 96,
-                      height: 96,
-                      fit: BoxFit.cover,
-                    );
-                  },
-                  errorBuilder: (context, error, stackTrace) {
-                    //show default profile image if there is an error loading the image (prevents broken image icon)
-                    return Image.asset(
-                      'lib/assets/images/default_pfp.jpg',
-                      width: 96,
-                      height: 96,
-                      fit: BoxFit.cover,
-                    );
-                  },
-                ),
-              ),
+              child: ProfilePictureWidget(context, size: 96),
             ),
           ),
         ],
@@ -78,74 +50,10 @@ class UserHomePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => StockPricePage(),
-                    ), // FUTURE JOB: MAKE STOCK PRICE PAGE
+                    ), // TODO: MAKE STOCK PRICE PAGE
                   );
                 },
-                child: Container(
-                  width: 450,
-                  height: 380,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0,
-                    vertical: 12.0,
-                  ),
-                  decoration: BoxDecoration(
-                    //takes theme data from main.dart
-                    color: Theme.of(context).primaryColor,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Stock Prices', //title of container
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-
-                      const SizedBox(height: 32.0),
-
-                      Column(
-                        children: [
-                          // Header row of stock table
-                          Row(
-                            children: [
-                              headerCell(
-                                'Name',
-                                flex: 3,
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
-                              ),
-                              headerCell(
-                                'Price',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
-                              ),
-                              headerCell(
-                                'Change',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ],
-                          ),
-
-                          const SizedBox(height: 12),
-
-                          SizedBox(
-                            height: 180, //fixed height for stock table
-                            child: miniStockTable(), //stock table body widget
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+                child: MiniStockListBox(),
               ),
               const SizedBox(height: 16.0),
 
@@ -153,13 +61,87 @@ class UserHomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Placeholder(),
+                    CategoryCards(),
+
                     SizedBox(width: 16.0),
+
                     Container(
                       alignment: Alignment.centerRight,
-                      width: 200,
+                      width: 220,
                       height: double.infinity,
-                      child: Placeholder(),
+                      child: Expanded(
+                        flex: 1,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(left: 16),
+                              padding: EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                color: Colors.grey.shade800,
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              height: 700,
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Current Items',
+                                    textAlign: TextAlign.start,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.titleLarge,
+                                  ),
+                                  Container(
+                                    alignment: Alignment.centerRight,
+                                    child: Text(
+                                      'Location: Warehouse 1',
+                                      textAlign: TextAlign.end,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall
+                                          ?.copyWith(color: Colors.white70),
+                                    ),
+                                  ),
+                                  SizedBox(height: 18),
+                                  CartItemList(),
+                                  Divider(),
+
+                                  Text(
+                                    'Total:', // TODO: MAKE DYNAMIC
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.titleMedium,
+                                  ),
+
+                                  Text(
+                                    '\$123.45', // TODO: MAKE DYNAMIC
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.titleMedium,
+                                  ),
+
+                                  SizedBox(height: 18),
+
+                                  ElevatedButton(
+                                    style: Theme.of(context)
+                                        .elevatedButtonTheme
+                                        .style
+                                        ?.copyWith(
+                                          textStyle: WidgetStatePropertyAll(
+                                            TextStyle(fontSize: 24),
+                                          ),
+                                        ), // make purchase button smaller than category buttons
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Purchase',
+                                    ), // TODO: MAKE DYNAMIC
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),

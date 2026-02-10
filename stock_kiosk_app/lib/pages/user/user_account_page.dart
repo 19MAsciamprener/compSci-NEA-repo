@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stock_kiosk_app/pages/user/change_password_page.dart';
 import 'package:stock_kiosk_app/pages/user/profile_settings_page.dart';
 import 'package:stock_kiosk_app/pages/global/standby_page.dart';
+import 'package:stock_kiosk_app/widgets/profile_picture_widget.dart';
 
 class UserAccountPage extends StatefulWidget {
   // User Account Page showing profile picture, name, email, and date of birth, with menu for settings, password change, and logout
@@ -119,34 +120,7 @@ class _UserAccountPageState extends State<UserAccountPage> {
             SizedBox(
               width: 256,
               height: 256,
-              child: ClipOval(
-                child: Image.network(
-                  'https://stock-tokenrequest.matnlaws.co.uk/images/profile/${FirebaseAuth.instance.currentUser!.uid}.jpg?${DateTime.now().millisecondsSinceEpoch}',
-                  //profile image URL with refresh key to prevent caching
-                  width: 96,
-                  height: 96,
-                  fit: BoxFit.cover,
-                  loadingBuilder: (context, child, loadingProgress) {
-                    //show default profile image while loading or if there is an error (prevents blank space or broken image icon)
-                    if (loadingProgress == null) return child;
-                    return Image.asset(
-                      'lib/assets/images/default_pfp.jpg',
-                      width: 96,
-                      height: 96,
-                      fit: BoxFit.cover,
-                    );
-                  },
-                  errorBuilder: (context, error, stackTrace) {
-                    //show default profile image if there is an error loading the image (prevents broken image icon)
-                    return Image.asset(
-                      'lib/assets/images/default_pfp.jpg',
-                      width: 96,
-                      height: 96,
-                      fit: BoxFit.cover,
-                    );
-                  },
-                ),
-              ),
+              child: ProfilePictureWidget(context, size: 96),
             ),
             SizedBox(height: 24),
 

@@ -21,6 +21,7 @@ TO-DO:
 \[x] redesign account page
 
 \[] design user home page
+
 \[] design purchase page
 
 

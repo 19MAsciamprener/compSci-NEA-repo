@@ -22,7 +22,7 @@ class _QrLoginPageState extends State<QrLoginPage> {
   );
 
   bool scanned =
-      false; //to prevent multiple scans, the page is initialised as not scanned
+      false; //to prevent multiple scans, the page is initialised as not scanned (will change when a code is scanned)
   String? idToken; //variable to hold the scanned token
 
   @override
@@ -98,8 +98,8 @@ class _QrLoginPageState extends State<QrLoginPage> {
                     minimumSize: WidgetStateProperty.all(Size(200, 80)),
                   ),
                   onPressed: () {
-                    // navigate to password login page (allows user to go back)
                     Navigator.pushReplacement(
+                      // navigate to password login page (allows user to go back, but also disposes of the scanner to free up resources)
                       context,
                       MaterialPageRoute(
                         builder: (context) => PasswordLoginPage(),

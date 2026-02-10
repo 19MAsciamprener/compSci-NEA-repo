@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stock_kiosk_app/logic/load_user_data.dart';
 import 'package:stock_kiosk_app/logic/pfp_upload.dart';
 import 'package:stock_kiosk_app/widgets/user_settings_fields.dart';
+import 'package:stock_kiosk_app/widgets/profile_picture_widget.dart';
 
 class UserSettingsPage extends StatefulWidget {
   //stateful widget for user settings page (profile settings fields and pfp are updated on change)
@@ -73,8 +74,6 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
   }
 
   late Future<void> _userDataFuture; //future for loading user data
-  int _imageRefreshKey = DateTime.now()
-      .millisecondsSinceEpoch; //key to refresh profile image (ensure latest image is shown and cached version is not used)
   late String oldEmail; //variable to store old email for comparison
 
   @override
@@ -126,34 +125,7 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
               Center(
                 child: Column(
                   children: [
-                    ClipOval(
-                      child: Image.network(
-                        'https://stock-tokenrequest.matnlaws.co.uk/images/profile/${FirebaseAuth.instance.currentUser!.uid}.jpg?${DateTime.now().millisecondsSinceEpoch}',
-                        //profile image URL with refresh key to prevent caching
-                        width: 148,
-                        height: 148,
-                        fit: BoxFit.cover,
-                        loadingBuilder: (context, child, loadingProgress) {
-                          //show default profile image while loading or if there is an error (prevents blank space or broken image icon)
-                          if (loadingProgress == null) return child;
-                          return Image.asset(
-                            'lib/assets/images/default_pfp.jpg',
-                            width: 148,
-                            height: 148,
-                            fit: BoxFit.cover,
-                          );
-                        },
-                        errorBuilder: (context, error, stackTrace) {
-                          //show default profile image if there is an error loading the image (prevents broken image icon)
-                          return Image.asset(
-                            'lib/assets/images/default_pfp.jpg',
-                            width: 148,
-                            height: 148,
-                            fit: BoxFit.cover,
-                          );
-                        },
-                      ),
-                    ),
+                    ProfilePictureWidget(context, size: 148),
                     TextButton(
                       onPressed: () async {
                         //button to edit profile image
@@ -161,9 +133,7 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
                           context,
                         ); //function to pick and upload new profile image (comes from pfp_upload.dart)
                         setState(() {
-                          //update state to refresh image (change refresh key)
-                          _imageRefreshKey =
-                              DateTime.now().millisecondsSinceEpoch;
+                          //update state to refresh profile image with new one (refresh key in URL forces reload)
                         });
                       },
                       child: Text(
