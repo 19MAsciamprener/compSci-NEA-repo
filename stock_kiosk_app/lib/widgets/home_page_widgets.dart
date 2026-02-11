@@ -111,7 +111,12 @@ class ItemCards extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }
         if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-          return const Center(child: Text('No items found in this category.'));
+          return const Center(
+            child: Text(
+              'No items found in this category.',
+              style: TextStyle(color: Colors.white70),
+            ),
+          );
         }
 
         final docs = snapshot.data!.docs;

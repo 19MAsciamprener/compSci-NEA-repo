@@ -53,6 +53,13 @@ class MyApp extends StatelessWidget {
 
         useMaterial3: true,
 
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromRGBO(29, 27, 32, 1),
+          surfaceTintColor: Colors.transparent,
+          scrolledUnderElevation: 0,
+          elevation: 0,
+        ),
+
         textTheme: TextTheme(
           titleLarge: TextStyle(
             fontSize: 30,
