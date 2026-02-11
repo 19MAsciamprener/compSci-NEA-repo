@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 //firebase imports
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:stock_kiosk_app/logic/sign_in_logic.dart';
+import 'package:stock_kiosk_app/logic/auth/sign_in_logic.dart';
 //internal page imports
 import 'package:stock_kiosk_app/pages/global/password_reset_page.dart';
 import 'package:stock_kiosk_app/pages/global/qr_login_page.dart';

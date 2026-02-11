@@ -1,7 +1,7 @@
 //material import
 import 'package:flutter/material.dart';
 //internal logic imports
-import 'package:stock_kiosk_app/logic/sign_in_logic.dart';
+import 'package:stock_kiosk_app/logic/auth/sign_in_logic.dart';
 
 class PasswordResetPage extends StatefulWidget {
   //stateful page for password reset (email input)

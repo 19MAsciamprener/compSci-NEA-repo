@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 //internal logic and widget imports
-import 'package:stock_kiosk_app/logic/load_user_data.dart';
-import 'package:stock_kiosk_app/logic/pfp_upload.dart';
-import 'package:stock_kiosk_app/widgets/user_settings_fields.dart';
-import 'package:stock_kiosk_app/widgets/profile_picture_widget.dart';
+import 'package:stock_kiosk_app/logic/auth/load_user_data.dart';
+import 'package:stock_kiosk_app/logic/upload/pfp_upload.dart';
+import 'package:stock_kiosk_app/widgets/user/user_settings_fields.dart';
+import 'package:stock_kiosk_app/widgets/user/profile_picture_widget.dart';
 
 class UserSettingsPage extends StatefulWidget {
   //stateful widget for user settings page (profile settings fields and pfp are updated on change)

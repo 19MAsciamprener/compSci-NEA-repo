@@ -7,8 +7,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stock_kiosk_app/pages/user/change_password_page.dart';
 import 'package:stock_kiosk_app/pages/user/profile_settings_page.dart';
 import 'package:stock_kiosk_app/pages/global/standby_page.dart';
-import 'package:stock_kiosk_app/widgets/coin_values.dart';
-import 'package:stock_kiosk_app/widgets/profile_picture_widget.dart';
+import 'package:stock_kiosk_app/widgets/user/coin_values.dart';
+import 'package:stock_kiosk_app/widgets/user/profile_picture_widget.dart';
 
 class UserAccountPage extends StatefulWidget {
   // User Account Page showing profile picture, name, email, and date of birth, with menu for settings, password change, and logout

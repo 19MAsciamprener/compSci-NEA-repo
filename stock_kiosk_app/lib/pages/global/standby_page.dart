@@ -6,7 +6,7 @@ import 'dart:async';
 import 'package:url_launcher/url_launcher.dart';
 //internal widget imports
 import 'package:stock_kiosk_app/widgets/main_icon_button.dart';
-import 'package:stock_kiosk_app/widgets/stock_list_widgets.dart';
+import 'package:stock_kiosk_app/widgets/stock/stock_list_widgets.dart';
 //internal page imports
 import 'qr_login_page.dart';
 import 'settings_page.dart';

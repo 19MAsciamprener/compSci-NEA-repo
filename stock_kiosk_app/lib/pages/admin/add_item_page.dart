@@ -1,8 +1,8 @@
 // material imports
 import 'package:flutter/material.dart';
 // internal logic and widget imports
-import 'package:stock_kiosk_app/widgets/new_item_fields.dart';
-import 'package:stock_kiosk_app/logic/upload_item.dart';
+import 'package:stock_kiosk_app/widgets/user/new_item_fields.dart';
+import 'package:stock_kiosk_app/logic/upload/upload_item.dart';
 
 class NewItemPage extends StatefulWidget {
   //stateful widget for adding a new item (fields refresh after each upload)

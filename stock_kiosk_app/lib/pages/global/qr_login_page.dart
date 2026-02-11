@@ -5,7 +5,7 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 //internal page imports
 import 'package:stock_kiosk_app/pages/global/password_login_page.dart';
 //internal logic imports
-import 'package:stock_kiosk_app/logic/sign_in_logic.dart';
+import 'package:stock_kiosk_app/logic/auth/sign_in_logic.dart';
 
 class QrLoginPage extends StatefulWidget {
   //stateful page because of scanner

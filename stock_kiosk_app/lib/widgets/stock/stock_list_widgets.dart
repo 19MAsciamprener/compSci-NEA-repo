@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stock_kiosk_app/widgets/stock_table_body.dart';
-import 'package:stock_kiosk_app/widgets/table_cell_widgets.dart';
+import 'package:stock_kiosk_app/widgets/stock/stock_table_body.dart';
+import 'package:stock_kiosk_app/widgets/stock/table_cell_widgets.dart';
 
 String _formatTime(DateTime dt) {
   //will format time as HH:MM

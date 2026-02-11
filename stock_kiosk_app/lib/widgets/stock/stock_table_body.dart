@@ -1,7 +1,7 @@
 // material imports
 import 'package:flutter/material.dart';
 //internal widget imports
-import 'package:stock_kiosk_app/widgets/table_cell_widgets.dart';
+import 'package:stock_kiosk_app/widgets/stock/table_cell_widgets.dart';
 //firebase imports
 import 'package:cloud_firestore/cloud_firestore.dart';
 

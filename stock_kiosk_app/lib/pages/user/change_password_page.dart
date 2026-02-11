@@ -1,7 +1,7 @@
 // material imports
 import 'package:flutter/material.dart';
 // internal logic imports
-import 'package:stock_kiosk_app/logic/password_change.dart';
+import 'package:stock_kiosk_app/logic/auth/password_change.dart';
 
 class ChangePasswordPage extends StatefulWidget {
   //stateful widget for changing password (fields are cleared after each attempt)
