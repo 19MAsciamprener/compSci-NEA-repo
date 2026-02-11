@@ -38,6 +38,7 @@ class _SignupPageState extends State<SignupPage> {
             'first_name': 'first',
             'last_name': 'last',
             'date_of_birth': Timestamp.fromDate(DateTime(2000, 1, 1)),
+            'is_admin': false,
           });
 
       if (!mounted) return;

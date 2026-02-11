@@ -36,3 +36,5 @@ TO-DO:
 
 \[] Abstract validation into its own file within 'logic' directory?
 
+\[] add a firestore doc that contains categories. category cards will pull from here, and admins will be able to edit this doc, when editing items, list of cateogry choices will pull from this doc
+

@@ -54,6 +54,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
 
         appBarTheme: const AppBarTheme(
+          //this appbar theme stops a material3 styling issue where app bar goes a pale red any time a user scrolls.
+          //This sections keeps UI consistency to not confuse users
           backgroundColor: Color.fromRGBO(29, 27, 32, 1),
           surfaceTintColor: Colors.transparent,
           scrolledUnderElevation: 0,

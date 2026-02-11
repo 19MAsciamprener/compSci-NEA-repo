@@ -6,14 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:stock_kiosk_app/pages/user/user_account_page.dart';
 import 'package:stock_kiosk_app/pages/global/stock_price_page.dart';
 import 'package:stock_kiosk_app/pages/user/user_purchase_page.dart';
-import 'package:stock_kiosk_app/widgets/home_page_widgets.dart';
-import 'package:stock_kiosk_app/widgets/stock_list_widgets.dart';
 //widget imports
 import 'package:stock_kiosk_app/widgets/profile_picture_widget.dart';
+import 'package:stock_kiosk_app/widgets/home_page_widgets.dart';
+import 'package:stock_kiosk_app/widgets/stock_list_widgets.dart';
 
 class UserHomePage extends StatelessWidget {
   const UserHomePage({super.key});
-  //TODO: MAKE THIS DYNAMIC
 
   @override
   Widget build(BuildContext context) {

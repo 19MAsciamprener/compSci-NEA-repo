@@ -214,6 +214,7 @@ Future<void> updateUserData(
         'date_of_birth': dateOfBirth != null
             ? Timestamp.fromDate(dateOfBirth)
             : null,
+        'updatedAt': Timestamp.now(),
       });
     } on Exception catch (e) {
       // catch any exceptions and show error message
@@ -317,6 +318,7 @@ Future<void> updateUserData(
           'date_of_birth': dateOfBirth != null
               ? Timestamp.fromDate(dateOfBirth)
               : null,
+          'updatedAt': Timestamp.now(),
         });
       } else {
         throw Exception(
