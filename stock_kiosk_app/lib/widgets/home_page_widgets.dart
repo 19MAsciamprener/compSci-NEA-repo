@@ -141,9 +141,21 @@ class ItemCards extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12.0),
                 ),
                 child: Center(
-                  child: Text(
-                    doc['name'],
-                    style: Theme.of(context).textTheme.titleLarge,
+                  child: Column(
+                    children: [
+                      Text(
+                        doc['name'],
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        '\$${doc['price']}',
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Colors.white70,
+                          fontSize: 32,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

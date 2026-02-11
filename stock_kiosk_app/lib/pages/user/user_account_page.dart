@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stock_kiosk_app/pages/user/change_password_page.dart';
 import 'package:stock_kiosk_app/pages/user/profile_settings_page.dart';
 import 'package:stock_kiosk_app/pages/global/standby_page.dart';
+import 'package:stock_kiosk_app/widgets/coin_values.dart';
 import 'package:stock_kiosk_app/widgets/profile_picture_widget.dart';
 
 class UserAccountPage extends StatefulWidget {
@@ -173,6 +174,29 @@ class _UserAccountPageState extends State<UserAccountPage> {
                 }
               },
             ),
+
+            SizedBox(height: 64),
+
+            CoinValues(
+              coinType: 'drink',
+            ), //custom widget to display coin values (image and text based on coin type)
+
+            SizedBox(height: 24),
+            CoinValues(
+              coinType: 'food',
+            ), //custom widget to display coin values (image and text based on coin type)
+
+            SizedBox(height: 24),
+
+            CoinValues(
+              coinType: 'library',
+            ), //custom widget to display coin values (image and text based on coin type)
+
+            SizedBox(height: 24),
+
+            CoinValues(
+              coinType: 'stationery',
+            ), //custom widget to display coin values (image and text based on coin type)
           ],
         ),
       ),
