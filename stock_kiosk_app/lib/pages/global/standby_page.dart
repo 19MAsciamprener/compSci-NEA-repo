@@ -131,7 +131,7 @@ class _StandbyPageState extends State<StandbyPage> {
                               .inAppWebView, //opens help page in in-app webview (prevents user from leaving app)
                         );
                       },
-                    ), //TODO: MAKE THIS AN IN-APP WEBVIEW
+                    ),
 
                     MainIconButton(
                       //language selection button

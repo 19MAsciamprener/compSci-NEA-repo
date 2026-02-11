@@ -1,12 +1,10 @@
 //material import
 import 'package:flutter/material.dart';
-//firebase imports
-import 'package:firebase_auth/firebase_auth.dart';
+//logic imports
 import 'package:stock_kiosk_app/logic/auth/sign_in_logic.dart';
 //internal page imports
 import 'package:stock_kiosk_app/pages/global/password_reset_page.dart';
 import 'package:stock_kiosk_app/pages/global/qr_login_page.dart';
-import 'package:stock_kiosk_app/pages/user/user_home_page.dart';
 
 class PasswordLoginPage extends StatefulWidget {
   //stateful page for user login with email and password (so that we can manage the input fields)
@@ -108,17 +106,6 @@ class _PasswordLoginPageState extends State<PasswordLoginPage> {
                     emailController,
                     passwordController,
                     context,
-                  );
-                  if (!context.mounted ||
-                      FirebaseAuth.instance.currentUser == null) {
-                    return; // Login failed or context is not mounted
-                  }
-
-                  Navigator.pushAndRemoveUntil(
-                    //navigate to user home page on successful login (removing all previous pages so user can't go back to login)
-                    context,
-                    MaterialPageRoute(builder: (context) => UserHomePage()),
-                    (route) => false,
                   );
                 },
                 style: Theme.of(context).elevatedButtonTheme.style?.copyWith(

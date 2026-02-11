@@ -184,6 +184,18 @@ Future<void> loginUserWithEmailAndPassword(
       email: emailController.text.trim(),
       password: passwordController.text.trim(),
     ); //trim() to remove any leading/trailing whitespace
+
+    if (!context.mounted || FirebaseAuth.instance.currentUser == null) {
+      return; // Login failed or context is not mounted
+    }
+
+    Navigator.pushAndRemoveUntil(
+      //navigate to user home page on successful login (removing all previous pages so user can't go back to login)
+      context,
+      MaterialPageRoute(builder: (context) => UserHomePage()),
+      (route) => false,
+    );
+
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Login successful!')),
