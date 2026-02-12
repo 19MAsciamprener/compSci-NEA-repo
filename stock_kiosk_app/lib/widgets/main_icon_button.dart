@@ -1,6 +1,5 @@
 // material imports
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class MainIconButton extends StatelessWidget {
   //stateful widget to create a reusable main icon button (gray circular button with an icon in the center)
