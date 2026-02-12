@@ -1,6 +1,10 @@
 // TO BE IMPLEMENTED
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:stock_kiosk_app/logic/account_transaction_logic.dart';
 
 class UserPurchasePage extends StatelessWidget {
   const UserPurchasePage({super.key});
@@ -20,10 +24,30 @@ class UserPurchasePage extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: const Center(
-        child: Text(
-          'Purchase Page will be implemented here.',
-          style: TextStyle(fontSize: 24, color: Colors.white),
+      body: Center(
+        child: Column(
+          children: [
+            Text(
+              'Purchase Page will be implemented here.',
+              style: TextStyle(fontSize: 24, color: Colors.white),
+            ),
+
+            ElevatedButton(
+              onPressed: () async {
+                try {
+                  await purchaseItem(
+                    uid: FirebaseAuth.instance.currentUser!.uid,
+                    cost: 10,
+                    category: 'drink',
+                  );
+                  print('Purchase successful');
+                } catch (e) {
+                  print('Purchase failed: $e');
+                }
+              },
+              child: Text('Test Purchase'),
+            ),
+          ],
         ),
       ),
     );
