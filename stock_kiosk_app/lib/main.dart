@@ -23,6 +23,9 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  static const String kioskLocation = 'CS classroom 1';
+  //location of kiosk, used for database reference. Change this to match the location of the kiosk (ex: 'CS classroom 1', 'CS classroom 2', 'CS lobby', etc.)
+
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
