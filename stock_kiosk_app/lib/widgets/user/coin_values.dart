@@ -1,11 +1,44 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class CoinValues extends StatelessWidget {
-  const CoinValues({super.key, required this.coinType});
-  final String coinType;
+class CoinList extends StatelessWidget {
+  const CoinList({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final uid = FirebaseAuth.instance.currentUser!.uid;
+
+    return StreamBuilder<DocumentSnapshot>(
+      stream: FirebaseFirestore.instance
+          .collection('wallets')
+          .doc(uid)
+          .snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const CircularProgressIndicator();
+        }
+
+        final data = snapshot.data!.data() as Map<String, dynamic>? ?? {};
+
+        return Column(
+          children: [
+            coinRow('drink', data),
+            const SizedBox(height: 24),
+            coinRow('food', data),
+            const SizedBox(height: 24),
+            coinRow('library', data),
+            const SizedBox(height: 24),
+            coinRow('stationery', data),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget coinRow(String coinType, Map<String, dynamic> data) {
+    final value = data['${coinType}_coin'] ?? 0;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -14,48 +47,15 @@ class CoinValues extends StatelessWidget {
           width: 128,
           height: 128,
         ),
-        SizedBox(width: 48),
+        const SizedBox(width: 48),
         Text(
-          //display coin value based on coin type (1 for drink, 2 for food)
-          coinType == 'drink' ? '1 Token' : '2 Tokens',
-          style: TextStyle(
+          '$value Tokens',
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 32,
             fontWeight: FontWeight.bold,
           ),
         ),
-      ],
-    );
-  }
-}
-
-class CoinList extends StatelessWidget {
-  const CoinList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CoinValues(
-          coinType: 'drink',
-        ), //custom widget to display coin values (image and text based on coin type)
-
-        SizedBox(height: 24),
-        CoinValues(
-          coinType: 'food',
-        ), //custom widget to display coin values (image and text based on coin type)
-
-        SizedBox(height: 24),
-
-        CoinValues(
-          coinType: 'library',
-        ), //custom widget to display coin values (image and text based on coin type)
-
-        SizedBox(height: 24),
-
-        CoinValues(
-          coinType: 'stationery',
-        ), //custom widget to display coin values (image and text based on coin type)
       ],
     );
   }
