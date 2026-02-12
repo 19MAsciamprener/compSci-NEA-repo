@@ -41,14 +41,38 @@ class _SignupPageState extends State<SignupPage> {
             'is_admin': false,
           });
 
+      FirebaseFirestore.instance
+          .collection('wallets')
+          .doc(FirebaseAuth.instance.currentUser?.uid)
+          .set({
+            'drink_coin': 0.0,
+            'food_coin': 0.0,
+            'library_coin': 0.0,
+            'stationery_coin': 0.0,
+            'updatedAt': Timestamp.now(),
+          });
+
+      FirebaseFirestore.instance
+          .collection('wallets')
+          .doc(FirebaseAuth.instance.currentUser?.uid)
+          .collection('transactions')
+          .doc('0')
+          .set({
+            'type': 'initial',
+            'amount': 0.0,
+            'coin_type': 'initial',
+            'timestamp': Timestamp.now(),
+            'performed_by': 'system',
+          });
+
       if (!mounted) return;
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text('Login successful!')));
+      ).showSnackBar(const SnackBar(content: Text('Signup successful!')));
     } on FirebaseAuthException catch (e) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(SnackBar(content: Text('Login failed: ${e.message}')));
+      ).showSnackBar(SnackBar(content: Text('Signup failed: ${e.message}')));
     }
   }
 

@@ -28,3 +28,35 @@ class CoinValues extends StatelessWidget {
     );
   }
 }
+
+class CoinList extends StatelessWidget {
+  const CoinList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CoinValues(
+          coinType: 'drink',
+        ), //custom widget to display coin values (image and text based on coin type)
+
+        SizedBox(height: 24),
+        CoinValues(
+          coinType: 'food',
+        ), //custom widget to display coin values (image and text based on coin type)
+
+        SizedBox(height: 24),
+
+        CoinValues(
+          coinType: 'library',
+        ), //custom widget to display coin values (image and text based on coin type)
+
+        SizedBox(height: 24),
+
+        CoinValues(
+          coinType: 'stationery',
+        ), //custom widget to display coin values (image and text based on coin type)
+      ],
+    );
+  }
+}

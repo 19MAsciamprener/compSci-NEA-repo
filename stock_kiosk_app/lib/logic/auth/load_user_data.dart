@@ -4,6 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+Future<DocumentSnapshot<Map<String, dynamic>>> getUserDoc() async {
+  // function to get user document from firestore (used in multiple places for up to date user data) String uid = FirebaseAuth.instance.currentUser!.uid; // get current user uid DocumentSnapshot userDoc = await FirebaseFirestore.instance.collection('users').doc(uid).get(); return userDoc; }
+
+  String uid = FirebaseAuth.instance.currentUser!.uid;
+  final userDoc = await FirebaseFirestore.instance
+      .collection('users')
+      .doc(uid)
+      .get();
+
+  return userDoc;
+}
+
 Future<String?> showPasswordPrompt(BuildContext context) async {
   //function to return password entered by user in dialog (for reauthentication before email change)
   final controller = TextEditingController();

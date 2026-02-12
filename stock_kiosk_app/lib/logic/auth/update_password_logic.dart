@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 // firebase imports
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:stock_kiosk_app/logic/auth/logout_logic.dart';
 // page imports
 import 'package:stock_kiosk_app/pages/global/standby_page.dart';
 
@@ -99,14 +100,9 @@ Future<void> updatePassword(
     ScaffoldMessenger.of(
       context,
     ).showSnackBar(SnackBar(content: Text('Password updated successfully')));
-    FirebaseAuth.instance
-        .signOut(); //sign out user after password change for security
-    Navigator.pushAndRemoveUntil(
-      //navigate to standby page and remove all previous routes
+    logout(
       context,
-      MaterialPageRoute(builder: (context) => StandbyPage()),
-      (route) => false,
-    );
+    ); // log out user after password change to ensure they reauthenticate with new password (for security)
   } on FirebaseAuthException catch (e) {
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(

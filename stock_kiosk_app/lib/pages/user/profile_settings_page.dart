@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 // firebase imports
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 //internal logic and widget imports
 import 'package:stock_kiosk_app/logic/auth/load_user_data.dart';
 import 'package:stock_kiosk_app/logic/upload/pfp_upload.dart';
@@ -46,11 +45,8 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
 
   Future<void> loadUserData() async {
     //function to load user data from firestore and populate text fields
-    String uid = FirebaseAuth.instance.currentUser!.uid;
-    final userDoc = await FirebaseFirestore.instance
-        .collection('users')
-        .doc(uid)
-        .get();
+    final userDoc =
+        await getUserDoc(); //get user document reference (comes from load_user_data.dart)
 
     if (userDoc.exists) {
       //populate text fields with user data
