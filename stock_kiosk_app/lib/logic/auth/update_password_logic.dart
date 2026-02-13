@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:stock_kiosk_app/logic/auth/logout_logic.dart';
 // page imports
-import 'package:stock_kiosk_app/pages/global/standby_page.dart';
 
 Future<void> updatePassword(
   //function to update user password with reauthentication and validation

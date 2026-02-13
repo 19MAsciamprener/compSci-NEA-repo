@@ -66,7 +66,7 @@ class CartPaneWidget extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Text('Purchase'), // TODO: MAKE DYNAMIC
+                  child: Text('Purchase'),
                 ),
               ],
             ),

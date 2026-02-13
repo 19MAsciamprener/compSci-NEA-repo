@@ -1,8 +1,6 @@
 // TO BE IMPLEMENTED
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:stock_kiosk_app/logic/account_transaction_logic.dart';
 
@@ -40,9 +38,15 @@ class UserPurchasePage extends StatelessWidget {
                     cost: 10,
                     category: 'drink',
                   );
-                  print('Purchase successful');
+                  if (!context.mounted) return;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Purchase successful')),
+                  );
                 } catch (e) {
-                  print('Purchase failed: $e');
+                  if (!context.mounted) return;
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('Purchase failed: $e')),
+                  );
                 }
               },
               child: Text('Test Purchase'),

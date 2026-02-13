@@ -38,4 +38,6 @@ TO-DO:
 
 \[] add a firestore doc that contains categories. category cards will pull from here, and admins will be able to edit this doc, when editing items, list of cateogry choices will pull from this doc
 
-\[] finish to abstract reusable or 'dangerous' code snippets to their own files/folders
+\[x] finish to abstract reusable or 'dangerous' code snippets to their own files/folders
+
+\[] remove uid from purchase page, have the function get uid from firebase.auth
