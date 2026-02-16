@@ -31,6 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
   
+  provider: ^6.0.5
+  
   mobile_scanner: ^7.1.4
 
   url_launcher: ^6.3.2

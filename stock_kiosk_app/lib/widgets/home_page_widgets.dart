@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:stock_kiosk_app/logic/provider/cart_provider.dart';
 import 'package:stock_kiosk_app/pages/user/user_category_subpage.dart';
 
 class CategoryCards extends StatelessWidget {
@@ -52,39 +54,32 @@ class CategoryCards extends StatelessWidget {
 
 class CartItemList extends StatelessWidget {
   const CartItemList({super.key});
-  static final List<String> cartItems = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-    'Item 6',
-    'Item 7',
-    'Item 8',
-    'Item 9',
-    'Item 10',
-  ];
 
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<CartProvider>(context).cart;
     return ListView.builder(
-      itemCount: cartItems.length, // TODO: MAKE DYNAMIC
+      itemCount: cart.length,
       itemBuilder: (context, index) {
+        final cartItem = cart[index];
         return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 6.0),
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Column(
             children: [
               Text(
-                cartItems[index].toString(), // TODO: MAKE DYNAMIC
-                style: Theme.of(
-                  context,
-                ).textTheme.bodyMedium?.copyWith(color: Colors.white70),
+                cartItem['title'] ?? 'Unknown Item',
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: Colors.white70,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
               ),
               Text(
-                'Quantity: 1', // TODO: MAKE DYNAMIC
-                style: Theme.of(
-                  context,
-                ).textTheme.bodySmall?.copyWith(color: Colors.white70),
+                'Cost: ${cartItem['price']}',
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  color: Colors.white70,
+                  fontSize: 12,
+                ),
               ),
             ],
           ),
@@ -133,7 +128,11 @@ class ItemCards extends StatelessWidget {
             final doc = docs[index];
             return GestureDetector(
               onTap: () {
-                //TODO: ADD TO CART FUNCTIONALITY
+                Provider.of<CartProvider>(context, listen: false).addToCart({
+                  'id': doc.id,
+                  'title': doc['name'],
+                  'price': doc['price'],
+                });
               },
               child: Card(
                 color: Colors.grey,

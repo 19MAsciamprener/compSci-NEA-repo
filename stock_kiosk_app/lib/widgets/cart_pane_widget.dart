@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:stock_kiosk_app/logic/provider/cart_provider.dart';
 import 'package:stock_kiosk_app/main.dart';
 import 'package:stock_kiosk_app/pages/user/user_purchase_page.dart';
 import 'package:stock_kiosk_app/widgets/home_page_widgets.dart';
@@ -42,14 +44,15 @@ class CartPaneWidget extends StatelessWidget {
                 Expanded(child: CartItemList()),
                 Divider(),
 
-                Text(
-                  'Total:', // TODO: MAKE DYNAMIC
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
+                Text('Total:', style: Theme.of(context).textTheme.titleMedium),
 
-                Text(
-                  '\$123.45', // TODO: MAKE DYNAMIC
-                  style: Theme.of(context).textTheme.titleMedium,
+                Consumer<CartProvider>(
+                  builder: (context, cartProvider, child) {
+                    return Text(
+                      '\$ ${cartProvider.totalPrice.toStringAsFixed(2)}',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    );
+                  },
                 ),
 
                 SizedBox(height: 18),
