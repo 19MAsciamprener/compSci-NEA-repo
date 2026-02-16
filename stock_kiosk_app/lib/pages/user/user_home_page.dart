@@ -2,6 +2,9 @@
 
 // material imports
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:stock_kiosk_app/logic/auth/open_admin_page.dart';
+import 'package:stock_kiosk_app/logic/provider/admin_provider.dart';
 //page imports
 import 'package:stock_kiosk_app/pages/user/user_account_page.dart';
 import 'package:stock_kiosk_app/pages/global/stock_price_page.dart';
@@ -20,6 +23,18 @@ class UserHomePage extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 96,
         title: const Text(''),
+        leading: Consumer<AdminProvider>(
+          builder: (context, admin, _) {
+            print('Admin status: ${admin.isAdmin}'); // Debug print statement
+            if (!admin.isAdmin) return const SizedBox();
+
+            return IconButton(
+              icon: const Icon(Icons.admin_panel_settings, size: 48),
+              onPressed: () => openAdminPage(context),
+            );
+          },
+        ),
+
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),

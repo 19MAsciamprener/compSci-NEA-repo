@@ -9,6 +9,8 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 // firebase imports
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:provider/provider.dart';
+import 'package:stock_kiosk_app/logic/provider/admin_provider.dart';
 // internal page imports
 import 'package:stock_kiosk_app/pages/user/user_home_page.dart';
 
@@ -120,6 +122,11 @@ Future<void> kioskSignInWithUid(String idToken, BuildContext context) async {
     ); // sign in user with Firebase custom token
 
     if (!context.mounted) return;
+    await loginHandler(
+      context,
+      FirebaseAuth.instance.currentUser!.uid,
+    ); // handle post-login logic (fetch user data, set admin status, etc.)
+    if (!context.mounted) return;
     Navigator.pushAndRemoveUntil(
       //if successful, navigate to user home page and remove all previous routes (to prevent back navigation)
       context,
@@ -191,7 +198,11 @@ Future<void> loginUserWithEmailAndPassword(
     if (!context.mounted || FirebaseAuth.instance.currentUser == null) {
       return; // Login failed or context is not mounted
     }
-
+    await loginHandler(
+      context,
+      FirebaseAuth.instance.currentUser!.uid,
+    ); // handle post-login logic (fetch user data, set admin status, etc.)
+    if (!context.mounted) return;
     Navigator.pushAndRemoveUntil(
       //navigate to user home page on successful login (removing all previous pages so user can't go back to login)
       context,
@@ -208,4 +219,19 @@ Future<void> loginUserWithEmailAndPassword(
       SnackBar(content: Text('Login failed: ${e.message}')),
     ); // show error message if login fails
   }
+}
+
+Future<void> loginHandler(BuildContext context, String uid) async {
+  final userData = await FirebaseFirestore.instance
+      .collection('users')
+      .doc(uid)
+      .get(); //fetch user data from Firestore using UID
+  print('${userData.data()}'); // Debug print statement
+  if (!context.mounted) return;
+  print('provider start');
+  Provider.of<AdminProvider>(
+    context,
+    listen: false,
+  ).setUser(userId: uid, isAdmin: userData.data()?['is_admin'] ?? false);
+  print(userData.data()?['is_admin']); // Debug print
 }

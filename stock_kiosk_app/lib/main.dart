@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 //firebase imports
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:stock_kiosk_app/logic/provider/admin_provider.dart';
 import 'package:stock_kiosk_app/logic/provider/cart_provider.dart';
 import 'firebase_options.dart';
 import 'package:provider/provider.dart';
@@ -32,8 +33,11 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => CartProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CartProvider()),
+        ChangeNotifierProvider(create: (_) => AdminProvider()),
+      ],
       child: MaterialApp(
         title: 'Stock Kiosk',
         theme: ThemeData(
