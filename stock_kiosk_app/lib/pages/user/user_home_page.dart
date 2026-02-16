@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 //page imports
 import 'package:stock_kiosk_app/pages/user/user_account_page.dart';
 import 'package:stock_kiosk_app/pages/global/stock_price_page.dart';
-import 'package:stock_kiosk_app/widgets/cart_pane_widget.dart';
+import 'package:stock_kiosk_app/widgets/user/cart_pane_widget.dart';
 //widget imports
 import 'package:stock_kiosk_app/widgets/user/profile_picture_widget.dart';
-import 'package:stock_kiosk_app/widgets/home_page_widgets.dart';
+import 'package:stock_kiosk_app/widgets/user/home_page_widgets.dart';
 import 'package:stock_kiosk_app/widgets/stock/stock_list_widgets.dart';
 
 class UserHomePage extends StatelessWidget {

@@ -52,43 +52,6 @@ class CategoryCards extends StatelessWidget {
   }
 }
 
-class CartItemList extends StatelessWidget {
-  const CartItemList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final cart = Provider.of<CartProvider>(context).cart;
-    return ListView.builder(
-      itemCount: cart.length,
-      itemBuilder: (context, index) {
-        final cartItem = cart[index];
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
-          child: Column(
-            children: [
-              Text(
-                cartItem['title'] ?? 'Unknown Item',
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Colors.white70,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-              ),
-              Text(
-                'Cost: ${cartItem['price']}',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Colors.white70,
-                  fontSize: 12,
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-}
-
 class ItemCards extends StatelessWidget {
   const ItemCards({super.key, required this.category});
   final String category;

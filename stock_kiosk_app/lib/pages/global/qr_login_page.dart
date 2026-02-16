@@ -16,11 +16,6 @@ class QrLoginPage extends StatefulWidget {
 }
 
 class _QrLoginPageState extends State<QrLoginPage> {
-  final MobileScannerController controller = MobileScannerController(
-    //controller settings for the scanner
-    detectionSpeed: DetectionSpeed.noDuplicates,
-  );
-
   bool scanned =
       false; //to prevent multiple scans, the page is initialised as not scanned (will change when a code is scanned)
   String? idToken; //variable to hold the scanned token
@@ -50,7 +45,6 @@ class _QrLoginPageState extends State<QrLoginPage> {
         children: [
           MobileScanner(
             //scanner widget
-            controller: controller,
             onDetect: (capture) => onQrScanned(
               context,
               capture,
@@ -73,7 +67,12 @@ class _QrLoginPageState extends State<QrLoginPage> {
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.white, width: 3),
                   ),
-                  child: MobileScanner(controller: controller),
+                  child: MobileScanner(
+                    controller: MobileScannerController(
+                      detectionSpeed: DetectionSpeed.normal,
+                      detectionTimeoutMs: 1250,
+                    ),
+                  ),
                 ),
               ),
             ),

@@ -32,6 +32,7 @@ Future<void> onQrScanned(
     }
   }
   if (idToken == null) {
+    scanned = false;
     //if no token was scanned, show error
     if (!context.mounted) return;
     ScaffoldMessenger.of(
@@ -47,6 +48,7 @@ Future<void> onQrScanned(
         .get();
 
     if (!backendTokenDoc.exists) {
+      scanned = false;
       //if the token does not exist in the database, show error
       if (!context.mounted) return;
       ScaffoldMessenger.of(
@@ -61,6 +63,7 @@ Future<void> onQrScanned(
     );
 
     if (DateTime.now().isAfter(expiresAt)) {
+      scanned = false;
       //compare current time to expiry time, show error if expired
       if (!context.mounted) return;
       ScaffoldMessenger.of(

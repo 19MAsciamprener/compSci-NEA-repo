@@ -2,7 +2,7 @@ TO-DO:
 
 
 
-\[] opon QR scan fail, retry (currently having to go back and back onto login page)
+\[x] opon QR scan fail, retry (currently having to go back and back onto login page)
 
 \[x] obscure passwords on password change page
 
