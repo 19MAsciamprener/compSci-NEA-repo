@@ -25,11 +25,14 @@ class UserHomePage extends StatelessWidget {
         title: const Text(''),
         leading: Consumer<AdminProvider>(
           builder: (context, admin, _) {
-            print('Admin status: ${admin.isAdmin}'); // Debug print statement
             if (!admin.isAdmin) return const SizedBox();
 
             return IconButton(
-              icon: const Icon(Icons.admin_panel_settings, size: 48),
+              icon: const Icon(
+                Icons.admin_panel_settings,
+                size: 48,
+                color: Colors.white,
+              ),
               onPressed: () => openAdminPage(context),
             );
           },
@@ -68,7 +71,8 @@ class UserHomePage extends StatelessWidget {
                     ), // TODO: MAKE STOCK PRICE PAGE
                   );
                 },
-                child: MiniStockListBox(),
+                child:
+                    MiniStockListBox(), //calls mini stock list box widget, which shows the current stock prices of a few items for sale (eg: drink, snack, etc.)
               ),
               const SizedBox(height: 16.0),
 
@@ -76,11 +80,13 @@ class UserHomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Expanded(child: CategoryCards()),
+                    Expanded(
+                      child: CategoryCards(),
+                    ), //calls category cards widget, which shows the different categories of items for sale (eg: drinks, snacks, etc.) and allows the user to add items to their cart
 
                     SizedBox(width: 16.0),
 
-                    CartPaneWidget(),
+                    CartPaneWidget(), //calls cart pane widget, which shows the user's current cart and allows them to checkout or clear their cart
                   ],
                 ),
               ),

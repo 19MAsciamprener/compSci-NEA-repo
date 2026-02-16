@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 //firebase imports
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+//provider imports
+import 'package:provider/provider.dart';
 import 'package:stock_kiosk_app/logic/provider/admin_provider.dart';
 import 'package:stock_kiosk_app/logic/provider/cart_provider.dart';
-import 'firebase_options.dart';
-import 'package:provider/provider.dart';
 //internal page imports
-// import 'package:stock_kiosk_app/pages/admin/add_item_page.dart'; //for testing
 import 'pages/global/standby_page.dart';
 
 void main() async {
@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
+      //provider setup, allows for state management across the app
       providers: [
         ChangeNotifierProvider(create: (_) => CartProvider()),
         ChangeNotifierProvider(create: (_) => AdminProvider()),
@@ -47,7 +48,9 @@ class MyApp extends StatelessWidget {
             primary: Color.fromRGBO(110, 5, 6, 1),
             surface: Color.fromRGBO(29, 27, 32, 1),
           ), //who picked this dumbass color scheme?
+          //oh right... I did
 
+          //theme data for generic inapp elevated button
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
               backgroundColor: Color.fromRGBO(110, 5, 6, 1),

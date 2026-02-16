@@ -48,7 +48,7 @@ class CartPaneWidget extends StatelessWidget {
                 Consumer<CartProvider>(
                   builder: (context, cartProvider, child) {
                     return Text(
-                      '\$ ${cartProvider.totalPrice.toStringAsFixed(2)}',
+                      '\$ ${cartProvider.totalPrice?.toStringAsFixed(2)}',
                       style: Theme.of(context).textTheme.titleMedium,
                     );
                   },

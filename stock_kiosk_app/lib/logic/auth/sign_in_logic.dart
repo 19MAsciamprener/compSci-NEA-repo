@@ -125,7 +125,7 @@ Future<void> kioskSignInWithUid(String idToken, BuildContext context) async {
     await loginHandler(
       context,
       FirebaseAuth.instance.currentUser!.uid,
-    ); // handle post-login logic (fetch user data, set admin status, etc.)
+    ); //set admin privileges based on Firestore data for the user
     if (!context.mounted) return;
     Navigator.pushAndRemoveUntil(
       //if successful, navigate to user home page and remove all previous routes (to prevent back navigation)
@@ -201,7 +201,7 @@ Future<void> loginUserWithEmailAndPassword(
     await loginHandler(
       context,
       FirebaseAuth.instance.currentUser!.uid,
-    ); // handle post-login logic (fetch user data, set admin status, etc.)
+    ); //set admin privileges based on Firestore data for the user
     if (!context.mounted) return;
     Navigator.pushAndRemoveUntil(
       //navigate to user home page on successful login (removing all previous pages so user can't go back to login)
@@ -226,12 +226,10 @@ Future<void> loginHandler(BuildContext context, String uid) async {
       .collection('users')
       .doc(uid)
       .get(); //fetch user data from Firestore using UID
-  print('${userData.data()}'); // Debug print statement
   if (!context.mounted) return;
-  print('provider start');
   Provider.of<AdminProvider>(
+    //set admin status in provider based on Firestore data for the user (using false as default if 'is_admin' field is not found)
     context,
     listen: false,
   ).setUser(userId: uid, isAdmin: userData.data()?['is_admin'] ?? false);
-  print(userData.data()?['is_admin']); // Debug print
 }

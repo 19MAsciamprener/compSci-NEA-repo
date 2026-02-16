@@ -1,3 +1,4 @@
+//material imports
 import 'package:flutter/material.dart';
 
 class AdminProvider extends ChangeNotifier {
@@ -10,16 +11,14 @@ class AdminProvider extends ChangeNotifier {
 
   void setUser({required String userId, required bool isAdmin}) {
     uid = userId;
-    _isAdmin = isAdmin;
+    _isAdmin = isAdmin; //sets admin privileges app-wide
     notifyListeners();
   }
 
   void logout() {
+    //removes admin priveleges on logout
     uid = null;
     _isAdmin = false;
     notifyListeners();
   }
-
-  // Optional helper: check access and return bool
-  bool canAccessAdmin() => _isAdmin;
 }

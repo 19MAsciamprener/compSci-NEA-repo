@@ -1,5 +1,6 @@
 // material imports
 import 'package:flutter/material.dart';
+import 'package:stock_kiosk_app/logic/auth/open_admin_page.dart';
 // internal logic and widget imports
 import 'package:stock_kiosk_app/widgets/user/new_item_fields.dart';
 import 'package:stock_kiosk_app/logic/upload/upload_item.dart';
@@ -33,6 +34,30 @@ class _NewItemPageState extends State<NewItemPage> {
     lowController.dispose();
     mvController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    // initialize all controllers with empty text (ensures fields are empty on page load)
+    super.initState();
+    if (!checkAdmin(context)) {
+      // if user is not admin, pop page and show error message (security measure to prevent unauthorized access to page)
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('Admin access required')));
+        Navigator.pop(context);
+      });
+    } else {
+      // if user is admin, initialize all fields with empty text
+      barcodeController.text = '';
+      nameController.text = '';
+      priceController.text = '';
+      changeController.text = '';
+      highController.text = '';
+      lowController.text = '';
+      mvController.text = '';
+    }
   }
 
   void clearAllFields() {
