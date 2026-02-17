@@ -2,17 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_kiosk_app/logic/provider/cart_provider.dart';
+import 'package:stock_kiosk_app/main.dart';
 import 'package:stock_kiosk_app/pages/user/user_category_subpage.dart';
 
 class CategoryCards extends StatelessWidget {
   const CategoryCards({super.key});
-  static final List<String> categories = [
-    'Drinks',
-    'Snacks',
-    'Books',
-    'Stationery',
-    'Electronics',
-  ];
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -22,9 +17,9 @@ class CategoryCards extends StatelessWidget {
         mainAxisSpacing: 16,
         childAspectRatio: 1,
       ),
-      itemCount: categories.length,
+      itemCount: MyApp.categories.length,
       itemBuilder: (context, index) {
-        final category = categories[index];
+        final category = MyApp.categories[index];
         return GestureDetector(
           onTap: () {
             Navigator.push(
@@ -95,6 +90,7 @@ class ItemCards extends StatelessWidget {
                   'id': doc.id,
                   'title': doc['name'],
                   'price': doc['price'],
+                  'category': doc['category'],
                 });
               },
               child: Card(

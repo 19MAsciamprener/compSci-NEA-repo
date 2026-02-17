@@ -43,4 +43,37 @@ class CartProvider extends ChangeNotifier {
     cart.clear();
     notifyListeners();
   }
+
+  //TESTING FOR NOW
+  Map<String, List<Map<String, dynamic>>> get itemsByCategory {
+    final Map<String, List<Map<String, dynamic>>> grouped = {};
+
+    for (var item in cart) {
+      final String category = item['category'] ?? 'Other';
+
+      if (!grouped.containsKey(category)) {
+        grouped[category] = [];
+      }
+
+      grouped[category]!.add(item);
+    }
+
+    return grouped;
+  }
+
+  // Optional: total price per category
+  double totalForCategory(String category) {
+    final items = cart.where((item) => item['category'] == category);
+
+    return items.fold(0.0, (total, item) {
+      final rawPrice = item['price'];
+
+      if (rawPrice is num) {
+        return total + rawPrice.toDouble();
+      } else if (rawPrice is String) {
+        return total + (double.tryParse(rawPrice) ?? 0.0);
+      }
+      return total;
+    });
+  }
 }

@@ -27,6 +27,15 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   static const String kioskLocation = 'CS classroom 1';
+
+  static const List<String> categories = [
+    'Drinks',
+    'Snacks',
+    'Books',
+    'Stationery',
+    'Electronics',
+  ];
+
   //location of kiosk, used for database reference. Change this to match the location of the kiosk (ex: 'CS classroom 1', 'CS classroom 2', 'CS lobby', etc.)
   //TODO: eventually, this should be set in a settings page in the app, but for now, it's just a constant in the code that needs to be changed before compiling and running the app.
 
