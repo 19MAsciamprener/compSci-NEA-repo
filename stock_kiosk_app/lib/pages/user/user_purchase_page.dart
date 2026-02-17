@@ -1,6 +1,5 @@
 // TODO: NEEDS TO BE COMMENTED
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stock_kiosk_app/logic/account_transaction_logic.dart';
 

@@ -29,7 +29,7 @@ TO-DO:
 
 \[] Invent and value currency (different currency for different item types: e.g. drinkCoin, snackCoin, libraryCoin, stationaryCoin, etc...)
 
-\[] Add user/admin logic
+\[x] Add user/admin logic
 
 \[] admin-only stock modificaiton page
 
