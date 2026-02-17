@@ -33,11 +33,7 @@ class UserPurchasePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () async {
                 try {
-                  await purchaseItem(
-                    uid: FirebaseAuth.instance.currentUser!.uid,
-                    cost: 10,
-                    category: 'drink',
-                  );
+                  await purchaseItem(cost: 10, category: 'drink');
                   if (!context.mounted) return;
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('Purchase successful')),

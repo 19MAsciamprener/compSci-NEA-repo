@@ -1,12 +1,17 @@
 //firebase imports
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 Future<void> purchaseItem({
   //function to handle purchasing an item, deducting coins from user's wallet and recording the transaction in Firestore
-  required String uid,
   required int cost,
   required String category,
 }) async {
+  final String uid = FirebaseAuth
+      .instance
+      .currentUser!
+      .uid; //get the current user's UID from Firebase Authentication
+
   final walletRef = FirebaseFirestore.instance.collection('wallets').doc(uid);
   final txRef = walletRef.collection('transactions').doc();
 
