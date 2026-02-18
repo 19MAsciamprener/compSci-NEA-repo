@@ -78,61 +78,28 @@ class _AccountPageState extends State<AccountPage> {
           ),
         ],
       ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 48),
-            SizedBox(
-              width: 128,
-              height: 128,
-              child: ProfilePictureWidget(context, size: 96),
-            ),
-            SizedBox(height: 24),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 48),
+              SizedBox(
+                width: 128,
+                height: 128,
+                child: ProfilePictureWidget(context, size: 96),
+              ),
+              SizedBox(height: 24),
 
-            DisplayDetailsStream(), //custom widget to display user details (name, email, date of birth) with real-time updates from Firestore
+              DisplayDetailsStream(), //custom widget to display user details (name, email, date of birth) with real-time updates from Firestore
 
-            SizedBox(height: 48),
+              SizedBox(height: 48),
 
-            CoinList(), //custom widget to display coin values (image and text based on coin type)
-          ],
+              CoinList(), //custom widget to display coin values (image and text based on coin type)
+            ],
+          ),
         ),
       ),
-    );
-  }
-}
-
-class CoinList extends StatelessWidget {
-  const CoinList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final uid = FirebaseAuth.instance.currentUser!.uid;
-
-    return StreamBuilder<DocumentSnapshot>(
-      stream: FirebaseFirestore.instance
-          .collection('wallets')
-          .doc(uid)
-          .snapshots(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return const CircularProgressIndicator();
-        }
-
-        final data = snapshot.data!.data() as Map<String, dynamic>? ?? {};
-
-        return Column(
-          children: [
-            coinRow('drink', data),
-            const SizedBox(height: 24),
-            coinRow('food', data),
-            const SizedBox(height: 24),
-            coinRow('library', data),
-            const SizedBox(height: 24),
-            coinRow('stationery', data),
-          ],
-        );
-      },
     );
   }
 }

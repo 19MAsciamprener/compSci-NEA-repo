@@ -2,6 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+class CoinList extends StatelessWidget {
+  const CoinList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final uid = FirebaseAuth.instance.currentUser!.uid;
+
+    return StreamBuilder<DocumentSnapshot>(
+      stream: FirebaseFirestore.instance
+          .collection('wallets')
+          .doc(uid)
+          .snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const CircularProgressIndicator();
+        }
+
+        final data = snapshot.data!.data() as Map<String, dynamic>? ?? {};
+
+        return Column(
+          children: [
+            coinRow('drink', data),
+            const SizedBox(height: 24),
+            coinRow('food', data),
+            const SizedBox(height: 24),
+            coinRow('library', data),
+            const SizedBox(height: 24),
+            coinRow('stationery', data),
+          ],
+        );
+      },
+    );
+  }
+}
+
 Widget coinRow(String coinType, Map<String, dynamic> data) {
   final value = data['${coinType}_coin'] ?? 0;
 
