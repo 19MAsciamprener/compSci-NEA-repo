@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 Future<void> purchaseItem({
   //function to handle purchasing an item, deducting coins from user's wallet and recording the transaction in Firestore
-  required int cost,
+  required double cost,
   required String category,
 }) async {
   final String uid = FirebaseAuth

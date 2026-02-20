@@ -15,7 +15,26 @@ class UserPurchasePage extends StatelessWidget {
     final grouped = cartProvider.itemsByCategory;
 
     if (grouped.isEmpty) {
-      return const Center(child: Text("Cart is empty"));
+      return Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          title: const Text(
+            'Purchase Page',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        body: Center(
+          child: Text(
+            "Cart is empty",
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+        ),
+      );
     }
 
     return Scaffold(
@@ -31,78 +50,93 @@ class UserPurchasePage extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: grouped.entries.map((entry) {
-          final category = entry.key;
-          final items = entry.value;
-          final total = cartProvider.totalForCategory(category);
+      body: Column(
+        children: [
+          SizedBox(
+            height: 750,
+            child: ListView(
+              padding: const EdgeInsets.all(16),
+              children: grouped.entries.map((entry) {
+                final category = entry.key;
+                final items = entry.value;
+                final total = cartProvider.totalForCategory(category);
 
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              /// Category Title
-              Text(
-                "$category Coins",
-                style: Theme.of(
-                  context,
-                ).textTheme.titleLarge?.copyWith(color: Colors.white),
-              ),
-              const SizedBox(height: 8),
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    /// Category Title
+                    Text(
+                      "$category Coins",
+                      style: Theme.of(
+                        context,
+                      ).textTheme.titleLarge?.copyWith(color: Colors.white),
+                    ),
+                    const SizedBox(height: 8),
 
-              /// Items in this category
-              ...items.map(
-                (item) => ListTile(
-                  title: Text(
-                    item['title'],
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                  trailing: Text(
-                    "\$${item['price']}",
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
+                    /// Items in this category
+                    ...items.map(
+                      (item) => ListTile(
+                        title: Text(
+                          item['title'],
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                        trailing: Text(
+                          "\$${item['price']}",
+                          style: const TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
 
-              /// Category total
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "Total: \$${total.toStringAsFixed(2)}",
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+                    /// Category total
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        "Total: \$${total.toStringAsFixed(2)}",
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
 
-              const Divider(thickness: 2),
-              const SizedBox(height: 16),
-            ],
-          );
-        }).toList(),
+                    const Divider(thickness: 2),
+                    const SizedBox(height: 16),
+                  ],
+                );
+              }).toList(),
+            ),
+          ),
+          SizedBox(height: 24),
+          Center(
+            child: ElevatedButton(
+              onPressed: () async {
+                for (var entry in grouped.entries) {
+                  final category = entry.key;
+                  final total = cartProvider.totalForCategory(category);
+                  try {
+                    await purchaseItem(cost: total, category: category);
+                    if (!context.mounted) return;
+                    Provider.of<CartProvider>(
+                      context,
+                      listen: false,
+                    ).clearCategory(category);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Purchase successful')),
+                    );
+                  } catch (e) {
+                    if (!context.mounted) return;
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Purchase failed: $e')),
+                    );
+                  }
+                }
+                Navigator.pop(context);
+              },
+              child: Text('Purchase'),
+            ),
+          ),
+        ],
       ),
     );
   }
 }
-
-
-// Center(
-//               child: ElevatedButton(
-//                 onPressed: () async {
-//                   try {
-//                     await purchaseItem(cost: 10, category: 'drink');
-//                     if (!context.mounted) return;
-//                     ScaffoldMessenger.of(context).showSnackBar(
-//                       SnackBar(content: Text('Purchase successful')),
-//                     );
-//                   } catch (e) {
-//                     if (!context.mounted) return;
-//                     ScaffoldMessenger.of(context).showSnackBar(
-//                       SnackBar(content: Text('Purchase failed: $e')),
-//                     );
-//                   }
-//                 },
-//                 child: Text('Test Purchase'),
-//               ),
-//             ),

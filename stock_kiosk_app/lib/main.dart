@@ -29,10 +29,10 @@ class MyApp extends StatelessWidget {
   static const String kioskLocation = 'CS classroom 1';
 
   static const List<String> categories = [
-    'Drinks',
-    'Snacks',
-    'Books',
-    'Stationery',
+    'drink',
+    'food',
+    'library',
+    'stationery',
     'Electronics',
   ];
 

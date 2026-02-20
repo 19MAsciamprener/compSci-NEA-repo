@@ -44,6 +44,11 @@ class CartProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void clearCategory(String category) {
+    cart.removeWhere((item) => item['category'] == category);
+    notifyListeners();
+  }
+
   //TESTING FOR NOW
   Map<String, List<Map<String, dynamic>>> get itemsByCategory {
     final Map<String, List<Map<String, dynamic>>> grouped = {};
