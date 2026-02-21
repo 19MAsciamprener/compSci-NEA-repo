@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stock_kiosk_app/logic/auth/open_admin_page.dart';
+import 'package:stock_kiosk_app/pages/admin/create_user_page.dart';
 import 'package:stock_kiosk_app/pages/admin/new_item_page.dart';
 
 class AdminHomePage extends StatefulWidget {
@@ -28,24 +29,37 @@ class _AdminHomePageState extends State<AdminHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Text(
-              'ADMIN Home Page, to be implemented',
-              style: TextStyle(color: Colors.white, fontSize: 24),
-            ),
-            SizedBox(height: 200),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => NewItemPage()),
-                );
-              },
-              child: Text('Add Item'),
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(48.0),
+        child: Center(
+          child: Column(
+            children: [
+              Text(
+                'ADMIN Home Page, to be implemented',
+                style: TextStyle(color: Colors.white, fontSize: 24),
+              ),
+              SizedBox(height: 200),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => NewItemPage()),
+                  );
+                },
+                child: Text('Add Item'),
+              ),
+              SizedBox(height: 64),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CreateUserPage()),
+                  );
+                },
+                child: Text('Create User'),
+              ),
+            ],
+          ),
         ),
       ),
     );

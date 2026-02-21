@@ -1,6 +1,7 @@
 // TO BE IMPLEMENTED
 
 import 'package:flutter/material.dart';
+import 'package:stock_kiosk_app/widgets/back_button.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -10,12 +11,7 @@ class SettingsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Settings', style: TextStyle(color: Colors.white)),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        leading: PagePageBackButton(),
       ),
       body: Center(
         child: Text(

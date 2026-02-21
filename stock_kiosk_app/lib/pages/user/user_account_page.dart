@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 // internal logic and widget imports
 import 'package:stock_kiosk_app/logic/auth/logout_logic.dart';
+import 'package:stock_kiosk_app/widgets/back_button.dart';
 import 'package:stock_kiosk_app/widgets/user/display_details_stream.dart';
 import 'package:stock_kiosk_app/widgets/user/coin_values.dart';
 import 'package:stock_kiosk_app/widgets/user/profile_picture_widget.dart';
@@ -50,17 +51,7 @@ class _UserAccountPageState extends State<UserAccountPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.keyboard_backspace,
-            color: Colors.white,
-            size: 48,
-          ),
-          onPressed: () {
-            //navigate back to previous page
-            Navigator.pop(context);
-          },
-        ),
+        leading: PagePageBackButton(),
         title: const Text(
           'Account Page',
           style: TextStyle(color: Colors.white),

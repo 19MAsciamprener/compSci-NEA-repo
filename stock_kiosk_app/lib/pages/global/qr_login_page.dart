@@ -6,6 +6,7 @@ import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:stock_kiosk_app/pages/global/password_login_page.dart';
 //internal logic imports
 import 'package:stock_kiosk_app/logic/auth/sign_in_logic.dart';
+import 'package:stock_kiosk_app/widgets/back_button.dart';
 
 class QrLoginPage extends StatefulWidget {
   //stateful page because of scanner
@@ -24,16 +25,7 @@ class _QrLoginPageState extends State<QrLoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(
-            Icons.keyboard_backspace,
-            color: Colors.white,
-            size: 48,
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        leading: PagePageBackButton(),
         title: const Text(
           'Scan QR Code to Login',
           style: TextStyle(color: Colors.white),

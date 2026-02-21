@@ -1,10 +1,10 @@
 // TODO: NEEDS TO BE COMMENTED
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stock_kiosk_app/logic/account_transaction_logic.dart';
 import 'package:stock_kiosk_app/logic/provider/cart_provider.dart';
+import 'package:stock_kiosk_app/widgets/back_button.dart';
 
 class UserPurchasePage extends StatelessWidget {
   const UserPurchasePage({super.key});
@@ -17,12 +17,7 @@ class UserPurchasePage extends StatelessWidget {
     if (grouped.isEmpty) {
       return Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
+          leading: PagePageBackButton(),
           title: const Text(
             'Purchase Page',
             style: TextStyle(color: Colors.white),
@@ -39,12 +34,7 @@ class UserPurchasePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        leading: PagePageBackButton(),
         title: const Text(
           'Purchase Page',
           style: TextStyle(color: Colors.white),

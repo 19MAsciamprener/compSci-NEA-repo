@@ -1,6 +1,7 @@
 // TO BE IMPLEMENTED
 
 import 'package:flutter/material.dart';
+import 'package:stock_kiosk_app/widgets/back_button.dart';
 
 class StockPricePage extends StatelessWidget {
   const StockPricePage({super.key});
@@ -9,12 +10,7 @@ class StockPricePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        leading: PagePageBackButton(),
         title: const Text(
           'Stock Prices',
           style: TextStyle(color: Colors.white),

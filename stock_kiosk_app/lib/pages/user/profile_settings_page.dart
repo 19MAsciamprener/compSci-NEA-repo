@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 //internal logic and widget imports
 import 'package:stock_kiosk_app/logic/auth/load_user_data.dart';
+import 'package:stock_kiosk_app/logic/date_pick.dart';
 import 'package:stock_kiosk_app/logic/upload/pfp_upload.dart';
+import 'package:stock_kiosk_app/widgets/back_button.dart';
 import 'package:stock_kiosk_app/widgets/user/user_settings_fields.dart';
 import 'package:stock_kiosk_app/widgets/user/profile_picture_widget.dart';
 
@@ -23,25 +25,6 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
   final TextEditingController emailController = TextEditingController();
   //variable for date of birth
   DateTime? dateOfBirth;
-
-  Future<void> _pickDate() async {
-    //function to pick date of birth
-    DateTime? selectedDate = await showDatePicker(
-      context: context,
-      initialDate:
-          dateOfBirth ??
-          DateTime.now(), //default to current date if not previously set
-      firstDate: DateTime(1900), //earliest date selectable
-      lastDate: DateTime.now(), //latest date selectable is current date
-    );
-
-    if (selectedDate != null) {
-      //if a date is selected, update the state
-      setState(() {
-        dateOfBirth = selectedDate;
-      });
-    }
-  }
 
   Future<void> loadUserData() async {
     //function to load user data from firestore and populate text fields
@@ -93,16 +76,7 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.keyboard_backspace,
-            color: Colors.white,
-            size: 48,
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          }, // back button to return to previous page
-        ),
+        leading: PagePageBackButton(),
         title: const Text(
           'User Settings',
           style: TextStyle(color: Colors.white),
@@ -209,7 +183,15 @@ class _UserSettingsPageState extends State<UserSettingsPage> {
                           ),
                           ElevatedButton(
                             onPressed: () async {
-                              await _pickDate(); //calls date picker function
+                              DateTime? newDate = await pickDate(
+                                context,
+                                dateOfBirth,
+                              );
+                              if (newDate != null) {
+                                setState(() {
+                                  dateOfBirth = newDate;
+                                });
+                              }
                             },
                             child: Text('Select Date'),
                           ),

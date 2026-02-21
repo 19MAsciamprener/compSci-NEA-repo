@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 // internal logic imports
 import 'package:stock_kiosk_app/logic/auth/update_password_logic.dart';
+import 'package:stock_kiosk_app/widgets/back_button.dart';
 
 class ChangePasswordPage extends StatefulWidget {
   //stateful widget for changing password (fields are cleared after each attempt)
@@ -36,17 +37,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
           'Account Settings',
           style: TextStyle(color: Colors.white),
         ),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.keyboard_backspace,
-            color: Colors.white,
-            size: 48,
-          ),
-          onPressed: () {
-            // back button to return to previous page
-            Navigator.pop(context);
-          },
-        ),
+        leading: PagePageBackButton(),
       ),
       body: Padding(
         padding: const EdgeInsets.all(96.0),

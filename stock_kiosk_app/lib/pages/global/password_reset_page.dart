@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 //internal logic imports
 import 'package:stock_kiosk_app/logic/auth/send_password_reset.dart';
+import 'package:stock_kiosk_app/widgets/back_button.dart';
 
 class PasswordResetPage extends StatefulWidget {
   //stateful page for password reset (email input)
@@ -19,17 +20,7 @@ class _PasswordResetPageState extends State<PasswordResetPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          // back button
-          icon: const Icon(
-            Icons.keyboard_backspace,
-            color: Colors.white,
-            size: 48,
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        leading: PagePageBackButton(),
         title: const Text(
           'Reset Password',
           style: TextStyle(color: Colors.white),
