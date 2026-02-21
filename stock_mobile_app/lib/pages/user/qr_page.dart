@@ -68,6 +68,7 @@ class _QrPageState extends State<QrPage> {
             onPressed: () {
               // oldIdToken = idToken;
               //}
+              //TODO: maybe delete old token from database here to prevent reuse?
               setState(() {});
             },
             child: Text('Refresh'),

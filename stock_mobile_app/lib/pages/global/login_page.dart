@@ -1,10 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:stock_mobile_app/logic/login_logic.dart';
 
 class LoginPage extends StatefulWidget {
-  final VoidCallback onTap;
-
-  const LoginPage({super.key, required this.onTap});
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -19,23 +18,6 @@ class _LoginPageState extends State<LoginPage> {
     emailController.dispose();
     passwordController.dispose();
     super.dispose();
-  }
-
-  Future<void> loginUserWithEmailAndPassword() async {
-    try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim(),
-      );
-      if (!mounted) return;
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Login successful!')));
-    } on FirebaseAuthException catch (e) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text('Login failed: ${e.message}')));
-    }
   }
 
   @override
@@ -104,7 +86,11 @@ class _LoginPageState extends State<LoginPage> {
               Center(
                 child: ElevatedButton(
                   onPressed: () async {
-                    await loginUserWithEmailAndPassword();
+                    await loginUserWithEmailAndPassword(
+                      context,
+                      emailController,
+                      passwordController,
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(300, 100),
@@ -120,22 +106,6 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ],
-          ),
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.transparent,
-        elevation: 0,
-        child: Center(
-          child: TextButton(
-            onPressed: widget.onTap,
-            child: Text(
-              'No account yet? Sign up here.',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: Colors.white,
-                fontSize: 24,
-              ),
-            ),
           ),
         ),
       ),

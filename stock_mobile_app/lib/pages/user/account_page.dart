@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:stock_mobile_app/logic/login_logic.dart';
+import 'package:stock_mobile_app/pages/change_password_page.dart';
+import 'package:stock_mobile_app/pages/user_settings_page.dart';
 import 'package:stock_mobile_app/widgets/account_page_widgets.dart';
 
 class AccountPage extends StatefulWidget {
@@ -13,13 +16,24 @@ class _AccountPageState extends State<AccountPage> {
     //function to handle menu selections (switch case for different options)
     switch (value) {
       case 'profile settings':
+        Navigator.push(
+          //navigate to profile settings page (allows user to return to account page)
+          context,
+          MaterialPageRoute(builder: (context) => UserSettingsPage()),
+        );
         break;
 
       case 'change password':
+        Navigator.push(
+          //navigate to change password page
+          //allows user to return to account page (unless they change password and are logged out)
+          context,
+          MaterialPageRoute(builder: (context) => ChangePasswordPage()),
+        );
         break;
 
       case 'logout': //log out user and navigate to standby page, removing all previous routes
-
+        logout(context);
         break;
     }
   }
