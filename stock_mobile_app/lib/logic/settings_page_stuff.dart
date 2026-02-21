@@ -535,3 +535,6 @@ Future<DateTime?> pickDate(BuildContext context, DateTime? dateOfBirth) async {
   }
   return dateOfBirth;
 }
+
+// TODO: fix this bullshit 500+ line file
+//fucking muppet

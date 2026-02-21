@@ -18,8 +18,9 @@ Future<void> createUser(
     );
   } catch (e) {
     //handle errors if user creation fails
-    if (!context.mounted)
-      return; //check if context is still valid before showing snackbar
+    if (!context.mounted) {
+      return;
+    } //check if context is still valid before showing snackbar
     ScaffoldMessenger.of(
       context,
     ).showSnackBar(SnackBar(content: Text('Error creating user: $e')));
@@ -44,8 +45,9 @@ Future<void> createUser(
     });
   } catch (e) {
     //handle errors if user creation fails
-    if (!context.mounted)
-      return; //check if context is still valid before showing snackbar
+    if (!context.mounted) {
+      return;
+    } //check if context is still valid before showing snackbar
     ScaffoldMessenger.of(
       context,
     ).showSnackBar(SnackBar(content: Text('Error creating user: $e')));
@@ -75,8 +77,9 @@ Future<void> createUser(
           'performed_by': 'system',
         });
   } catch (e) {
-    if (!context.mounted)
-      return; //check if context is still valid before showing snackbar
+    if (!context.mounted) {
+      return;
+    } //check if context is still valid before showing snackbar
     ScaffoldMessenger.of(
       context,
     ).showSnackBar(SnackBar(content: Text('Error creating wallet: $e')));
