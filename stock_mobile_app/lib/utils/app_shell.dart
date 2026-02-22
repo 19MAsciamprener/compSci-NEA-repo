@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../pages/user/qr_page.dart';
-import '../pages/user/account_page.dart';
+import '../pages/qr_page.dart';
+import '../pages/account_page.dart';
 
 class AppShell extends StatefulWidget {
   const AppShell({super.key});

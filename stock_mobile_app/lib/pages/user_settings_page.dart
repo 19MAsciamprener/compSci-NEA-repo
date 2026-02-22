@@ -2,7 +2,10 @@
 import 'package:flutter/material.dart';
 // firebase imports
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:stock_mobile_app/logic/settings_page_stuff.dart';
+import 'package:stock_mobile_app/logic/profile_picture_logic.dart';
+import 'package:stock_mobile_app/logic/user_credential_logic.dart';
+import 'package:stock_mobile_app/widgets/account_page_widgets.dart';
+import 'package:stock_mobile_app/widgets/setting_fields.dart';
 //internal logic and widget imports
 
 class UserSettingsPage extends StatefulWidget {
