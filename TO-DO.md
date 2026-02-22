@@ -41,3 +41,5 @@ TO-DO:
 \[x] finish to abstract reusable or 'dangerous' code snippets to their own files/folders
 
 \[x] remove uid from purchase page, have the function get uid from firebase.auth
+
+\[] make mobile app size change based on screen size

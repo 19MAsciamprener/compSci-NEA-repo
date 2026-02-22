@@ -43,7 +43,7 @@ class CoinList extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
-          'lib/assets/images/${coinType}_coin.ico',
+          'assets/images/${coinType}_coin.ico',
           width: 128,
           height: 128,
         ),

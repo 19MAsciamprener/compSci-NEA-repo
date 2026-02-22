@@ -19,7 +19,7 @@ class ProfilePictureWidget extends StatelessWidget {
           //show default profile image while loading or if there is an error (prevents blank space or broken image icon)
           if (loadingProgress == null) return child;
           return Image.asset(
-            'lib/assets/images/default_pfp.jpg',
+            'assets/images/default_pfp.jpg',
             width: size ?? 96,
             height: size ?? 96,
             fit: BoxFit.cover,
@@ -28,7 +28,7 @@ class ProfilePictureWidget extends StatelessWidget {
         errorBuilder: (context, error, stackTrace) {
           //show default profile image if there is an error loading the image (prevents broken image icon)
           return Image.asset(
-            'lib/assets/images/default_pfp.jpg',
+            'assets/images/default_pfp.jpg',
             width: size ?? 96,
             height: size ?? 96,
             fit: BoxFit.cover,
