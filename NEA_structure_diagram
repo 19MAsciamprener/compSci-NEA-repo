@@ -1,20 +1,14 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.5.2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" version="29.5.5">
   <diagram name="Page-1" id="97916047-d0de-89f5-080d-49f4d83e522f">
-    <mxGraphModel dx="3935.5" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3095.5" dy="715" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" parent="1" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" value="NEA PROJECT" vertex="1">
-          <mxGeometry height="60" width="200" x="672" y="205.5" as="geometry" />
-        </mxCell>
-        <mxCell id="29" edge="1" parent="1" source="2" style="edgeStyle=elbowEdgeStyle;elbow=vertical;strokeWidth=4;endArrow=block;endFill=1;fontStyle=1;strokeColor=#23445D;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="41CRgPURk2EIKP6zxfPS-56" value="">
+        <mxCell id="29" edge="1" parent="1" style="edgeStyle=elbowEdgeStyle;elbow=vertical;strokeWidth=4;endArrow=block;endFill=1;fontStyle=1;strokeColor=#23445D;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" value="">
           <mxGeometry height="100" width="100" x="22" y="165.5" as="geometry">
-            <mxPoint x="22" y="265.5" as="sourcePoint" />
-            <mxPoint x="772" y="345.5" as="targetPoint" />
+            <mxPoint x="332" y="80" as="sourcePoint" />
+            <mxPoint x="-20" y="194.5" as="targetPoint" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="41CRgPURk2EIKP6zxfPS-56" parent="1" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontStyle=1;fontSize=14;" value="KIOSK APP" vertex="1">
-          <mxGeometry height="60" width="200" x="320" y="380" as="geometry" />
         </mxCell>
         <mxCell id="41CRgPURk2EIKP6zxfPS-57" parent="1" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shadow=1;fontStyle=1;fontSize=14;" value="MOBILE APP" vertex="1">
           <mxGeometry height="60" width="200" x="1040" y="380" as="geometry" />
@@ -22,77 +16,119 @@
         <mxCell id="41CRgPURk2EIKP6zxfPS-58" parent="1" style="rounded=1;fillColor=#10739E;strokeColor=none;shadow=1;gradientColor=none;fontStyle=1;fontColor=#FFFFFF;fontSize=14;" value="FIREBASE BACKEND" vertex="1">
           <mxGeometry height="60" width="200" x="1300" y="50" as="geometry" />
         </mxCell>
-        <mxCell id="41CRgPURk2EIKP6zxfPS-59" edge="1" parent="1" source="2" style="edgeStyle=elbowEdgeStyle;elbow=vertical;strokeWidth=4;endArrow=block;endFill=1;fontStyle=1;strokeColor=#23445D;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="41CRgPURk2EIKP6zxfPS-57" value="">
+        <mxCell id="41CRgPURk2EIKP6zxfPS-59" edge="1" parent="1" style="edgeStyle=elbowEdgeStyle;elbow=vertical;strokeWidth=4;endArrow=block;endFill=1;fontStyle=1;strokeColor=#23445D;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
           <mxGeometry height="100" width="100" x="22" y="165.5" as="geometry">
-            <mxPoint x="1032" y="290" as="sourcePoint" />
-            <mxPoint x="770" y="384" as="targetPoint" />
+            <mxPoint x="332" y="80" as="sourcePoint" />
+            <mxPoint x="700" y="194.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SuPLhIEAeGpzkHReTqnK-30" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Standby Screen" vertex="1">
-          <mxGeometry height="60" width="200" x="320" y="520" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1165" y="620" as="geometry" />
         </mxCell>
         <mxCell id="SuPLhIEAeGpzkHReTqnK-34" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="QR Login Screen" vertex="1">
-          <mxGeometry height="60" width="200" x="-200.5" y="760" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1685.5" y="860" as="geometry" />
         </mxCell>
-        <mxCell id="SuPLhIEAeGpzkHReTqnK-45" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Password Login Screen" vertex="1">
-          <mxGeometry height="60" width="200" x="-180" y="860" as="geometry" />
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-45" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Check with backend to confirm QR token&#39;s authenticity (JS script)" vertex="1">
+          <mxGeometry height="60" width="200" x="-1670" y="1020" as="geometry" />
         </mxCell>
-        <mxCell id="SuPLhIEAeGpzkHReTqnK-48" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Forgot Password Screen" vertex="1">
-          <mxGeometry height="60" width="200" x="-160" y="960" as="geometry" />
+        <mxCell id="SuPLhIEAeGpzkHReTqnK-48" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Text fields for &lt;br&gt;username &amp;amp; password.&lt;br&gt;button to login" vertex="1">
+          <mxGeometry height="60" width="200" x="-1650" y="1280" as="geometry" />
         </mxCell>
         <mxCell id="SuPLhIEAeGpzkHReTqnK-52" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="User&amp;nbsp;&lt;div&gt;Home Screen&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="360" y="1260" as="geometry" />
+          <mxGeometry height="60" width="200" x="360" y="1510" as="geometry" />
         </mxCell>
         <mxCell id="SuPLhIEAeGpzkHReTqnK-56" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="On Pressed:&amp;nbsp;&lt;div&gt;open stock screen&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="640" y="1120" as="geometry" />
+          <mxGeometry height="60" width="200" x="-845" y="1220" as="geometry" />
         </mxCell>
         <mxCell id="SuPLhIEAeGpzkHReTqnK-60" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="User&lt;div&gt;Account Page&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="730" y="1330" as="geometry" />
+          <mxGeometry height="60" width="200" x="730" y="1580" as="geometry" />
         </mxCell>
         <mxCell id="7YtKrfzgYX1kp9tnJl8U-34" edge="1" parent="1" source="7YtKrfzgYX1kp9tnJl8U-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7YtKrfzgYX1kp9tnJl8U-32">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="7YtKrfzgYX1kp9tnJl8U-30" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Admin&lt;br&gt;&lt;div&gt;Home Screen&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="200" y="1330" as="geometry" />
+          <mxGeometry height="60" width="200" x="200" y="1580" as="geometry" />
         </mxCell>
         <mxCell id="7YtKrfzgYX1kp9tnJl8U-32" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Admin&lt;div&gt;Controls Screen&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="510" y="1330" as="geometry" />
+          <mxGeometry height="60" width="200" x="510" y="1580" as="geometry" />
         </mxCell>
         <mxCell id="SuPLhIEAeGpzkHReTqnK-38" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Info Dialog" vertex="1">
-          <mxGeometry height="60" width="200" x="53" y="660" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1432" y="760" as="geometry" />
         </mxCell>
         <mxCell id="SuPLhIEAeGpzkHReTqnK-39" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Language Change Dialog" vertex="1">
-          <mxGeometry height="60" width="200" x="320" y="660" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1165" y="760" as="geometry" />
         </mxCell>
         <mxCell id="Ic7f0umk1Rla5jvzEd6J-32" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Login Button" vertex="1">
-          <mxGeometry height="60" width="200" x="-215" y="660.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1700" y="760.25" as="geometry" />
         </mxCell>
         <mxCell id="Ic7f0umk1Rla5jvzEd6J-33" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Settings Page" vertex="1">
-          <mxGeometry height="60" width="200" x="855" y="660.12" as="geometry" />
+          <mxGeometry height="60" width="200" x="-630" y="760.12" as="geometry" />
         </mxCell>
         <mxCell id="Ic7f0umk1Rla5jvzEd6J-34" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Stock Price Information" vertex="1">
-          <mxGeometry height="60" width="200" x="588" y="660" as="geometry" />
+          <mxGeometry height="60" width="200" x="-897" y="760" as="geometry" />
         </mxCell>
         <mxCell id="Ic7f0umk1Rla5jvzEd6J-38" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Open In-App browser&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="70" y="760" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1415" y="860" as="geometry" />
         </mxCell>
         <mxCell id="Ic7f0umk1Rla5jvzEd6J-39" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Host help website from home-server" vertex="1">
-          <mxGeometry height="60" width="200" x="90" y="860" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1395" y="960" as="geometry" />
         </mxCell>
         <mxCell id="Ic7f0umk1Rla5jvzEd6J-41" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="On language change:&lt;div&gt;Modify all pieces of text based on language&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="337" y="760" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1148" y="860" as="geometry" />
         </mxCell>
         <mxCell id="Ic7f0umk1Rla5jvzEd6J-42" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Show current time&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="605" y="760" as="geometry" />
+          <mxGeometry height="60" width="200" x="-880" y="860" as="geometry" />
         </mxCell>
         <mxCell id="Ic7f0umk1Rla5jvzEd6J-43" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Show a live item list&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="605" y="840" as="geometry" />
+          <mxGeometry height="60" width="200" x="-880" y="940" as="geometry" />
         </mxCell>
         <mxCell id="Ic7f0umk1Rla5jvzEd6J-45" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;div&gt;Pull data from firestore backend&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="620" y="940" as="geometry" />
+          <mxGeometry height="60" width="200" x="-865" y="1040" as="geometry" />
         </mxCell>
         <mxCell id="Ic7f0umk1Rla5jvzEd6J-46" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="slice data and format into&amp;nbsp;&lt;div&gt;a table&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="620" y="1020" as="geometry" />
+          <mxGeometry height="60" width="200" x="-865" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-29" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Show full live stock list&lt;div&gt;(editable if admin)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="-825" y="1320" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-30" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="KIOSK APP" vertex="1">
+          <mxGeometry height="60" width="200" x="-199.5" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-31" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;flipH=0;legacyAnchorPoints=0;" value="Pre-Login" vertex="1">
+          <mxGeometry height="60" width="200" x="-742" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-33" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;flipH=0;legacyAnchorPoints=0;" value="User" vertex="1">
+          <mxGeometry height="60" width="200" x="-371" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-34" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;flipH=0;legacyAnchorPoints=0;" value="Admin" vertex="1">
+          <mxGeometry height="60" width="200" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-36" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Scan QR using kiosk camera" vertex="1">
+          <mxGeometry height="60" width="200" x="-1670" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-37" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Log user into system, and use their UID to obtain their info via firestore" vertex="1">
+          <mxGeometry height="60" width="200" x="-1670" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-38" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Password Login Screen" vertex="1">
+          <mxGeometry height="60" width="200" x="-1670" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-39" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Use firebaseAuth to validate user credentials with backend" vertex="1">
+          <mxGeometry height="60" width="200" x="-1650" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-40" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;span style=&quot;color: rgb(255, 255, 255);&quot;&gt;Log user into system, and use their UID to obtain their info via firestore&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="-1650" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-41" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Forgot Password Screen" vertex="1">
+          <mxGeometry height="60" width="200" x="-1650" y="1520" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-42" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="field for user to enter password" vertex="1">
+          <mxGeometry height="60" width="200" x="-1632" y="1620" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-43" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Send password reset email to user via firebaseAuth API" vertex="1">
+          <mxGeometry height="60" width="200" x="-1632" y="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="jE0Y0uuq9eOf84GDKueG-44" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Send user back to login page" vertex="1">
+          <mxGeometry height="60" width="200" x="-1632" y="1780" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
