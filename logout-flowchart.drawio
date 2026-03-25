@@ -1,0 +1,57 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" version="29.6.6">
+  <diagram name="Page-1" id="nj5fv7RMtWkWKGm01-3-">
+    <mxGraphModel dx="1668" dy="918" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="44yf1XXXieFxvlYje8W0-4" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" value="Is a user logged in?" vertex="1">
+          <mxGeometry height="80" width="136" x="346" y="167" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-19" edge="1" parent="1" source="44yf1XXXieFxvlYje8W0-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="44yf1XXXieFxvlYje8W0-18" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-16" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;flipV=0;legacyAnchorPoints=0;" value="Clear Cart" vertex="1">
+          <mxGeometry height="80" width="133.33333333333331" x="347.33333333333337" y="283" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-17" edge="1" parent="1" source="44yf1XXXieFxvlYje8W0-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="44yf1XXXieFxvlYje8W0-16" value="YES">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-21" edge="1" parent="1" source="44yf1XXXieFxvlYje8W0-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="44yf1XXXieFxvlYje8W0-20" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-18" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;flipV=0;legacyAnchorPoints=0;" value="Clear Admin Permissions" vertex="1">
+          <mxGeometry height="80" width="133.33333333333331" x="347.33333333333337" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-25" edge="1" parent="1" source="44yf1XXXieFxvlYje8W0-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="44yf1XXXieFxvlYje8W0-24" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-20" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;flipV=0;legacyAnchorPoints=0;" value="FirebaseAuth logout" vertex="1">
+          <mxGeometry height="80" width="133.33333333333331" x="347.33333333333337" y="517" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-24" parent="1" style="whiteSpace=wrap;html=1;rounded=1;arcSize=6;" value="Push &amp;amp; remove navigation to standby screen" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="643" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-26" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="END" vertex="1">
+          <mxGeometry height="60" width="100" x="364" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-27" edge="1" parent="1" source="44yf1XXXieFxvlYje8W0-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="44yf1XXXieFxvlYje8W0-26" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-30" edge="1" parent="1" source="44yf1XXXieFxvlYje8W0-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="44yf1XXXieFxvlYje8W0-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-28" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="START" vertex="1">
+          <mxGeometry height="80" width="133.33333333333331" x="346.0033333333334" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="44yf1XXXieFxvlYje8W0-32" edge="1" parent="1" source="44yf1XXXieFxvlYje8W0-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="44yf1XXXieFxvlYje8W0-26" value="NO">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="207" />
+              <mxPoint x="560" y="790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
