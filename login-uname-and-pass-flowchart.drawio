@@ -1,13 +1,13 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
   <diagram name="Page-1" id="_Abn0Di8QGhwhQTqttJi">
-    <mxGraphModel dx="1722" dy="2117" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2066" dy="2306" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="fPs7imALuk-sQuQngByo-5" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fPs7imALuk-sQuQngByo-4" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="fPs7imALuk-sQuQngByo-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="Start" vertex="1">
+        <mxCell id="fPs7imALuk-sQuQngByo-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;flipV=0;legacyAnchorPoints=0;" value="Start" vertex="1">
           <mxGeometry height="60" width="100" x="364" as="geometry" />
         </mxCell>
         <mxCell id="fPs7imALuk-sQuQngByo-10" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fPs7imALuk-sQuQngByo-9" value="">
@@ -18,11 +18,11 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="fPs7imALuk-sQuQngByo-4" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" value="Are username or&lt;br&gt;password variables&lt;br&gt;empty?" vertex="1">
-          <mxGeometry height="80" width="176" x="326" y="120" as="geometry" />
+        <mxCell id="fPs7imALuk-sQuQngByo-4" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;flipV=0;legacyAnchorPoints=0;" value="Are username or&lt;br&gt;password variables&lt;br&gt;empty?" vertex="1">
+          <mxGeometry height="80" width="176" x="326" y="129" as="geometry" />
         </mxCell>
         <mxCell id="fPs7imALuk-sQuQngByo-6" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" value="&lt;u&gt;show snackbar&lt;br&gt;&lt;/u&gt;&quot;Please enter email&lt;br&gt;&amp;amp; password&quot;" vertex="1">
-          <mxGeometry height="60" width="140" x="560" y="130" as="geometry" />
+          <mxGeometry height="60" width="140" x="560" y="139" as="geometry" />
         </mxCell>
         <mxCell id="fPs7imALuk-sQuQngByo-7" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="fPs7imALuk-sQuQngByo-6">
           <mxGeometry relative="1" as="geometry" />
@@ -40,11 +40,20 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="fPs7imALuk-sQuQngByo-9" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" value="Does email &lt;br&gt;match RegEx?" vertex="1">
-          <mxGeometry height="80" width="126" x="351" y="280" as="geometry" />
+        <mxCell id="fPs7imALuk-sQuQngByo-9" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;flipV=0;legacyAnchorPoints=0;" value="Does email &lt;br&gt;match RegEx?" vertex="1">
+          <mxGeometry height="80" width="126" x="351" y="267" as="geometry" />
+        </mxCell>
+        <mxCell id="7G9QMUG_OMw-5qsfNv-1-9" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="307" />
+              <mxPoint x="760" y="1140" />
+            </Array>
+            <mxPoint x="470" y="1140" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="fPs7imALuk-sQuQngByo-11" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" value="&lt;u&gt;show snackbar&lt;/u&gt;&lt;br&gt;&quot;please enter a valid &lt;br&gt;email address&quot;" vertex="1">
-          <mxGeometry height="60" width="140" x="560" y="290" as="geometry" />
+          <mxGeometry height="60" width="140" x="560" y="277" as="geometry" />
         </mxCell>
         <mxCell id="fPs7imALuk-sQuQngByo-12" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fPs7imALuk-sQuQngByo-11" value="">
           <mxGeometry relative="1" as="geometry" />
@@ -57,11 +66,11 @@
         <mxCell id="fPs7imALuk-sQuQngByo-22" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="fPs7imALuk-sQuQngByo-21">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="fPs7imALuk-sQuQngByo-15" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" value="Is password variable&lt;br&gt;longer&amp;nbsp;than&lt;br&gt;6 characters?" vertex="1">
-          <mxGeometry height="90" width="190" x="319" y="440" as="geometry" />
+        <mxCell id="fPs7imALuk-sQuQngByo-15" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;flipV=0;legacyAnchorPoints=0;" value="Is password variable&lt;br&gt;longer&amp;nbsp;than&lt;br&gt;6 characters?" vertex="1">
+          <mxGeometry height="90" width="190" x="319" y="401" as="geometry" />
         </mxCell>
         <mxCell id="fPs7imALuk-sQuQngByo-17" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" value="&lt;u&gt;show snackbar&lt;/u&gt;&lt;div&gt;&quot;Password must be at least 6 characters&quot;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="65" width="140" x="560" y="452.5" as="geometry" />
+          <mxGeometry height="65" width="140" x="560" y="413.5" as="geometry" />
         </mxCell>
         <mxCell id="fPs7imALuk-sQuQngByo-18" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="fPs7imALuk-sQuQngByo-17">
           <mxGeometry relative="1" as="geometry" />
@@ -74,25 +83,76 @@
         <mxCell id="fPs7imALuk-sQuQngByo-24" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fPs7imALuk-sQuQngByo-23" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="fPs7imALuk-sQuQngByo-21" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="FirebaseAuth signIn with uname &amp;amp; pass" vertex="1">
-          <mxGeometry height="60" width="116" x="356" y="585" as="geometry" />
+        <mxCell id="7G9QMUG_OMw-5qsfNv-1-5" connectable="0" parent="fPs7imALuk-sQuQngByo-24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="SUCCESS" vertex="1">
+          <mxGeometry relative="1" x="-0.322" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
-        <mxCell id="fPs7imALuk-sQuQngByo-23" parent="1" style="rhombus;whiteSpace=wrap;html=1;rounded=1;arcSize=6;" value="Is a user logged in?" vertex="1">
-          <mxGeometry height="80" width="86" x="371" y="730" as="geometry" />
+        <mxCell id="7G9QMUG_OMw-5qsfNv-1-2" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=filledEdge;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="7G9QMUG_OMw-5qsfNv-1-3" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="584" />
+              <mxPoint x="560" y="1139" />
+            </Array>
+            <mxPoint x="550" y="1200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7G9QMUG_OMw-5qsfNv-1-13" connectable="0" parent="7G9QMUG_OMw-5qsfNv-1-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="FAILURE" vertex="1">
+          <mxGeometry relative="1" x="-0.8782" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fPs7imALuk-sQuQngByo-21" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;flipV=0;legacyAnchorPoints=0;" value="FirebaseAuth signIn with uname &amp;amp; pass" vertex="1">
+          <mxGeometry height="60" width="116" x="356" y="554" as="geometry" />
+        </mxCell>
+        <mxCell id="fPs7imALuk-sQuQngByo-23" parent="1" style="rhombus;whiteSpace=wrap;html=1;rounded=1;arcSize=6;flipV=0;legacyAnchorPoints=0;" value="Is a user logged in?" vertex="1">
+          <mxGeometry height="80" width="86" x="371" y="683" as="geometry" />
         </mxCell>
         <mxCell id="QkOeHbikSQWNrH0ipg3J-3" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="QkOeHbikSQWNrH0ipg3J-4" value="">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="420" y="1050" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="fPs7imALuk-sQuQngByo-25" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="LoginHandler" vertex="1">
-          <mxGeometry height="80" width="133.33" x="357.67" y="910" as="geometry" />
+        <mxCell id="fPs7imALuk-sQuQngByo-25" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;flipV=0;legacyAnchorPoints=0;" value="LoginHandler" vertex="1">
+          <mxGeometry height="80" width="133.33" x="347.00000000000006" y="822" as="geometry" />
         </mxCell>
         <mxCell id="fPs7imALuk-sQuQngByo-26" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fPs7imALuk-sQuQngByo-25" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="QkOeHbikSQWNrH0ipg3J-4" parent="1" style="whiteSpace=wrap;html=1;rounded=1;arcSize=6;" value="Push &amp;amp; remove navigation to standby screen" vertex="1">
-          <mxGeometry height="60" width="120" x="364.33" y="1060" as="geometry" />
+        <mxCell id="7G9QMUG_OMw-5qsfNv-1-8" connectable="0" parent="fPs7imALuk-sQuQngByo-26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="YES" vertex="1">
+          <mxGeometry relative="1" x="0.0537" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QkOeHbikSQWNrH0ipg3J-4" parent="1" style="whiteSpace=wrap;html=1;rounded=1;arcSize=6;flipV=0;legacyAnchorPoints=0;" value="Push &amp;amp; remove navigation to&amp;nbsp;&lt;br&gt;user home page" vertex="1">
+          <mxGeometry height="60" width="120" x="353.99" y="970" as="geometry" />
+        </mxCell>
+        <mxCell id="7G9QMUG_OMw-5qsfNv-1-3" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;flipV=0;legacyAnchorPoints=0;" value="END" vertex="1">
+          <mxGeometry height="60" width="100" x="364" y="1109" as="geometry" />
+        </mxCell>
+        <mxCell id="7G9QMUG_OMw-5qsfNv-1-6" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="7G9QMUG_OMw-5qsfNv-1-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="723" />
+              <mxPoint x="520" y="1140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7G9QMUG_OMw-5qsfNv-1-7" connectable="0" parent="7G9QMUG_OMw-5qsfNv-1-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NO" vertex="1">
+          <mxGeometry relative="1" x="-0.8904" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7G9QMUG_OMw-5qsfNv-1-10" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="7G9QMUG_OMw-5qsfNv-1-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="446" />
+              <mxPoint x="730" y="1139" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7G9QMUG_OMw-5qsfNv-1-11" edge="1" parent="1" source="QkOeHbikSQWNrH0ipg3J-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="7G9QMUG_OMw-5qsfNv-1-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
