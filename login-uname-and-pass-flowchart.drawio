@@ -80,7 +80,7 @@
         <mxCell id="fPs7imALuk-sQuQngByo-23" parent="1" style="rhombus;whiteSpace=wrap;html=1;rounded=1;arcSize=6;" value="Is a user logged in?" vertex="1">
           <mxGeometry height="80" width="86" x="371" y="730" as="geometry" />
         </mxCell>
-        <mxCell id="fPs7imALuk-sQuQngByo-25" parent="1" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;" value="LoginHandler" vertex="1">
+        <mxCell id="fPs7imALuk-sQuQngByo-25" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="LoginHandler" vertex="1">
           <mxGeometry height="80" width="133.33333333333331" x="347.33333333333337" y="880" as="geometry" />
         </mxCell>
         <mxCell id="fPs7imALuk-sQuQngByo-26" edge="1" parent="1" source="fPs7imALuk-sQuQngByo-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fPs7imALuk-sQuQngByo-25" value="">
