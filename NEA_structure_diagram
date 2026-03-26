@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" version="29.6.6">
   <diagram name="Page-1" id="97916047-d0de-89f5-080d-49f4d83e522f">
-    <mxGraphModel dx="6480.5" dy="2600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3421.5" dy="918" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -183,6 +183,27 @@
         </mxCell>
         <mxCell id="mV1aRIGu5okmSmYSVVDF-33" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Send user back to login page" vertex="1">
           <mxGeometry height="60" width="200" x="-1615" y="1879" as="geometry" />
+        </mxCell>
+        <mxCell id="mV1aRIGu5okmSmYSVVDF-36" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Get categories from list&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="200" x="480" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="mV1aRIGu5okmSmYSVVDF-37" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Show a gridlist of cards named according to the category list&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="200" x="480" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="mV1aRIGu5okmSmYSVVDF-38" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;On Pressed:&lt;/div&gt;&lt;div&gt;open category subpage&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="480" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="mV1aRIGu5okmSmYSVVDF-39" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Get item list from the Firebase backend" vertex="1">
+          <mxGeometry height="60" width="200" x="500" y="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="mV1aRIGu5okmSmYSVVDF-40" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Filter list by selected category" vertex="1">
+          <mxGeometry height="60" width="200" x="500" y="1190" as="geometry" />
+        </mxCell>
+        <mxCell id="mV1aRIGu5okmSmYSVVDF-41" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Show gridlist of cards, with the name and price of each item from filtered list" vertex="1">
+          <mxGeometry height="60" width="200" x="500" y="1270" as="geometry" />
+        </mxCell>
+        <mxCell id="mV1aRIGu5okmSmYSVVDF-42" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="On Pressed:&lt;div&gt;Add item to cart&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="500" y="1350" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
