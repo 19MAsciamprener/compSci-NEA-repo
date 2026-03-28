@@ -1,0 +1,42 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
+  <diagram name="Page-1" id="Du7Ogv61KY_Jme7dAS31">
+    <mxGraphModel dx="2066" dy="2306" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fU34q1_za979EexzpKGI-3" edge="1" parent="1" source="fU34q1_za979EexzpKGI-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fU34q1_za979EexzpKGI-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fU34q1_za979EexzpKGI-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="On Start" vertex="1">
+          <mxGeometry height="60" width="100" x="364" as="geometry" />
+        </mxCell>
+        <mxCell id="fU34q1_za979EexzpKGI-7" edge="1" parent="1" source="fU34q1_za979EexzpKGI-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fU34q1_za979EexzpKGI-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fU34q1_za979EexzpKGI-2" parent="1" style="whiteSpace=wrap;html=1;strokeWidth=2;" value="now = datetime.current-time" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="147" as="geometry" />
+        </mxCell>
+        <mxCell id="fU34q1_za979EexzpKGI-9" edge="1" parent="1" source="fU34q1_za979EexzpKGI-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fU34q1_za979EexzpKGI-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fU34q1_za979EexzpKGI-10" connectable="0" parent="fU34q1_za979EexzpKGI-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Every 30s" vertex="1">
+          <mxGeometry relative="1" x="-0.1456" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fU34q1_za979EexzpKGI-6" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;strokeWidth=2;" value="Timer = timer (30 secs)" vertex="1">
+          <mxGeometry height="60" width="166" x="331" y="293" as="geometry" />
+        </mxCell>
+        <mxCell id="fU34q1_za979EexzpKGI-8" parent="1" style="whiteSpace=wrap;html=1;strokeWidth=2;" value="&lt;b&gt;set state:&lt;/b&gt;&lt;div&gt;now = datetime.current-time&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="580" y="293" as="geometry" />
+        </mxCell>
+        <mxCell id="fU34q1_za979EexzpKGI-11" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="END" vertex="1">
+          <mxGeometry height="60" width="100" x="364" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="fU34q1_za979EexzpKGI-12" edge="1" parent="1" source="fU34q1_za979EexzpKGI-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="fU34q1_za979EexzpKGI-11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
