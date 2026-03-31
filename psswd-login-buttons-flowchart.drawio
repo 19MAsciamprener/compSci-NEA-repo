@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
   <diagram name="Page-1" id="Wde8ZL7GpzY4wK8vSjUU">
-    <mxGraphModel dx="689" dy="1548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1181" dy="1819" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -32,6 +32,27 @@
           <mxGeometry height="60" width="100" x="590" y="230" as="geometry" />
         </mxCell>
         <mxCell id="sLOfCDAZa2NfpgPrzr_h-10" edge="1" parent="1" source="sLOfCDAZa2NfpgPrzr_h-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sLOfCDAZa2NfpgPrzr_h-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vFczsbpXMS4ODid2unfv-3" edge="1" parent="1" source="vFczsbpXMS4ODid2unfv-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vFczsbpXMS4ODid2unfv-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vFczsbpXMS4ODid2unfv-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="On Page close" vertex="1">
+          <mxGeometry height="60" width="100" x="90" as="geometry" />
+        </mxCell>
+        <mxCell id="vFczsbpXMS4ODid2unfv-5" edge="1" parent="1" source="vFczsbpXMS4ODid2unfv-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vFczsbpXMS4ODid2unfv-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vFczsbpXMS4ODid2unfv-2" parent="1" style="whiteSpace=wrap;html=1;strokeWidth=2;" value="dispose the Email box controller&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="80" y="103" as="geometry" />
+        </mxCell>
+        <mxCell id="vFczsbpXMS4ODid2unfv-4" parent="1" style="whiteSpace=wrap;html=1;strokeWidth=2;" value="dispose the password box controller" vertex="1">
+          <mxGeometry height="60" width="120" x="80" y="207" as="geometry" />
+        </mxCell>
+        <mxCell id="vFczsbpXMS4ODid2unfv-6" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="END" vertex="1">
+          <mxGeometry height="60" width="100" x="90" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="vFczsbpXMS4ODid2unfv-7" edge="1" parent="1" source="vFczsbpXMS4ODid2unfv-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vFczsbpXMS4ODid2unfv-6" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
