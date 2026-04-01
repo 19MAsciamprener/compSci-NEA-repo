@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.6">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36">
   <diagram name="Page-1" id="Wde8ZL7GpzY4wK8vSjUU">
-    <mxGraphModel dx="1181" dy="1819" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1426" dy="1912" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -53,6 +53,33 @@
           <mxGeometry height="60" width="100" x="90" y="310" as="geometry" />
         </mxCell>
         <mxCell id="vFczsbpXMS4ODid2unfv-7" edge="1" parent="1" source="vFczsbpXMS4ODid2unfv-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="vFczsbpXMS4ODid2unfv-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WAcdsgrIQOsSEBBl2RiG-7" edge="1" parent="1" source="WAcdsgrIQOsSEBBl2RiG-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="WAcdsgrIQOsSEBBl2RiG-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WAcdsgrIQOsSEBBl2RiG-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="On &#39;submit&#39; button pressed" vertex="1">
+          <mxGeometry height="60" width="100" x="285" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="WAcdsgrIQOsSEBBl2RiG-9" edge="1" parent="1" source="WAcdsgrIQOsSEBBl2RiG-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="WAcdsgrIQOsSEBBl2RiG-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WAcdsgrIQOsSEBBl2RiG-6" parent="1" style="whiteSpace=wrap;html=1;strokeWidth=2;" value="Email = EmailController" vertex="1">
+          <mxGeometry height="60" width="120" x="275" y="473" as="geometry" />
+        </mxCell>
+        <mxCell id="WAcdsgrIQOsSEBBl2RiG-8" parent="1" style="whiteSpace=wrap;html=1;strokeWidth=2;" value="Password = PasswordController" vertex="1">
+          <mxGeometry height="60" width="120" x="275" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="WAcdsgrIQOsSEBBl2RiG-12" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="LoginWithUsernameAndPassword(&lt;br&gt;email, password)" vertex="1">
+          <mxGeometry height="90" width="270" x="200" y="643" as="geometry" />
+        </mxCell>
+        <mxCell id="WAcdsgrIQOsSEBBl2RiG-13" edge="1" parent="1" source="WAcdsgrIQOsSEBBl2RiG-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="WAcdsgrIQOsSEBBl2RiG-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WAcdsgrIQOsSEBBl2RiG-15" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="END" vertex="1">
+          <mxGeometry height="60" width="100" x="285" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="WAcdsgrIQOsSEBBl2RiG-16" edge="1" parent="1" source="WAcdsgrIQOsSEBBl2RiG-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="WAcdsgrIQOsSEBBl2RiG-15" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
