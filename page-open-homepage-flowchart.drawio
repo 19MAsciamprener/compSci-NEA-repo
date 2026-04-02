@@ -25,6 +25,21 @@
         <mxCell id="eYhJJeE7beSCAW-Mkw9S-11" edge="1" parent="1" source="eYhJJeE7beSCAW-Mkw9S-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="eYhJJeE7beSCAW-Mkw9S-10" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="y8K1qdt13nxz6aRXmagM-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="OnTap&lt;br&gt;(admin button)" vertex="1">
+          <mxGeometry height="60" width="100" x="70" as="geometry" />
+        </mxCell>
+        <mxCell id="y8K1qdt13nxz6aRXmagM-4" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="OpenAdminPage()" vertex="1">
+          <mxGeometry height="60" width="160" x="40" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="y8K1qdt13nxz6aRXmagM-5" edge="1" parent="1" source="y8K1qdt13nxz6aRXmagM-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="y8K1qdt13nxz6aRXmagM-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y8K1qdt13nxz6aRXmagM-6" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="END" vertex="1">
+          <mxGeometry height="60" width="100" x="70" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="y8K1qdt13nxz6aRXmagM-7" edge="1" parent="1" source="y8K1qdt13nxz6aRXmagM-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="y8K1qdt13nxz6aRXmagM-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
