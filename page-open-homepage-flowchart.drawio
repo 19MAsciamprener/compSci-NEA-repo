@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="ZWNBP--DA9rTyxSr9yDu">
-    <mxGraphModel dx="2066" dy="2272" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1425" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,17 +13,37 @@
         <mxCell id="eYhJJeE7beSCAW-Mkw9S-2" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" value="Is user admin?" vertex="1">
           <mxGeometry height="80" width="80" x="374" y="130" as="geometry" />
         </mxCell>
+        <mxCell id="y8K1qdt13nxz6aRXmagM-10" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="200" />
+              <mxPoint x="560" y="400" />
+            </Array>
+            <mxPoint x="534.0055865921788" y="200" as="sourcePoint" />
+            <mxPoint x="414" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="eYhJJeE7beSCAW-Mkw9S-8" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="return" vertex="1">
-          <mxGeometry height="80" width="133.33333333333331" x="534" y="130" as="geometry" />
+          <mxGeometry height="60" width="100" x="510" y="140" as="geometry" />
         </mxCell>
         <mxCell id="eYhJJeE7beSCAW-Mkw9S-9" edge="1" parent="1" source="eYhJJeE7beSCAW-Mkw9S-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="eYhJJeE7beSCAW-Mkw9S-8" value="">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y8K1qdt13nxz6aRXmagM-11" connectable="0" parent="eYhJJeE7beSCAW-Mkw9S-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NO" vertex="1">
+          <mxGeometry relative="1" x="-0.1761" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="eYhJJeE7beSCAW-Mkw9S-10" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" value="display admin icon button in appbar" vertex="1">
           <mxGeometry height="80" width="133.33333333333331" x="347.33333333333337" y="290" as="geometry" />
         </mxCell>
         <mxCell id="eYhJJeE7beSCAW-Mkw9S-11" edge="1" parent="1" source="eYhJJeE7beSCAW-Mkw9S-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="eYhJJeE7beSCAW-Mkw9S-10" value="">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y8K1qdt13nxz6aRXmagM-12" connectable="0" parent="eYhJJeE7beSCAW-Mkw9S-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="YES" vertex="1">
+          <mxGeometry relative="1" x="-0.1193" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="y8K1qdt13nxz6aRXmagM-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="OnTap&lt;br&gt;(admin button)" vertex="1">
           <mxGeometry height="60" width="100" x="70" as="geometry" />
@@ -38,6 +58,12 @@
           <mxGeometry height="60" width="100" x="70" y="210" as="geometry" />
         </mxCell>
         <mxCell id="y8K1qdt13nxz6aRXmagM-7" edge="1" parent="1" source="y8K1qdt13nxz6aRXmagM-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="y8K1qdt13nxz6aRXmagM-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="y8K1qdt13nxz6aRXmagM-8" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="END" vertex="1">
+          <mxGeometry height="60" width="106" x="361" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="y8K1qdt13nxz6aRXmagM-9" edge="1" parent="1" source="eYhJJeE7beSCAW-Mkw9S-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="y8K1qdt13nxz6aRXmagM-8" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
