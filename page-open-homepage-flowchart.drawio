@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="ZWNBP--DA9rTyxSr9yDu">
+    <mxGraphModel dx="2066" dy="2272" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="eYhJJeE7beSCAW-Mkw9S-3" edge="1" parent="1" source="eYhJJeE7beSCAW-Mkw9S-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="eYhJJeE7beSCAW-Mkw9S-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eYhJJeE7beSCAW-Mkw9S-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="On Page Open" vertex="1">
+          <mxGeometry height="60" width="100" x="364" as="geometry" />
+        </mxCell>
+        <mxCell id="eYhJJeE7beSCAW-Mkw9S-2" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" value="Is user admin?" vertex="1">
+          <mxGeometry height="80" width="80" x="374" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="eYhJJeE7beSCAW-Mkw9S-8" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="return" vertex="1">
+          <mxGeometry height="80" width="133.33333333333331" x="534" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="eYhJJeE7beSCAW-Mkw9S-9" edge="1" parent="1" source="eYhJJeE7beSCAW-Mkw9S-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="eYhJJeE7beSCAW-Mkw9S-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eYhJJeE7beSCAW-Mkw9S-10" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" value="display admin icon button in appbar" vertex="1">
+          <mxGeometry height="80" width="133.33333333333331" x="347.33333333333337" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="eYhJJeE7beSCAW-Mkw9S-11" edge="1" parent="1" source="eYhJJeE7beSCAW-Mkw9S-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="eYhJJeE7beSCAW-Mkw9S-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
