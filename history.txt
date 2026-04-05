@@ -1,0 +1,302 @@
+439890b | 2026-04-03 | Added onTap.drawio | 
+3ea834b | 2026-04-02 | Update page-open-homepage-flowchart.drawio | 
+6ceb2ab | 2026-04-02 | Update page-open-homepage-flowchart.drawio | 
+404524e | 2026-04-02 | Added page-open-homepage-flowchart.drawio | 
+ca41aae | 2026-04-02 | Added isAdmin-check-flowchart.drawio | 
+7698e6c | 2026-04-02 | Added password-reset-function-flowchart.drawio | 
+7b3cf89 | 2026-04-02 | Added forgotten-password-buttons-flowchart.drawio | 
+bef2a00 | 2026-04-02 | Update psswd-login-buttons-flowchart.drawio | 
+8a75b48 | 2026-03-31 | Update psswd-login-buttons-flowchart.drawio | 
+2041b20 | 2026-03-31 | Added psswd-login-buttons-flowchart.drawio | 
+9dce655 | 2026-03-30 | Update kiosk-signin-with-uid-flowchart.drawio | 
+885c2c8 | 2026-03-30 | Update kiosk-signin-with-uid-flowchart.drawio | 
+4e7332f | 2026-03-30 | Added kiosk-signin-with-uid-flowchart.drawio | 
+cb615b4 | 2026-03-30 | Added on-qr-scanned-flowchart.drawio | 
+54623b5 | 2026-03-30 | Added Qr-Login-Page-Flowchart.drawio | 
+f19c5d4 | 2026-03-28 | Update stock-table-function-flowchart.drawio | 
+6778e50 | 2026-03-28 | Added stock-table-function-flowchart.drawio | 
+66644ec | 2026-03-28 | Update standby-page-buttons-flowchart.drawio | 
+47973a7 | 2026-03-28 | Added standby-page-buttons-flowchart.drawio | 
+513fd3d | 2026-03-28 | Added standby-page-timer-flowchart.drawio | 
+54276af | 2026-03-26 | Update NEA_structure_diagram | 
+e6dd057 | 2026-03-26 | Update NEA_structure_diagram | 
+8bcf3b1 | 2026-03-25 | Update uid-signin-flowchart.drawio | 
+569fb6b | 2026-03-25 | rm drawio | 
+bd16107 | 2026-03-25 | Added uid-signin-flowchart.drawio | 
+e955f5c | 2026-03-25 | Update login-uname-and-pass-flowchart.drawio | 
+558040b | 2026-03-25 | Update login-uname-and-pass-flowchart.drawio | 
+20c29a2 | 2026-03-25 | Update login-uname-and-pass-flowchart.drawio | 
+f12b261 | 2026-03-25 | Update login-uname-and-pass-flowchart.drawio | 
+f4eccad | 2026-03-25 | Added login-uname-and-pass-flowchart.drawio | 
+76310ab | 2026-03-25 | Added set-admin-flowchart.drawio | 
+0ba9e2d | 2026-03-25 | Added Untitled Diagram.drawio | 
+1d4374b | 2026-03-25 | Added logout-flowchart.drawio | 
+171278f | 2026-03-09 | Update NEA_structure_diagram | 
+8de7d9d | 2026-03-05 | Update NEA_structure_diagram | 
+7737701 | 2026-02-26 | Update NEA_structure_diagram | 
+6c1eda8 | 2026-02-26 | Update NEA_structure_diagram | 
+d91ec62 | 2026-02-22 | moved assets out of lib (now in root dir) | 
+eacf237 | 2026-02-22 | cleaned mobile app codebase | 
+0860695 | 2026-02-21 | self-deprecation | 
+d1179e9 | 2026-02-21 | mobile app update (needs cleaning) | 
+36d8c44 | 2026-02-21 | admins can create users (+ cleaning) | 
+c18ed42 | 2026-02-20 | implementing working start to purchase page | 
+0937bd8 | 2026-02-18 | fixing user theme inconsistency | 
+295443d | 2026-02-18 | cleaning and rendererror fix | 
+0ffd026 | 2026-02-18 | CLEANING | STILL NEED TO ADD HAMBURGER FUNC.
+
+28eabec | 2026-02-17 | improving mobile app | added bottom navigator to switch between QR page and account page, copied code from kiosk app and resized
+
+e3d60e9 | 2026-02-17 | purchase sorted by category & temp categories moved to myApp | 
+bb0b445 | 2026-02-17 | quick changes | 
+d48e621 | 2026-02-17 | abstracted uid from purchase page | 
+c1bfbfc | 2026-02-16 | CLEANING | added comments, cleaned admin stuff, added admin security, moved files about
+
+f715634 | 2026-02-16 | admin menu setup | needs cleaning
+
+0bcefd4 | 2026-02-16 | moved widgets and fixed QR (see desc.) | Moved widgets into correct folders to follow folder structure.
+
+Fixed QR service on login screens, 1250ms delay between scans instead of only scanning once. Meaning if user scans an invalid QR, they don't need to go back to scan again.
+
+883c9b9 | 2026-02-16 | dynamic cart | added provider for the user cart.
+
+clear cart on logout
+item onTap adds to cart
+total is dynamic
+list reflects provider cart list
+provider added in pubspec.yaml
+
+712e637 | 2026-02-13 | small changes (see desc.) | fixing warnings, removing complete TODOs from comments
+
+updating todo list
+
+adding snackboxes for purchase instead of print.
+
+1cdd3f0 | 2026-02-12 | purchase logic added | written logic for item purchasing using firestore transactions.
+
+added a test button to the purchase page for now
+
+52e7257 | 2026-02-12 | made coinList dynamic | see title
+
+0ecd97c | 2026-02-12 | small adjustments | added kioskLocation to myApp for the purchase page & cart pane.
+
+abstracted cart pane  to its own file in widgets.
+
+d4b288a | 2026-02-12 | 1hr of changes (see desc.) | moved coins back into /images because I was having issues with the .yaml
+
+abstracted firebase commands into logic folder, page folders now just contain widget stuff
+
+made a dedicated logout file in logic
+
+moved some functions and files around (e.g. email change)
+
+moved coin list into its own function (widget folder)
+
+changed mobile signup page to create a userWallet, and add a subcollection for transactions
+
+0bc23d4 | 2026-02-12 | removed unused import | removed temporary import from main_icon_button.dart
+
+e8e07e9 | 2026-02-11 | small fixes, To-Do update | 
+a5d0e4d | 2026-02-11 | refactoring & file organisation | 
+c5ef728 | 2026-02-11 | small fixes | 
+62f24d2 | 2026-02-11 | coin icons & account page update | Designed and imported icons for all coin types, showing them (non dynamically) in account page
+
+6977bc1 | 2026-02-11 | Fixed subpage and styling issues | removed pale tint on app bar when scrolling
+
+fixed subpage item showing, now just need to make the cart dynamic
+
+dcbe59c | 2026-02-11 | Added category subpage | needs work still
+
+2a516cb | 2026-02-10 | Fixed renderflow errors | I fucked up on expanded logic in flutter widget structure and hierarchy, my bad. All fixed now
+
+5818253 | 2026-02-10 | README | IDEA FOR CATEGORIES:
+One page, reusable and parameterised by category, not separate pages for each category. Simply use button to pass in a value to search through database.
+
+Also created user_purchase page & set purchase button to push to it.
+
+3317509 | 2026-02-10 | Further refactoring and home_page design | changed/added comments (e.g. qr_login_page.dart)
+
+refactored code, abstracted widgets in pages such as standby, profile settings, user home, etc. to their own files in /widgets for reusability and legibility.
+
+LEARNED ABOUT LINTS!!!!
+I found out I can get a warning message if I comment //TODO: before a to-do item.
+
+continued design of user_home_page.dart
+
+slight to-do list update
+
+2fbb6cc | 2026-02-09 | started user-home page design | mostly still placeholders, just sorting layout and added miniStockTable
+
+9d023eb | 2026-02-09 | to-do update | 
+cf9691a | 2026-02-09 | small modifications | 
+6e1ac77 | 2026-02-09 | made help page in-app web view instead of external client browser | 
+88facb8 | 2026-02-09 | Fixed QR page memory leak | changed from push and pop to pushReplacement
+
+Also added comments for last commit (imageAsset change)
+
+8c73e1d | 2026-02-09 | Fixed pfp error I was having | Changed fadeinimage to image.network with loadingbuilder and errorbuilder
+
+80951e0 | 2026-02-06 | Added a copy of the backend file system | 
+dfd5d4f | 2026-01-20 | System tested, To-Do updated | Some changes acted on
+
+bda157b | 2026-01-20 | validation & todo addition | added validation to all functions ( I think)
+
+added to-do.md officially to the repo
+
+7b4dd44 | 2026-01-20 | COMMENTS | ALL FILES COMMENTED (in lib folder)
+
+aaf31f4 | 2026-01-18 | mainly just code comments | Added comments to all files other than the files in the Widgets folder.
+
+Added dispose files to a few stateful widgets that were missing it.
+
+3e8b028 | 2026-01-18 | more abstraction and fixed emails | 
+834adb5 | 2026-01-18 | Modifications | Added password_change.dart for PW change logic.
+
+renamed account settings page to PW change page.
+
+redesigned user account page, added DOB to user personal info DB.
+
+7171ca3 | 2026-01-15 | mac changes | 
+38508b4 | 2026-01-11 | 4hrs of Work | begun to move sign-in functions to sign_in_logic.dart
+
+added comments to:
+main.dart, standby_page.dart, qr_login_page.dart, password_login_page.dart, password_reset_page,dart
+
+added elevatedButtonTheme to main.dart
+
+created add_item_page.dart:
+This page adds item info (name, price, change, etc)to a new firebase collection called 'items', and files are named after their barcode.
+
+moved pages into deeper folder structure (global, user, admin)
+
+new_note_page.dart NEEDS REMOVING
+
+created an account_settings_page.dart
+
+fixed email logic in user_settings_page.dart
+
+modified popupmenu to include account settings in user_account_page
+
+modified standby_page to add live clock, and modified stock table logic (created stock_table_body.dart, table_cell_widgets.dart)
+
+91de514 | 2026-01-07 | user page updates | spent most of time designing profile_settings_page.
+
+refactored code, abstracted functions to their own files and folders for simplicity.
+
+user_settings_field.dart is a reusable widget for the user_settings_page.dart and probably for the future admin version.
+
+It renders the text fields with the current data in the variable (fist name is already in the box when you open the settings page.
+
+b664c1c | 2026-01-06 | A couple of evening additions. | Added working hamburger menu to user_account_page.dart
+
+created user_settings_page.dart
+
+changed icon on user_home_page.dart to the currentuser pfp.
+
+Rounded pfp in user_account_page.dart
+
+not great but not bad.
+
+(I tried to make an inactivity monitor to log the user out after a few minutes and crashed the entire project and all its caches with a stack overflow)
+(lowkenuinely hit flow state)
+
+fc69fed | 2026-01-06 | Another night of big changes | Working Profile Pictures:
+Default pfp jpeg added for loading and null pfp (new accounts).
+massive changes in user account page
+backend server files changed!!!
+
+removed obsolete code from the following:
+password_login_page.dart
+password_reset_page.dart
+qr_page.dart
+
+changed print to scaffold messanger for qr_login_page.dart
+
+added future plans to standby_page.dart
+
+added assets/images path to pubspec.yaml assets
+
+added the following packages to pubspec.yaml:
+http_parser
+image_picker
+image
+webview_flutter (unused for now)
+
+altered qr_page.dart code
+(added refresh button)
+
+5698dbd | 2026-01-05 | Update NEA_structure_diagram | 
+cab6a3c | 2026-01-05 | Update NEA_structure_diagram | 
+9f2cc74 | 2026-01-05 | HUGE progress update | QR System working!
+Now using backend server at local ip 192.168.0.160 for firebase admin SDK to complete a token generation when QR is generated on mobile, scanned on kiosk and sent via http to the server for backend checks. backend checks expiry time, valid token and then deletes record from firestore after token is generated and sent back to kiosk.
+
+Backend server will also be used for file storage (PFPs).
+
+added email password reset using FirebaseAuth
+
+changed many prints to snackbars
+
+added some buttons and pages (e.g. sign out buttons)
+
+fixed context warnings (using mounted property)
+
+setup authgate/authpage on mobile app
+
+added various packages to pubspec.yaml on both apps (http, uuid, etc.).
+
+VERY GOOD PROGRESS TONIGHT
+
+b8dc03a | 2026-01-03 | 2am changes | 
+7627191 | 2026-01-02 | BIG CHANGES | CREATED MOBILE APP
+-------------------------
+Mobile app has a login page and a QR code page, once logged in the qr page currently shows a QR with the UID of the currently loggedin account.
+
+Both apps are now successfully connected to firebase, and use firebase auth for login and logout.
+
+there is a temporary notes page, for use with firestore database services.
+
+ca51897 | 2026-01-01 | setting up firebase pt 1 | 
+f34cd9f | 2026-01-01 | Pre-Backend development | All init pages have been designed:
+- Standby Page
+- Settings Page (placeholder)
+- Language Dialog (placeholder)
+- [WORKING] Help Link (example link)
+- qr login page
+- user/pass login page
+- password reset page
+- user home (placeholder)
+- admin home (placeholder)
+- stock price page (placeholder)
+
+navigation between pages added
+[MAY NEED TO REMOVE BACK BUTTON FROM AUTH PAGES]
+
+scanner package allows camera access and scans camera input
+
+link launcher package allows for opening links in native web browser (help page)
+
+icon button styling changed an improved on stanbdy page
+
+FUTURE:
+---------------
+add backend for server auth with qr codes & user/pass
+design placeholder pages.
+
+a722cc1 | 2025-12-31 | slight UI update (I can't remember what I did) | 
+5243f42 | 2025-12-11 | Stream-2 Progress | Added bottom buttons, grid needs fixing
+
+5c4bd21 | 2025-12-11 | Update NEA_structure_diagram | 
+7a552c3 | 2025-12-11 | Update NEA_structure_diagram | 
+076398c | 2025-12-11 | Added NEA_structure_diagram | 
+bac078f | 2025-12-11 | Added NEA_structure_diagram | 
+e07ad4b | 2025-12-05 | Stream-1 progress | - removed flutter template
+- created a folder structure
+- made start to homepage (home_page.dart)
+- - title & time
+- - dummy item list
+- made widget .dart for the item list (stock_item_list.dart)
+- created dummy data for UI purposes (dummy_data.dart)
+
+ce601e1 | 2025-12-04 | Flutter.Create | I have created the flutter application template in VSC. No further changes have yet been made.
+
+0f2b128 | 2025-12-04 | Initial commit | 
