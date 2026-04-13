@@ -1,0 +1,47 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Page-1" id="tD3rY36BLUytGDeGa75i">
+    <mxGraphModel dx="545" dy="1558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qZHXz0gdzsobFFann_vZ-1" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" value="START" vertex="1">
+          <mxGeometry height="60" width="100" x="364" as="geometry" />
+        </mxCell>
+        <mxCell id="qZHXz0gdzsobFFann_vZ-4" edge="1" parent="1" source="qZHXz0gdzsobFFann_vZ-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="qZHXz0gdzsobFFann_vZ-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qZHXz0gdzsobFFann_vZ-2" parent="1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;" value="Show Dialog:&lt;div&gt;&quot;remove ${item} from cart?&quot;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="100" x="365" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="qZHXz0gdzsobFFann_vZ-6" edge="1" parent="1" source="qZHXz0gdzsobFFann_vZ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="qZHXz0gdzsobFFann_vZ-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qZHXz0gdzsobFFann_vZ-7" connectable="0" parent="qZHXz0gdzsobFFann_vZ-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="NO" vertex="1">
+          <mxGeometry relative="1" x="-0.2422" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qZHXz0gdzsobFFann_vZ-3" parent="1" style="rhombus;whiteSpace=wrap;html=1;strokeWidth=2;" value="selected yes&lt;br&gt;or no?" vertex="1">
+          <mxGeometry height="80" width="97" x="367" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="qZHXz0gdzsobFFann_vZ-5" parent="1" style="whiteSpace=wrap;html=1;strokeWidth=2;" value="Navigator pop" vertex="1">
+          <mxGeometry height="60" width="120" x="530.5" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="qZHXz0gdzsobFFann_vZ-10" parent="1" style="verticalLabelPosition=middle;verticalAlign=middle;html=1;shape=process;whiteSpace=wrap;rounded=1;size=0.14;arcSize=6;labelPosition=center;align=center;" value="Cart Provider.&lt;br&gt;removeFromCart&lt;br&gt;(item)" vertex="1">
+          <mxGeometry height="80" width="133.33333333333331" x="348.83333333333337" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="qZHXz0gdzsobFFann_vZ-11" edge="1" parent="1" source="qZHXz0gdzsobFFann_vZ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="qZHXz0gdzsobFFann_vZ-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qZHXz0gdzsobFFann_vZ-12" connectable="0" parent="qZHXz0gdzsobFFann_vZ-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="YES" vertex="1">
+          <mxGeometry relative="1" x="-0.1891" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qZHXz0gdzsobFFann_vZ-14" edge="1" parent="1" source="qZHXz0gdzsobFFann_vZ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="qZHXz0gdzsobFFann_vZ-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
