@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36">
   <diagram name="Page-1" id="wnp7l_WI1jW9mohmeSR9">
-    <mxGraphModel dx="3879" dy="919" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3669" dy="781" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -20,241 +20,283 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-4" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Standby Screen" vertex="1">
-          <mxGeometry height="60" width="200" x="-1165" y="620" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1325" y="620" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-5" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="QR Login Screen" vertex="1">
-          <mxGeometry height="60" width="200" x="-1685.5" y="860" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1845.5" y="860" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-6" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Check with backend to confirm QR token&#39;s authenticity (JS script)" vertex="1">
-          <mxGeometry height="60" width="200" x="-1670" y="1020" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1830" y="1020" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-7" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Text fields for &lt;br&gt;username &amp;amp; password.&lt;br&gt;button to login" vertex="1">
-          <mxGeometry height="60" width="200" x="-1650" y="1280" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1810" y="1280" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-8" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="On Pressed:&amp;nbsp;&lt;div&gt;open stock screen&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="-880" y="1220" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1040" y="1220" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-9" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Info Dialog" vertex="1">
-          <mxGeometry height="60" width="200" x="-1432" y="760" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1592" y="760" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-10" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Language Change Dialog" vertex="1">
-          <mxGeometry height="60" width="200" x="-1165" y="760" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1325" y="760" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-11" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Login Button" vertex="1">
-          <mxGeometry height="60" width="200" x="-1700" y="760.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1860" y="760.25" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-12" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Settings Page" vertex="1">
-          <mxGeometry height="60" width="200" x="-630" y="760.12" as="geometry" />
+          <mxGeometry height="60" width="200" x="-790" y="760.12" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-13" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Stock Price Information" vertex="1">
-          <mxGeometry height="60" width="200" x="-897" y="760" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1057" y="760" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-14" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Open In-App browser&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="-1415" y="860" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1575" y="860" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-15" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Host help website from home-server" vertex="1">
-          <mxGeometry height="60" width="200" x="-1395" y="960" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1555" y="960" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-16" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="On language change:&lt;div&gt;Modify all text based on selected language&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="-1148" y="900" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1308" y="900" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-17" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Show current time&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="-880" y="860" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1040" y="860" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-18" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Show a live item list&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="-880" y="940" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1040" y="940" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-19" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;div&gt;Pull data from firestore backend&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="-865" y="1040" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1025" y="1040" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-20" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="slice data and format into&amp;nbsp;&lt;div&gt;a table&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="-865" y="1120" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1025" y="1120" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-21" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Show full live stock list&lt;div&gt;(editable if admin)&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="-865" y="1320" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1025" y="1320" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-22" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="KIOSK APP" vertex="1">
           <mxGeometry height="60" width="200" x="-100" y="320" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-23" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;flipH=0;legacyAnchorPoints=0;" value="Pre-Login" vertex="1">
-          <mxGeometry height="60" width="200" x="-742" y="440" as="geometry" />
+          <mxGeometry height="60" width="200" x="-902" y="440" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-24" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Scan QR using kiosk camera" vertex="1">
-          <mxGeometry height="60" width="200" x="-1670" y="940" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1830" y="940" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-25" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Log user into system, and use their UID to obtain their info via firestore" vertex="1">
-          <mxGeometry height="60" width="200" x="-1670" y="1100" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1830" y="1100" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-26" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Password Login Screen" vertex="1">
-          <mxGeometry height="60" width="200" x="-1670" y="1180" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1830" y="1180" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-27" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Use firebaseAuth to validate user credentials with backend" vertex="1">
-          <mxGeometry height="60" width="200" x="-1650" y="1360" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1810" y="1360" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-28" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;span style=&quot;color: rgb(255, 255, 255);&quot;&gt;Log user into system, and use their UID to obtain their info via firestore&lt;/span&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="-1650" y="1440" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1810" y="1440" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-29" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Forgot Password Button&lt;br&gt;(opens forgot passwd page)" vertex="1">
-          <mxGeometry height="60" width="200" x="-1650" y="1520" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1810" y="1520" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-30" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="field for user to enter email" vertex="1">
-          <mxGeometry height="60" width="200" x="-1632" y="1620" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1792" y="1620" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-31" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="User Home Screen" vertex="1">
-          <mxGeometry height="60" width="200" x="640.5" y="620" as="geometry" />
+          <mxGeometry height="60" width="200" x="570.5" y="620" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-32" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Category Cards" vertex="1">
-          <mxGeometry height="60" width="200" x="457.5" y="760" as="geometry" />
+          <mxGeometry height="60" width="200" x="247.5" y="760" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-33" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="User cart" vertex="1">
-          <mxGeometry height="60" width="200" x="870" y="760.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="660" y="760.25" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-34" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Profile Picture Button&lt;div&gt;(right corner of screen)&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1429.5" y="759.75" as="geometry" />
+          <mxGeometry height="60" width="200" x="1409.5" y="759.75" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-35" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Mini Stock List" vertex="1">
-          <mxGeometry height="60" width="200" x="0.5" y="759.75" as="geometry" />
+          <mxGeometry height="60" width="200" x="-209.5" y="759.75" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-36" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;rounded=1;shadow=1;fontStyle=1;" value="Check admin status&lt;br&gt;after login" vertex="1">
-          <mxGeometry height="60" width="200" x="620" y="520" as="geometry" />
+          <mxGeometry height="60" width="200" x="550" y="520" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-37" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Show a live item list&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="20.5" y="860" as="geometry" />
+          <mxGeometry height="60" width="200" x="-189.5" y="860" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-38" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;div&gt;Pull data from firestore backend&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="35.5" y="960" as="geometry" />
+          <mxGeometry height="60" width="200" x="-174.5" y="960" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-39" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="slice data and format into&amp;nbsp;&lt;div&gt;a table&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="35.5" y="1040" as="geometry" />
+          <mxGeometry height="60" width="200" x="-174.5" y="1040" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-40" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="On Pressed:&amp;nbsp;&lt;div&gt;open stock screen&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="20.5" y="1140" as="geometry" />
+          <mxGeometry height="60" width="200" x="-159.5" y="1140" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-41" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Show full live stock list&lt;div&gt;(editable if admin)&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="41" y="1240" as="geometry" />
+          <mxGeometry height="60" width="200" x="-139" y="1240" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-42" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="MOBILE APP" vertex="1">
           <mxGeometry height="60" width="200" x="1040" y="50" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-43" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Pull profile picture from server backend&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1450.5" y="860" as="geometry" />
+          <mxGeometry height="60" width="200" x="1430.5" y="860" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-44" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Show pfp as a clickable button in the top right&amp;nbsp;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1450.5" y="940" as="geometry" />
+          <mxGeometry height="60" width="200" x="1430.5" y="940" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-45" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="On Pressed:&amp;nbsp;&lt;div&gt;open user account screen&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1450.5" y="1020" as="geometry" />
+          <mxGeometry height="60" width="200" x="1430.5" y="1020" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-46" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Hamburger Menu" vertex="1">
-          <mxGeometry height="60" width="200" x="1750.5" y="1110" as="geometry" />
+          <mxGeometry height="60" width="200" x="1940.5" y="1110" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-47" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="User Profile Picture" vertex="1">
-          <mxGeometry height="60" width="200" x="1180" y="1110" as="geometry" />
+          <mxGeometry height="60" width="200" x="1052" y="1110" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-48" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="User coin credits" vertex="1">
-          <mxGeometry height="60" width="200" x="1462.5" y="1110" as="geometry" />
+          <mxGeometry height="60" width="200" x="1442.5" y="1110" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-49" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Pull profile picture from server backend&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1210.5" y="1200" as="geometry" />
+          <mxGeometry height="60" width="200" x="1060.5" y="1200" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-50" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Show pfp in center of screen&amp;nbsp;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1210.5" y="1280" as="geometry" />
+          <mxGeometry height="60" width="200" x="1060.5" y="1280" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-51" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Clickable, expanding menu, &lt;br&gt;&lt;div&gt;showing the buttons below:&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1770.5" y="1190" as="geometry" />
+          <mxGeometry height="60" width="200" x="1950.5" y="1190" as="geometry" />
         </mxCell>
-        <mxCell id="XlPRV6YaccK5TZHoK6my-52" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Account Settings" vertex="1">
-          <mxGeometry height="60" width="200" x="1520.5" y="1290" as="geometry" />
+        <mxCell id="XlPRV6YaccK5TZHoK6my-52" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Account Settings&lt;div&gt;onPressed:&lt;/div&gt;&lt;div&gt;open profile settings page&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="1700.5" y="1290" as="geometry" />
         </mxCell>
-        <mxCell id="XlPRV6YaccK5TZHoK6my-53" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Change Password" vertex="1">
-          <mxGeometry height="60" width="200" x="1790.5" y="1290" as="geometry" />
+        <mxCell id="XlPRV6YaccK5TZHoK6my-53" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Change Password&lt;div&gt;onPressed:&lt;/div&gt;&lt;div&gt;open password change page&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="2050.5" y="1290" as="geometry" />
         </mxCell>
-        <mxCell id="XlPRV6YaccK5TZHoK6my-54" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Logout" vertex="1">
-          <mxGeometry height="60" width="200" x="2064" y="1290" as="geometry" />
+        <mxCell id="XlPRV6YaccK5TZHoK6my-54" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Logout&lt;div&gt;onPressed:&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="2344" y="1290" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-55" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;flipH=0;legacyAnchorPoints=0;" value="Post-Login" vertex="1">
-          <mxGeometry height="60" width="200" x="530" y="450" as="geometry" />
+          <mxGeometry height="60" width="200" x="460" y="450" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-56" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="field for user to enter email" vertex="1">
-          <mxGeometry height="60" width="200" x="-1632" y="1700" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1792" y="1700" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-57" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Send password reset email to user via firebaseAuth API" vertex="1">
-          <mxGeometry height="60" width="200" x="-1615" y="1800" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1775" y="1800" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-58" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Send user back to login page" vertex="1">
-          <mxGeometry height="60" width="200" x="-1615" y="1879" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1775" y="1879" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-59" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Get categories from list&amp;nbsp;" vertex="1">
-          <mxGeometry height="60" width="200" x="480" y="860" as="geometry" />
+          <mxGeometry height="60" width="200" x="270" y="860" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-60" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Show a gridlist of cards named according to the category list&amp;nbsp;" vertex="1">
-          <mxGeometry height="60" width="200" x="480" y="940" as="geometry" />
+          <mxGeometry height="60" width="200" x="270" y="940" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-61" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;On Pressed:&lt;/div&gt;&lt;div&gt;open category subpage&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="480" y="1020" as="geometry" />
+          <mxGeometry height="60" width="200" x="270" y="1020" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-62" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Get item list from the Firebase backend" vertex="1">
-          <mxGeometry height="60" width="200" x="500" y="1110" as="geometry" />
+          <mxGeometry height="60" width="200" x="290" y="1110" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-63" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Filter list by selected category" vertex="1">
-          <mxGeometry height="60" width="200" x="500" y="1190" as="geometry" />
+          <mxGeometry height="60" width="200" x="290" y="1190" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-64" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Show gridlist of cards, with the name and price of each item from filtered list" vertex="1">
-          <mxGeometry height="60" width="200" x="500" y="1270" as="geometry" />
+          <mxGeometry height="60" width="200" x="290" y="1270" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-65" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="On Pressed:&lt;div&gt;Add item to cart&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="500" y="1350" as="geometry" />
+          <mxGeometry height="60" width="200" x="290" y="1350" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-1" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Show selection list with multiple languages for the user to choose from." vertex="1">
-          <mxGeometry height="60" width="200" x="-1148" y="830" as="geometry" />
+          <mxGeometry height="60" width="200" x="-1308" y="830" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-2" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Interactive page showing various options for users to access and modify&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="-614" y="840" as="geometry" />
+          <mxGeometry height="60" width="200" x="-774" y="840" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-3" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Get items from cart.provider" vertex="1">
-          <mxGeometry height="60" width="200" x="886.5" y="840.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="676.5" y="840.25" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-4" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Listview for all items in list&lt;div&gt;show name, quantitiy &amp;amp; price&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="886.5" y="910.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="676.5" y="910.25" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-5" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="OnSwipe:&lt;div&gt;remove from cart&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="886.5" y="980.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="676.5" y="980.25" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-6" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="show total cost of all items" vertex="1">
-          <mxGeometry height="60" width="200" x="886.5" y="1050.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="676.5" y="1050.25" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-7" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Purchase Button&lt;div&gt;onPressed:&amp;nbsp;&lt;/div&gt;&lt;div&gt;open purchase page&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="886.5" y="1120.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="676.5" y="1120.25" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-8" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Admin Page Button&lt;div&gt;(right corner of screen)&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="2040" y="760.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="2430" y="760.25" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-9" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="OnPressed:&lt;div&gt;isAdmin()&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="2064" y="840.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="2454" y="840.25" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-10" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;if admin: open admin controls page&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="2064" y="920.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="2454" y="920.25" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-11" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="create user page" vertex="1">
-          <mxGeometry height="60" width="200" x="1970.5" y="1020" as="geometry" />
+          <mxGeometry height="60" width="200" x="2360.5" y="1020" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-13" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="add new item page" vertex="1">
-          <mxGeometry height="60" width="200" x="2210" y="1020" as="geometry" />
+          <mxGeometry height="60" width="200" x="2600" y="1020" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-14" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="get items from cart.provider" vertex="1">
-          <mxGeometry height="60" width="200" x="900" y="1200" as="geometry" />
+          <mxGeometry height="60" width="200" x="690" y="1200" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-15" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="split by category" vertex="1">
-          <mxGeometry height="60" width="200" x="900" y="1280" as="geometry" />
+          <mxGeometry height="60" width="200" x="690" y="1280" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-16" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="show cost for each category individually" vertex="1">
-          <mxGeometry height="60" width="200" x="900" y="1350" as="geometry" />
+          <mxGeometry height="60" width="200" x="690" y="1350" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-17" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="purchase button at bottom:&lt;div&gt;On pressed:&amp;nbsp;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="900" y="1420" as="geometry" />
+          <mxGeometry height="60" width="200" x="690" y="1420" as="geometry" />
         </mxCell>
-        <mxCell id="UNjHu5clto-TzhCB3I6X-18" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="" vertex="1">
-          <mxGeometry height="60" width="200" x="910" y="1500" as="geometry" />
+        <mxCell id="UNjHu5clto-TzhCB3I6X-18" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="run transactionLogic()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;this will run firebase transactions and take the necessary funds&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="200" x="700" y="1500" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-19" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Show a list of each coin type (icon) and the account&amp;nbsp;&lt;div&gt;funds next to it&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="1454" y="1270" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-21" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="get account coin funds from firebase &#39;wallets&#39; table" vertex="1">
+          <mxGeometry height="60" width="200" x="1454" y="1190" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-22" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="logout()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;this will run firebaseAuth.logout and return app to standby page&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="200" x="2354" y="1370" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-24" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="show fields for:&lt;div&gt;old password,&lt;/div&gt;&lt;div&gt;&amp;nbsp;new password,&amp;nbsp;&lt;/div&gt;&lt;div&gt;confirm new password&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="2070" y="1370" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-36" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="PFP" vertex="1">
+          <mxGeometry height="60" width="200" x="1583.5" y="1370" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-37" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="FIELDS" vertex="1">
+          <mxGeometry height="60" width="200" x="1807.5" y="1370" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-38" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;onPressed:&lt;/span&gt;&lt;div style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;open imagePicker, then&lt;/div&gt;&lt;div style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;changePFP()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="1593.5" y="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-39" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;Show pfp in top 1/3 of screen&amp;nbsp;&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="1593.5" y="1520" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-40" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;Pull profile picture from server backend&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="1593.5" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-41" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;SUBMIT button at bottom&lt;/span&gt;&lt;div style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;onPressed:&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="1817.5" y="1600" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-42" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;datepicker for selecting DOB&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="1817.5" y="1520" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-43" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;show various text boxes for user inform&lt;/span&gt;&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18); white-space: pre;&quot;&gt;ation, and allow for&lt;/span&gt;&lt;div style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; user to change them&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="200" x="1817.5" y="1440" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-44" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(255, 255, 255); color: rgb(255, 255, 255);&quot;&gt;changeUserInfo()&lt;/span&gt;&lt;div style=&quot;caret-color: rgb(255, 255, 255); color: rgb(255, 255, 255);&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;caret-color: rgb(255, 255, 255); color: rgb(255, 255, 255);&quot;&gt;will run firebase changes to user document&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="1827.5" y="1680" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-46" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Submit Button&lt;div&gt;onPressed:&lt;/div&gt;&lt;div&gt;changePassword()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="2070" y="1445" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
