@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36">
   <diagram name="Page-1" id="wnp7l_WI1jW9mohmeSR9">
-    <mxGraphModel dx="3669" dy="781" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="5875" dy="2231" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -146,31 +146,31 @@
           <mxGeometry height="60" width="200" x="1430.5" y="1020" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-46" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Hamburger Menu" vertex="1">
-          <mxGeometry height="60" width="200" x="1940.5" y="1110" as="geometry" />
+          <mxGeometry height="60" width="200" x="2260" y="1110" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-47" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="User Profile Picture" vertex="1">
-          <mxGeometry height="60" width="200" x="1052" y="1110" as="geometry" />
+          <mxGeometry height="60" width="200" x="1170" y="1110" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-48" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="User coin credits" vertex="1">
-          <mxGeometry height="60" width="200" x="1442.5" y="1110" as="geometry" />
+          <mxGeometry height="60" width="200" x="1600.5" y="1110" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-49" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Pull profile picture from server backend&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1060.5" y="1200" as="geometry" />
+          <mxGeometry height="60" width="200" x="1178.5" y="1200" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-50" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;Show pfp in center of screen&amp;nbsp;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1060.5" y="1280" as="geometry" />
+          <mxGeometry height="60" width="200" x="1178.5" y="1280" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-51" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Clickable, expanding menu, &lt;br&gt;&lt;div&gt;showing the buttons below:&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1950.5" y="1190" as="geometry" />
+          <mxGeometry height="60" width="200" x="2270" y="1230" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-52" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Account Settings&lt;div&gt;onPressed:&lt;/div&gt;&lt;div&gt;open profile settings page&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1700.5" y="1290" as="geometry" />
+          <mxGeometry height="60" width="200" x="1869.5" y="1362" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-53" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Change Password&lt;div&gt;onPressed:&lt;/div&gt;&lt;div&gt;open password change page&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="2050.5" y="1290" as="geometry" />
+          <mxGeometry height="60" width="200" x="2279.5" y="1362" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-54" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Logout&lt;div&gt;onPressed:&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="2344" y="1290" as="geometry" />
+          <mxGeometry height="60" width="200" x="2663" y="1362" as="geometry" />
         </mxCell>
         <mxCell id="XlPRV6YaccK5TZHoK6my-55" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;flipH=0;legacyAnchorPoints=0;" value="Post-Login" vertex="1">
           <mxGeometry height="60" width="200" x="460" y="450" as="geometry" />
@@ -227,19 +227,19 @@
           <mxGeometry height="60" width="200" x="676.5" y="1120.25" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-8" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="Admin Page Button&lt;div&gt;(right corner of screen)&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="2430" y="760.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="2449.5" y="610" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-9" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="OnPressed:&lt;div&gt;isAdmin()&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="2454" y="840.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="2473.5" y="690" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-10" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;div&gt;if admin: open admin controls page&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="2454" y="920.25" as="geometry" />
+          <mxGeometry height="60" width="200" x="2473.5" y="770" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-11" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="create user page" vertex="1">
-          <mxGeometry height="60" width="200" x="2360.5" y="1020" as="geometry" />
+          <mxGeometry height="60" width="200" x="2380" y="869.75" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-13" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="add new item page" vertex="1">
-          <mxGeometry height="60" width="200" x="2600" y="1020" as="geometry" />
+          <mxGeometry height="60" width="200" x="2619.5" y="869.75" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-14" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="get items from cart.provider" vertex="1">
           <mxGeometry height="60" width="200" x="690" y="1200" as="geometry" />
@@ -257,46 +257,52 @@
           <mxGeometry height="90" width="200" x="700" y="1500" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-19" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Show a list of each coin type (icon) and the account&amp;nbsp;&lt;div&gt;funds next to it&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1454" y="1270" as="geometry" />
+          <mxGeometry height="60" width="200" x="1612" y="1270" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-21" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="get account coin funds from firebase &#39;wallets&#39; table" vertex="1">
-          <mxGeometry height="60" width="200" x="1454" y="1190" as="geometry" />
+          <mxGeometry height="60" width="200" x="1612" y="1190" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-22" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="logout()&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;this will run firebaseAuth.logout and return app to standby page&lt;/div&gt;" vertex="1">
-          <mxGeometry height="90" width="200" x="2354" y="1370" as="geometry" />
+          <mxGeometry height="90" width="200" x="2673" y="1442" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-24" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="show fields for:&lt;div&gt;old password,&lt;/div&gt;&lt;div&gt;&amp;nbsp;new password,&amp;nbsp;&lt;/div&gt;&lt;div&gt;confirm new password&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="2070" y="1370" as="geometry" />
+          <mxGeometry height="60" width="200" x="2299" y="1442" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-36" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="PFP" vertex="1">
-          <mxGeometry height="60" width="200" x="1583.5" y="1370" as="geometry" />
+          <mxGeometry height="60" width="200" x="1752.5" y="1442" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-37" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="FIELDS" vertex="1">
-          <mxGeometry height="60" width="200" x="1807.5" y="1370" as="geometry" />
+          <mxGeometry height="60" width="200" x="1976.5" y="1442" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-38" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;onPressed:&lt;/span&gt;&lt;div style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;open imagePicker, then&lt;/div&gt;&lt;div style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;changePFP()&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1593.5" y="1600" as="geometry" />
+          <mxGeometry height="60" width="200" x="1762.5" y="1672" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-39" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;Show pfp in top 1/3 of screen&amp;nbsp;&lt;/span&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1593.5" y="1520" as="geometry" />
+          <mxGeometry height="60" width="200" x="1762.5" y="1592" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-40" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;Pull profile picture from server backend&lt;/span&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1593.5" y="1440" as="geometry" />
+          <mxGeometry height="60" width="200" x="1762.5" y="1512" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-41" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;SUBMIT button at bottom&lt;/span&gt;&lt;div style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;onPressed:&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1817.5" y="1600" as="geometry" />
+          <mxGeometry height="60" width="200" x="1986.5" y="1672" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-42" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;datepicker for selecting DOB&lt;/span&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1817.5" y="1520" as="geometry" />
+          <mxGeometry height="60" width="200" x="1986.5" y="1592" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-43" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;shadow=1;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;show various text boxes for user inform&lt;/span&gt;&lt;span style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18); white-space: pre;&quot;&gt;ation, and allow for&lt;/span&gt;&lt;div style=&quot;caret-color: rgb(18, 18, 18); color: rgb(18, 18, 18);&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt; user to change them&lt;/span&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="70" width="200" x="1817.5" y="1440" as="geometry" />
+          <mxGeometry height="70" width="200" x="1986.5" y="1512" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-44" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="&lt;span style=&quot;caret-color: rgb(255, 255, 255); color: rgb(255, 255, 255);&quot;&gt;changeUserInfo()&lt;/span&gt;&lt;div style=&quot;caret-color: rgb(255, 255, 255); color: rgb(255, 255, 255);&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;caret-color: rgb(255, 255, 255); color: rgb(255, 255, 255);&quot;&gt;will run firebase changes to user document&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="1827.5" y="1680" as="geometry" />
+          <mxGeometry height="60" width="200" x="2010" y="1752" as="geometry" />
         </mxCell>
         <mxCell id="UNjHu5clto-TzhCB3I6X-46" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="Submit Button&lt;div&gt;onPressed:&lt;/div&gt;&lt;div&gt;changePassword()&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="200" x="2070" y="1445" as="geometry" />
+          <mxGeometry height="60" width="200" x="2299" y="1517" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-47" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="" vertex="1">
+          <mxGeometry height="60" width="200" x="2619.5" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="UNjHu5clto-TzhCB3I6X-48" parent="1" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" value="" vertex="1">
+          <mxGeometry height="60" width="200" x="2380" y="950" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
