@@ -31,19 +31,19 @@ Future<void> uploadItemToDatabase(
     return;
   }
 
-  if ((mvController.text.trim() != '-') ||
-      (mvController.text.trim() != 'v') ||
-      (mvController.text.trim() != '^')) {
-    // check market value field is valid
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          "Market Value must be '-', 'v', or '^'.",
-        ), //if invalid, show error
-      ),
-    );
-    return;
-  }
+  // if ((mvController.text.trim() != '-') ||
+  //     (mvController.text.trim() != 'v') ||
+  //     (mvController.text.trim() != '^')) {
+  //   // check market value field is valid
+  //   ScaffoldMessenger.of(context).showSnackBar(
+  //     SnackBar(
+  //       content: Text(
+  //         "Market Value must be '-', 'v', or '^'.",
+  //       ), //if invalid, show error
+  //     ),
+  //   );
+  //   return;
+  // }
 
   if (double.tryParse(highController.text.trim())! <
       double.tryParse(lowController.text.trim())!) {
